@@ -12,6 +12,9 @@
 # binaries
 export PATH="/mnt/data/pbin/_all:$PATH"
 
+# Set some environment preferences
+tabs 4
+
 # Load all scripts completions in 'sh' folder
 for file in $HOME/utils/scripts/bashrc/sh/*.sh $HOME/utils/scripts/bashrc/sh/*.bash; do 
     if [ -f "$file" ]; then  
