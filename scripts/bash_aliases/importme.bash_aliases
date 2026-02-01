@@ -20,6 +20,9 @@ alias bun_httpserver='bun run --no-install http-server' # Need Node.js/nvm as it
 alias bun_gnomon='bun run --bun --no-install gnomon'
 alias prettylog="bun run --bun --no-install pino-pretty"
 
+# Local Bun scripts
+alias bun_cat='bun run $HOME/utils/scripts/bun/cat.ts'
+
 # cheatsheets
 function cheatsheet() {
     ## TODO script for argument completion (because it will be difficult to guess `cheatsheet git-tricks`` for example)
