@@ -1,0 +1,23 @@
+bind ^s savefile main
+
+set linenumbers
+set tabsize 4
+set tabstospaces
+set mouse
+set softwrap
+set atblanks
+set stateflags
+
+set titlecolor plum,peach
+set stripecolor normal,orange
+set keycolor plum,peach
+set numbercolor beet,peach
+set scrollercolor cyan,normal
+
+set autoindent
+set constantshow
+set guidestripe 160
+set indicator
+set jumpyscrolling
+#set minibar
+set positionlog

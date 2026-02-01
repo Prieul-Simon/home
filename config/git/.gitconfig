@@ -1,0 +1,8 @@
+# Ceci est le fichier de configuration personnel de Git.
+[user]
+	name = Simon Prieul
+	email = simon.prieul@gmail.com
+[core]
+	editor = nano
+[init]
+	defaultBranch = main
