@@ -2,10 +2,11 @@
 # In ~/.bashrc, include this file with the following line:
 # `source "$HOME/utils/scripts/bashrc/importme.bashrc"`
 # 
-# need to install and then symlink the folder containing all the .md files containing the cheatsheets:
+# need to download and setup the .sh files for git prompt & git completions :
 # ```
+# cd $HOME/utils/scripts/bun/
 # bun install
-# ln -s /path/to/the/storage/dir/assets/cheatsheets bun/cheatsheets
+# ./setup-git.ts
 # ```
 #####################################################################################################################################################
 
@@ -23,11 +24,11 @@ for file in $HOME/utils/scripts/bashrc/sh/*.sh $HOME/utils/scripts/bashrc/sh/*.b
 done
 
 # Git
-source "$HOME/utils/scripts/bashrc/git/git-prompt.sh"
+source "$HOME/utils/scripts/bashrc/git/current/git-prompt.sh"
 export GIT_PS1_SHOWDIRTYSTATE=1
 PS1=$PS1'\[\e[91m\]$(__git_ps1 "(%s) ")\[\e[00m\]'
 # PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
 
 
 # Git completion
-source "$HOME/utils/scripts/bashrc/git/git-completion.bash"
+source "$HOME/utils/scripts/bashrc/git/current/git-completion.bash"
