@@ -14,6 +14,23 @@
 alias pdfreader='evince'
 alias ccurl="curl -i -w '\n\n~~> Time: %{time_total}s\n'"
 
+# Utilities
+alias python='python3'
+alias fake-mail='python -m smtpd -n -c DebuggingServer localhost:25'
+
+# Better commands
+function recursive-grep() {
+    echo "> grep -RHIn --exclude-dir={dist,node_modules,.git,var,.local} --color=always \""$@"\" | cut -c 1-400"
+    grep -RHIn --exclude-dir={dist,node_modules,.git,var} --color=always "$@" | cut -c 1-400
+    return 0
+}
+function find-then-grep() {
+    echo " > find -name "$1" -exec grep -HIn \"$2\" {} +"
+    echo ""
+    find -name "$1" -exec grep --color=always -HIn "$2" {} +
+    return 0
+}
+
 # Use npmjs.com packages installed globally with Bun
 alias cb='bun run --bun --no-install clipboard'
 alias bun_httpserver='bun run --no-install http-server' # Need Node.js/nvm as it does not work with Bun runtime
@@ -21,7 +38,16 @@ alias bun_gnomon='bun run --bun --no-install gnomon'
 alias prettylog="bun run --bun --no-install pino-pretty"
 
 # Local Bun scripts
-alias bun_cat='bun run $HOME/utils/scripts/bun/cat.ts'
+alias bun_cat='$HOME/utils/scripts/bun/cat.ts'
+alias now-timestamp='$HOME/utils/scripts/bun/timestamp.ts'
+
+# Easy life
+alias àmajuscule='echo -n "À" | cb'
+alias émajuscule='echo -n "É" | cb'
+alias èmajuscule='echo -n "È" | cb'
+alias êmajuscule='echo -n "Ê" | cb'
+alias ëmajuscule='echo -n "Ë" | cb'
+alias çmajuscule='echo -n "Ç" | cb'
 
 # cheatsheets
 function cheatsheet() {
@@ -29,3 +55,6 @@ function cheatsheet() {
     [ -z $1 ] && echo "Argument missing: name of the cheatsheet";
     bun run $HOME/utils/scripts/bun/cheatsheets.ts --name ${1-"<missing cheatsheet argument>"};
 }
+
+# HELP / REMINDERS
+source "${BASH_SOURCE%/*}/helpers/all.sh"
