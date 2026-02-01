@@ -4,8 +4,9 @@
 # 
 # need to install and then symlink the folder containing all the .md files containing the cheatsheets:
 # ```
+# cd $HOME/utils/scripts/bun/
 # bun install
-# ln -s /path/to/the/storage/dir/assets/cheatsheets bun/cheatsheets
+# ln -s /mnt/data/assets/cheatsheets cheatsheets
 # ```
 #####################################################################################################################################################
 
@@ -23,5 +24,5 @@ alias prettylog="bun run --bun --no-install pino-pretty"
 function cheatsheet() {
     ## TODO script for argument completion (because it will be difficult to guess `cheatsheet git-tricks`` for example)
     [ -z $1 ] && echo "Argument missing: name of the cheatsheet";
-    bun run $HOME/utils/scripts/bash_aliases/bun/cheatsheets.ts --name ${1-"<missing cheatsheet argument>"};
+    bun run $HOME/utils/scripts/bun/cheatsheets.ts --name ${1-"<missing cheatsheet argument>"};
 }
