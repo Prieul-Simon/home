@@ -10,9 +10,15 @@
 # ```
 #####################################################################################################################################################
 
+source "${BASH_SOURCE%/*}/create_alias.sh"
+
 #alias noderun='node --run'
 alias pdfreader='evince'
 alias ccurl="curl -i -w '\n\n~~> Time: %{time_total}s\n'"
+
+# I use apt so often that I want to shortcut the commands
+__simon_create_alias "apt-list-upgradable" "sudo apt update && apt list --upgradable"
+__simon_create_alias "apt-upgrade" "sudo apt upgrade -y"
 
 # Utilities
 alias python='python3'
