@@ -2,11 +2,12 @@
 # In ~/.bashrc, include this file with the following line:
 # `source "$HOME/utils/scripts/bashrc/importme.bashrc"`
 # 
-# need to download and setup the .sh files for git prompt & git completions :
+# need to download and setup the .sh files for git prompt & completions :
 # ```
 # cd $HOME/utils/scripts/bun/
 # bun install
 # ./setup-git.ts
+# ./setup-tmux-completions.ts
 # ```
 #####################################################################################################################################################
 
@@ -32,3 +33,5 @@ PS1=$PS1'\[\e[91m\]$(__git_ps1 "(%s) ")\[\e[00m\]'
 
 # Git completion
 source "$HOME/utils/scripts/bashrc/git/current/git-completion.bash"
+# tmux completion
+source "$HOME/utils/scripts/bashrc/tmux/tmux.completion.bash"

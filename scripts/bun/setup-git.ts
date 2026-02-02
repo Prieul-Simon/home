@@ -1,8 +1,9 @@
 #!/usr/bin/env bun
 
 import { $, write } from "bun"
-import { mkdir, symlink } from 'fs/promises'
-import { resolve} from 'path'
+import { mkdir } from 'fs/promises'
+import { resolve } from 'path'
+import { retrieveRawContent, symlinkIfUnexisting } from "./src/common/common"
 
 const RELATIVE_POINTER = `../bashrc/git/current`
 const relativeLocation = (v: string) => `../bashrc/git/${v}`
@@ -21,9 +22,9 @@ async function setupGit() {
         completionFile,
         promptFile,
     ] = [
-        `${relativeLocation(version)}/git-completion.bash`,
-        `${relativeLocation(version)}/git-prompt.sh`,
-    ]
+            `${relativeLocation(version)}/git-completion.bash`,
+            `${relativeLocation(version)}/git-prompt.sh`,
+        ]
     if (completionResult?.status === 'fulfilled') {
         await write(completionFile, completionResult.value)
     }
@@ -32,8 +33,8 @@ async function setupGit() {
     }
     // Create links
     await mkdir(RELATIVE_POINTER, { recursive: true })
-    await symlink(resolve(completionFile), `${RELATIVE_POINTER}/git-completion.bash`)
-    await symlink(resolve(promptFile), `${RELATIVE_POINTER}/git-prompt.sh`)
+    await symlinkIfUnexisting(resolve(completionFile), `${RELATIVE_POINTER}/git-completion.bash`)
+    await symlinkIfUnexisting(resolve(promptFile), `${RELATIVE_POINTER}/git-prompt.sh`)
     console.info('setup-git finished !')
 }
 
@@ -47,17 +48,6 @@ async function getVersion(): Promise<string> {
     const version = `v${vNumber}`
     console.info(`Found version ${version}`)
     return version
-}
-
-async function retrieveRawContent(url: string): Promise<string> {
-    console.info(`Fetching '${url}'...`)
-    const rawContent = await fetch(url)
-    if (rawContent.status !== 200) {
-        console.error('Not the expected result from GitHub: %o', rawContent)
-        process.exit(1)
-    }
-    console.info(`End fetching '${url}' with success`)
-    return rawContent.text()
 }
 
 await setupGit()
