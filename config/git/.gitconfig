@@ -4,5 +4,14 @@
 	email = simon.prieul@gmail.com
 [core]
 	editor = nano
+	excludesFile = /home/simon/utils/config/git/global.gitignore
+	hooksPath = /home/simon/utils/config/git/hooks/
 [init]
 	defaultBranch = main
+[pull]
+	ff = false
+	rebase = true
+[rebase]
+	autostash = true
+[sequence]
+	editor = code -w
