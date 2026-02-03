@@ -12,6 +12,9 @@
 
 source "${BASH_SOURCE%/*}/create_alias.sh"
 
+# Improve even more ls aliases
+alias ll='ls -alFh'
+
 #alias noderun='node --run'
 alias pdfreader='evince'
 alias ccurl="curl -i -w '\n\n~~> Time: %{time_total}s\n'"
@@ -44,7 +47,6 @@ alias bun_gnomon='bun run --bun --no-install gnomon'
 alias prettylog="bun run --bun --no-install pino-pretty"
 
 # Local Bun scripts
-alias bun_cat='$HOME/utils/scripts/bun/cat.ts'
 alias now-timestamp='$HOME/utils/scripts/bun/timestamp.ts'
 
 # Easy life
