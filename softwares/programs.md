@@ -16,9 +16,7 @@
         * pino-pretty
 * nvm/npm
     * https://github.com/nvm-sh/nvm
-    * Enable CLI NPM completion: [https://docs.npmjs.com/cli/v10/commands/npm-completion](https://docs.npmjs.com/cli/v11/commands/npm-completion)
-    * Enable CLI Node completion
-    * (@antfu/ni)
+    * (@antfu/ni)   
     * (clever-tools)
     * (hotel)
     * (npm-check-updates)
