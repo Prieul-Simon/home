@@ -70,3 +70,8 @@ function cheatsheet() {
 
 # HELP / REMINDERS
 source "${BASH_SOURCE%/*}/helpers/all.sh"
+
+# Games
+if [ -f "${BASH_SOURCE%/*}/games.sh" ]; then  
+    source "${BASH_SOURCE%/*}/games.sh"
+fi 
