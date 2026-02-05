@@ -14,6 +14,7 @@
         * http-server
         * gnomon
         * pino-pretty
+        * tldr
 * nvm/npm
     * https://github.com/nvm-sh/nvm
     * (@antfu/ni)   

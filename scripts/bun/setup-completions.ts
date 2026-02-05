@@ -9,6 +9,7 @@ async function setupAll() {
         setupBun(),
         setupNpm(),
         setupNode(),
+        setupTldr(),
     ])
 }
 
@@ -39,6 +40,12 @@ async function setupNpm() {
 
 async function setupNode() {
     await $`node --completion-bash > ../bashrc/sh/node.completion.bash`
+}
+
+async function setupTldr() {
+    const completionUrl = `https://raw.githubusercontent.com/tldr-pages/tldr-node-client/refs/heads/main/bin/completion/bash/tldr`
+    const completionResult = await retrieveRawContent(completionUrl)
+    await write('../bashrc/sh/tldr.completion.bash', completionResult)
 }
 
 await setupAll()
