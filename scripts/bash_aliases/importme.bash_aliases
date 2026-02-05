@@ -12,8 +12,11 @@
 
 source "${BASH_SOURCE%/*}/create_alias.sh"
 
-# Improve even more ls aliases
+# Improve even more ls & other aliases
 alias ll='ls -alFh'
+alias grep='grep --color=always'
+alias fgrep='fgrep --color=always'
+alias egrep='egrep --color=always'
 
 #alias noderun='node --run'
 alias pdfreader='evince'
@@ -45,6 +48,7 @@ alias cb='bun run --bun --no-install clipboard'
 alias bun_httpserver='bun run --no-install http-server' # Need Node.js/nvm as it does not work with Bun runtime
 alias bun_gnomon='bun run --bun --no-install gnomon'
 alias prettylog="bun run --bun --no-install pino-pretty"
+alias tldr="bun run --bun --no-install tldr"
 
 # Local Bun scripts
 alias now-timestamp='$HOME/utils/scripts/bun/timestamp.ts'

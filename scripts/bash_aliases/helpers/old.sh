@@ -67,16 +67,6 @@ function help.docker() {
 function help.chown() {
     echo "  > chown username filename.ext"
 }
-function help.grep() {
-    echo "Some tips / useful options of grep:"
-    echo "  --exclude-dir"
-    echo "  > grep -RHIn --exclude-dir=node_modules \"<my-search-sequence>\" ./folder_to_search"
-    echo "  # multiple directories with --exclude-dir={one,two}"
-    echo "  # Can also be used with recursive-grep:"
-    echo "  > recursive-grep --exclude-dir={dist,node_modules} \"<my-search-sequence>\" "
-    echo "  # Find then grep"
-    echo "  > find . -type f -iname \"compose-test.yml\" -exec grep \"args\" {} \+"
-}
 function help.rabbit() {
     echo "Command for RabbitMQ server"
     echo "  > rabbitmqctl list_queues"

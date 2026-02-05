@@ -33,3 +33,7 @@ PS1=$PS1'\[\e[91m\]$(__git_ps1 "(%s) ")\[\e[00m\]'
 
 # Git completion
 source "$HOME/utils/scripts/bashrc/git/current/git-completion.bash"
+
+# Others
+#export CAPACITOR_ANDROID_STUDIO_PATH="/home/simon/programs/android-studio-2024/bin/studio.sh"
+
