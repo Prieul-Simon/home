@@ -11,6 +11,7 @@ async function setupAll() {
         setupNpm(),
         setupNode(),
         setupTldr(),
+        setupBat(),
     ])
 }
 
@@ -23,6 +24,7 @@ type Category =
     | 'npm'
     | 'node'
     | 'tldr'
+    | 'bat'
 
 function syncLog(category: Category, msg: string, ...data: any[]) {
     const beginCategory = `[${category}]`
@@ -100,5 +102,25 @@ async function setupTldr(category: Category = 'tldr') {
     const completionUrl = `https://raw.githubusercontent.com/tldr-pages/tldr-node-client/refs/heads/main/bin/completion/bash/tldr`
     const completionResult = await retrieveRawContent(category, completionUrl)
     await write(completionFile, completionResult)
+    logSuccess(category, completionFile)
+}
+
+async function setupBat(category: Category = 'bat') {
+    // as I made `alias bat='batcat'`, need to setup its autocomplete
+    const completionFile = '../bashrc/sh/bat.completion.bash'
+    if (await testFileExists(category, completionFile)) return
+
+    const sourceFile = '/usr/share/bash-completion/completions/batcat'
+    if (!await exists(sourceFile)) {
+        syncLog(category, "Cannot find %s, the script is unable to generate completion file for bat alias command", sourceFile)
+        return
+    }
+    await $`cp ${sourceFile} ${completionFile}`
+
+    // Need to remove last line, so copy it with 'head' command (-n -1 removes the last line)
+    await $`head -n -1 ${sourceFile} > ${completionFile}`
+    // & replace it with another line at the end of the copied file
+    await $`echo '} && complete -F _bat bat' >> ${completionFile}`
+
     logSuccess(category, completionFile)
 }

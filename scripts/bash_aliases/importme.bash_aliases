@@ -17,6 +17,7 @@ alias ll='ls -alFh'
 alias grep='grep --color=always'
 alias fgrep='fgrep --color=always'
 alias egrep='egrep --color=always'
+alias bat='batcat'
 
 #alias noderun='node --run'
 alias pdfreader='evince'

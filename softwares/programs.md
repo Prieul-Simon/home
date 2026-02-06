@@ -11,6 +11,7 @@
     * libnotify-bin
     * dysk (https://dystroy.org/dysk/install)
     * lf
+    * bat (installed as `batcat`, an alias is already created to `bat`)
 * Git
 * Bun
     * Install globally :
