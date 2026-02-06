@@ -18,7 +18,7 @@ async function setupAll() {
 await setupAll()
 process.exit(0)
 
-type Category = 
+type Category =
     | 'tmux'
     | 'bun'
     | 'npm'
@@ -53,22 +53,14 @@ async function retrieveRawContent(category: Category, url: string): Promise<stri
 }
 
 async function setupTmux(category: Category = 'tmux') {
-    const relativeLocation = `../bashrc/tmux`
-    const completionFile = `${relativeLocation}/tmux.completion.bash`
+    const completionFile = '../bashrc/sh/tmux.completion.bash'
     if (await testFileExists(category, completionFile)) return
 
     // const completionUrl = `https://raw.githubusercontent.com/Bash-it/bash-it/refs/heads/master/completion/available/tmux.completion.bash`
     const completionUrl = `https://raw.githubusercontent.com/imomaliev/tmux-bash-completion/master/completions/tmux`
-
-    const [completionResult] = await Promise.allSettled<string>([
-        retrieveRawContent(category, completionUrl),
-    ])
-
-    // Create real files
-    if (completionResult?.status === 'fulfilled') {
-        await write(completionFile, completionResult.value)
-        logSuccess(category, completionFile)
-    }
+    const completionResult = await retrieveRawContent(category, completionUrl)
+    await write(completionFile, completionResult)
+    logSuccess(category, completionFile)
 }
 
 async function setupBun(category: Category = 'bun') {
