@@ -1,0 +1,6 @@
+tmux.completion.bash
+bun.completion.bash
+npm.completion.sh
+node.completion.bash
+tldr.completion.bash
+bat.completion.bash

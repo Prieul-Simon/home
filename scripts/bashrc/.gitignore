@@ -1,4 +1,0 @@
-*.sh
-*.bash
-!test.sh
-!test.bash
