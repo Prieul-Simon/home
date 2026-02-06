@@ -3,6 +3,8 @@
 * Pop!\_OS 24.04
     * COSMIC Store Applets
     * Ghostty: https://github.com/mkasberg/ghostty-ubuntu (+ `case "$TERM" in xterm-ghostty) color_prompt=yes;;esac` in `~/.bashrc`)
+    * NerdFonts: https://www.nerdfonts.com/font-downloads ('Droid Sans Mono' for Code, 'Noto Sans Mono' for terminal under Pop!_OS, etc.)
+        * => just  copy .ttf files of fonts you need into `~/.local/share/fonts`
     * fastfetch
     * cmatrix (because it is useless & cool)
     * GParted
