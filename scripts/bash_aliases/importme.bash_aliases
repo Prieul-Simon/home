@@ -48,7 +48,9 @@ alias cb='bun run --bun --no-install clipboard'
 alias bun_httpserver='bun run --no-install http-server' # Need Node.js/nvm as it does not work with Bun runtime
 alias bun_gnomon='bun run --bun --no-install gnomon'
 alias prettylog="bun run --bun --no-install pino-pretty"
-alias tldr="bun run --bun --no-install tldr"
+export __SIMON_TLDR_NODE_CLIENT="/mnt/data/dev/_ext/tldr-node-client/bin/tldr"
+alias tldr-bun="bun run --bun $__SIMON_TLDR_NODE_CLIENT"
+alias tldr-node="$__SIMON_TLDR_NODE_CLIENT"
 
 # Local Bun scripts
 alias now-timestamp='$HOME/utils/scripts/bun/timestamp.ts'
@@ -70,6 +72,11 @@ function cheatsheet() {
 
 # HELP / REMINDERS
 source "${BASH_SOURCE%/*}/helpers/all.sh"
+
+# tldr.sh
+# Unfortunately, tldr node client does not work, so use python client instead
+export TLDR_LANGUAGE="en"
+alias tldr="tldr-py"
 
 # Games
 if [ -f "${BASH_SOURCE%/*}/games.sh" ]; then  
