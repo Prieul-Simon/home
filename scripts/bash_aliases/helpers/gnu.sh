@@ -1,3 +1,14 @@
+function help.complete() {
+    echo "Autocompletion on bash:"
+    echo "  > batcat --version"
+    echo "  > complete -p batcat"
+    echo "    ~> \`complete -F _bat batcat\`"
+    echo "  (We now know that function for completion is \`_bat\`)"
+    echo "  > complete -F _bat my-alias-for-bat"
+    echo "  (Now, \`my-alias-for-bat\` as the same completion as \`batcat\`)"
+    echo "  (Read also \`tldr complete\`)"
+}
+
 function help.grep() {
     echo "Some tips / useful options of grep:"
     echo "  "
