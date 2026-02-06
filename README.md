@@ -14,4 +14,4 @@ ln -s /mnt/data/dev/home.git/config config
 ln -s /mnt/data/dev/home.git/scripts scripts
 ```
 
-Then follow the instructions in `importme.bashrc` and `importme.bash_aliases`
+Then follow the instructions in `importme.bashrc.bash` and `importme.bash_aliases.bash`

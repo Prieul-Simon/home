@@ -1,6 +1,6 @@
 #####################################################################################################################################################
 # In ~/.bash_aliases, include this file with the following line:
-# `source "$HOME/utils/scripts/bash_aliases/importme.bash_aliases"`
+# `source "$HOME/utils/scripts/bash_aliases/importme.bash_aliases.bash"`
 # 
 # need to install and then symlink the folder containing all the .md files containing the cheatsheets:
 # ```

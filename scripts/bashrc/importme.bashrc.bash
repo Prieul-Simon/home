@@ -1,6 +1,6 @@
 #####################################################################################################################################################
 # In ~/.bashrc, include this file with the following line:
-# `source "$HOME/utils/scripts/bashrc/importme.bashrc"`
+# `source "$HOME/utils/scripts/bashrc/importme.bashrc.bash"`
 # 
 # need to download and setup the .sh files for git prompt+completions and all other completions :
 # ```
