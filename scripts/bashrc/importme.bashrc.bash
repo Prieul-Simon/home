@@ -12,7 +12,7 @@
 #####################################################################################################################################################
 
 # binaries
-export PATH="/mnt/data/pbin/_all:$PATH"
+export PATH="/mnt/data/pbin/_all:$HOME/.local/bin:$PATH"
 
 # Set some environment preferences
 tabs 4
@@ -41,4 +41,7 @@ source "$HOME/utils/scripts/bashrc/git/current/git-completion.bash"
 # export CAPACITOR_ANDROID_STUDIO_PATH="/home/simon/programs/android-studio-2024/bin/studio.sh"
 export EDITOR="nano" # `lf` need it
 # export EDITOR="cosmic-edit 2>/dev/null" # `lf` need it
+
+# zoxide. It should be at the very end of this file !
+eval "$(zoxide init bash)"
 
