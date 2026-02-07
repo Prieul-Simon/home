@@ -38,5 +38,7 @@ PS1=$PS1'\[\e[91m\]$(__git_ps1 "(%s) ")\[\e[00m\]'
 source "$HOME/utils/scripts/bashrc/git/current/git-completion.bash"
 
 # Others
-#export CAPACITOR_ANDROID_STUDIO_PATH="/home/simon/programs/android-studio-2024/bin/studio.sh"
+# export CAPACITOR_ANDROID_STUDIO_PATH="/home/simon/programs/android-studio-2024/bin/studio.sh"
+export EDITOR="nano" # `lf` need it
+# export EDITOR="cosmic-edit 2>/dev/null" # `lf` need it
 

@@ -110,4 +110,5 @@ cmd zip ${{
 # ## My modifications from the example file are added below:
 set drawbox true
 set icons true
-set previewer "~/.config/lf/previewer.sh"
+# set previewer "~/.config/lf/previewer.sh"
+set previewer "~/.config/lf/smart-bat-lf-previewer.sh"
