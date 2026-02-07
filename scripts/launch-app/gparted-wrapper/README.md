@@ -1,0 +1,1 @@
+Need to `ln -s ~/utils/scripts/launch-app/gparted-wrapper/gparted.desktop  ~/.local/share/applications/gparted.desktop`

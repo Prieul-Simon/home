@@ -1,0 +1,27 @@
+[Desktop Entry]
+Name[en_CA]=GParted
+Name[en_GB]=GParted
+Name[fr]=GParted
+Name=GParted
+GenericName[en_CA]=Partition Editor
+GenericName[en_GB]=Partition Editor
+GenericName[fr]=Éditeur de partitions
+GenericName=Partition Editor
+X-GNOME-FullName=GParted Partition Editor
+Comment[en_CA]=Create, reorganise, and delete partitions
+Comment[en_GB]=Create, reorganise, and delete partitions
+Comment[fr]=(simon 5)Crée, réorganise et supprime des partitions
+Comment=Create, reorganize, and delete partitions
+################################################################
+# Modify 'Exec'
+#Exec=/usr/sbin/gparted %f
+Exec=/mnt/data/pbin/gparted-wrapper/gparted.sh
+################################################################
+Icon=gparted
+Terminal=false
+Type=Application
+Categories=GNOME;System;Filesystem;
+Keywords[en_GB]=Partition;
+Keywords[fr]=Partition;
+Keywords=Partition;
+StartupNotify=true
