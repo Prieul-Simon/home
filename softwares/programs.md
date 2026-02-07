@@ -12,8 +12,10 @@
     * python3-venv python3-pip
     * libnotify-bin
     * dysk (https://dystroy.org/dysk/install)
-    * lf
-    * bat (installed as `batcat`, an alias is already created to `bat`)
+    * lf (https://github.com/gokcehan/lf)
+    * bat (installed as `batcat`, an alias is already created to `bat`) (https://github.com/sharkdp/bat)
+    * zoxide (https://github.com/ajeetdsouza/zoxide)
+    * fzf (https://github.com/junegunn/fzf & https://junegunn.github.io/fzf)
 * Git
 * Bun
     * Install globally :

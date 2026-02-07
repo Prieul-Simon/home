@@ -42,6 +42,8 @@ source "$HOME/utils/scripts/bashrc/git/current/git-completion.bash"
 export EDITOR="nano" # `lf` need it
 # export EDITOR="cosmic-edit 2>/dev/null" # `lf` need it
 
+# fzf
+eval "$(fzf --bash)"
 # zoxide. It should be at the very end of this file !
 eval "$(zoxide init bash)"
 
