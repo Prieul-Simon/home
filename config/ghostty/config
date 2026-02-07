@@ -67,3 +67,11 @@ theme = One Half Dark
 background = #2c2525
 background-opacity = 0.96
 background-blur = 20
+
+## WINDOW
+# window-decoration = 
+window-new-tab-position = end
+# window-height = 45
+# window-width = 180
+window-padding-x = 8
+window-padding-y = 0
