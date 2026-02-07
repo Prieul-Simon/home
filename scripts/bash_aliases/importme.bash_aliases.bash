@@ -29,6 +29,7 @@ __simon_create_alias "apt-list-upgradable" "sudo apt update && apt list --upgrad
 __simon_create_alias "apt-upgrade" "sudo apt upgrade -y"
 
 # Utilities
+alias boo='ghostty +boo'
 alias python='python3'
 alias fake-mail='python -m smtpd -n -c DebuggingServer localhost:25'
 
