@@ -1,5 +1,12 @@
 #!/usr/bin/env bun
 
+/**
+ * This script retrieves:
+ * 1) The bash script for enabling completions in bash shell
+ * 2) The bash script for exposing functions for integrating git status in the prompt of the bash shell
+ * 
+ * There is no need to do the same for fish as fish already integrates git in the prompt and already integrate git completions
+ */
 import { $, write } from "bun"
 import { mkdir } from 'fs/promises'
 import { resolve } from 'path'

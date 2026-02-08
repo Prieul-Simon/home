@@ -1,5 +1,11 @@
 #!/usr/bin/env bun
 
+/**
+ * This script retrieves for each program:
+ * 1) The bash script for enabling completions in bash shell
+ * 2) The fish script for enabling completions in fish shell, if needed (for instance fish seems to already integrate node,npm,tmux completions)
+ */
+
 import { $, write } from "bun"
 import { retrieveRawContent as commonRetrieveRawContent } from "./src/common/common"
 import { exists } from "fs/promises"
@@ -64,10 +70,26 @@ async function setupTmux(category: Category = 'tmux') {
 }
 
 async function setupBun(category: Category = 'bun') {
+    await Promise.allSettled([
+        setupBunBash(category),
+        setupBunFish(category),
+    ])
+}
+async function setupBunBash(category: Category = 'bun') {
     const completionFile = '../bashrc/sh/bun.completion.bash'
     if (await testFileExists(category, completionFile)) return
 
     await $`bun completions > ${completionFile}`
+    logSuccess(category, completionFile)
+}
+async function setupBunFish(category: Category = 'bun') {
+    const completionFile = '../../config/fish/completions/bun.fish'
+    if (await testFileExists(category, completionFile)) return
+
+    await $`
+        export SHELL="/usr/bin/fish"
+        bun completions > ${completionFile}
+    `
     logSuccess(category, completionFile)
 }
 

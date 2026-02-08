@@ -5,6 +5,8 @@
     * Ghostty: https://github.com/mkasberg/ghostty-ubuntu (+ `case "$TERM" in xterm-ghostty) color_prompt=yes;;esac` in `~/.bashrc`)
     * NerdFonts: https://www.nerdfonts.com/font-downloads ('Droid Sans Mono' for Code, 'Noto Sans Mono' for terminal under Pop!_OS, etc.)
         * => just  copy .ttf files of fonts you need into `~/.local/share/fonts`
+    * fish (https://fishshell.com/ & https://github.com/fish-shell/fish-shell?tab=readme-ov-file#packages-for-linux)
+    * starship (https://starship.rs)
     * fastfetch
     * cmatrix (because it is useless & cool)
     * GParted
