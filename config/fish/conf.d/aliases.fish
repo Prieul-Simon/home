@@ -46,8 +46,14 @@ alias çmajuscule='echo -n "Ç" | cb'
 ## cheatsheets
 # TODO from importme.bash_aliases.bash
 
-# HELP / REMINDERS
-# TODO from importme.bash_aliases.bash
+## HELP / REMINDERS
+# compatibility with from importme.bash_aliases.bash
+# TODO
+# set -l HELPERS_DIR $HOME/utils/scripts/bash_aliases/helpers/all.sh
+# set -l HELPERS_DIR $HOME/utils/scripts/bash_aliases/helpers/_private.sh
+# if test -e $HELPERS_DIR
+    # bass source $HELPERS_DIR
+# end
 
 ## tldr.sh
 # Unfortunately, tldr node client does not work, so use python client instead
