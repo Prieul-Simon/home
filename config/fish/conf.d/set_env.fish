@@ -3,7 +3,7 @@
 set -gx SHELL /usr/bin/fish
 set -g fish_autosuggestion_enabled 1
 # set -g fish_color_autosuggestion
-set fish_greeting ''
+# set -U fish_greeting
 
 ## XDG spec
 ## https://wiki.archlinux.org/title/XDG_Base_Directory
