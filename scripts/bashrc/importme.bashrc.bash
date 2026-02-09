@@ -47,9 +47,11 @@ source "$HOME/utils/scripts/bashrc/git/current/git-completion.bash"
 # Node.js
 # https://nodejs.org/api/repl.html#repl_environment_variable_options
 export NODE_REPL_HISTORY="$XDG_STATE_HOME/.node_repl_history"
-
 # Python
 export PYTHON_HISTORY="$XDG_STATE_HOME/.python_history" # for python >= 3.13 only
+# wget
+# https://bug-wget.gnu.narkive.com/BFRYDBtI/wishlist-configure-wget-hsts-by-environment-variable
+export WGETRC="$XDG_CONFIG_HOME/wget/wgetrc"
 
 # Others
 # export CAPACITOR_ANDROID_STUDIO_PATH="/home/simon/programs/android-studio-2024/bin/studio.sh"
