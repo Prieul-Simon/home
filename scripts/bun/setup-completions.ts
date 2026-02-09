@@ -18,6 +18,7 @@ async function setupAll() {
         setupNode(),
         setupTldr(),
         setupBat(),
+        setupEza(),
     ])
 }
 
@@ -31,6 +32,7 @@ type Category =
     | 'node'
     | 'tldr'
     | 'bat'
+    | 'eza'
 
 function syncLog(category: Category, msg: string, ...data: any[]) {
     const beginCategory = `[${category}]`
@@ -136,5 +138,20 @@ async function setupBat(category: Category = 'bat') {
     // & replace it with another line at the end of the copied file
     await $`echo '} && complete -F _bat bat' >> ${completionFile}`
 
+    logSuccess(category, completionFile)
+}
+
+async function setupEza(category: Category = 'eza') {
+    await Promise.allSettled([
+        setupEzaFish(category),
+    ])
+}
+async function setupEzaFish(category: Category = 'eza') {
+    const completionFile = '../../config/fish/completions/eza.fish'
+    if (await testFileExists(category, completionFile)) return
+
+    const completionUrl = `https://raw.githubusercontent.com/eza-community/eza/refs/heads/main/completions/fish/eza.fish`
+    const completionResult = await retrieveRawContent(category, completionUrl)
+    await write(completionFile, completionResult)
     logSuccess(category, completionFile)
 }

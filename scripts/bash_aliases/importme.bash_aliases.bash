@@ -19,6 +19,7 @@ alias fgrep='fgrep --color=always'
 alias egrep='egrep --color=always'
 alias bat='batcat'
 alias lf='lfcd'
+source "${BASH_SOURCE%/*}/core/all.sh"
 
 #alias noderun='node --run'
 alias pdfreader='evince'

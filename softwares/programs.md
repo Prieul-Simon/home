@@ -7,6 +7,12 @@
         * => just  copy .ttf files of fonts you need into `~/.local/share/fonts`
     * fish (https://fishshell.com/ & https://github.com/fish-shell/fish-shell?tab=readme-ov-file#packages-for-linux)
     * starship (https://starship.rs)
+    * fzf (https://github.com/junegunn/fzf & https://junegunn.github.io/fzf)
+    * zoxide (https://github.com/ajeetdsouza/zoxide)
+    * bat (installed as `batcat`, an alias is already created to `bat`) (https://github.com/sharkdp/bat)
+    * eza (https://github.com/eza-community/eza)
+    * lf (https://github.com/gokcehan/lf)
+* Other utilities
     * fastfetch
     * cmatrix (because it is useless & cool)
     * GParted
@@ -14,10 +20,6 @@
     * python3-venv python3-pip
     * libnotify-bin
     * dysk (https://dystroy.org/dysk/install)
-    * lf (https://github.com/gokcehan/lf)
-    * bat (installed as `batcat`, an alias is already created to `bat`) (https://github.com/sharkdp/bat)
-    * zoxide (https://github.com/ajeetdsouza/zoxide)
-    * fzf (https://github.com/junegunn/fzf & https://junegunn.github.io/fzf)
 * Git
 * Bun
     * Install globally :
