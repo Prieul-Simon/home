@@ -11,6 +11,13 @@
 # ```
 #####################################################################################################################################################
 
+## XDG spec
+## https://wiki.archlinux.org/title/XDG_Base_Directory
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_STATE_HOME="$HOME/.local/state"
+
 # binaries
 export PATH="/mnt/data/pbin/_all:$HOME/.local/bin:$PATH"
 
@@ -36,6 +43,13 @@ PS1=$PS1'\[\e[91m\]$(__git_ps1 "(%s) ")\[\e[00m\]'
 # PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
 # Git completion
 source "$HOME/utils/scripts/bashrc/git/current/git-completion.bash"
+
+# Node.js
+# https://nodejs.org/api/repl.html#repl_environment_variable_options
+export NODE_REPL_HISTORY="$XDG_STATE_HOME/.node_repl_history"
+
+# Python
+export PYTHON_HISTORY="$XDG_STATE_HOME/.python_history" # for python >= 3.13 only
 
 # Others
 # export CAPACITOR_ANDROID_STUDIO_PATH="/home/simon/programs/android-studio-2024/bin/studio.sh"
