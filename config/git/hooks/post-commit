@@ -1,0 +1,7 @@
+#!/bin/sh
+echo '(simon) (postcommit hook)'
+
+# last=$(git log -1 HEAD --oneline)
+# echo '  commit info: '$last
+
+exit 0
