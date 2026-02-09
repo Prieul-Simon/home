@@ -14,4 +14,6 @@ ln -s /mnt/data/dev/home.git/config config
 ln -s /mnt/data/dev/home.git/scripts scripts
 ```
 
-Then follow the instructions in `importme.bashrc.bash` and `importme.bash_aliases.bash`
+Then
+* fish: follow the instructions in `config.fish`
+* bash: follow the instructions in `importme.bashrc.bash` and `importme.bash_aliases.bash`
