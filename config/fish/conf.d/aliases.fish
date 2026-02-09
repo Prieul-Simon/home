@@ -58,4 +58,8 @@ set -x TLDR_LANGUAGE "en"
 alias tldr="tldr-py"
 
 # Games
-# TODO from importme.bash_aliases.bash
+# compatibility with from importme.bash_aliases.bash
+set -l GAMES_ALIASES_DIR $HOME/utils/scripts/bash_aliases/games.sh
+if test -e $GAMES_ALIASES_DIR
+    bass source $GAMES_ALIASES_DIR
+end
