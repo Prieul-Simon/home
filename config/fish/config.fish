@@ -25,7 +25,7 @@ set fish_complete_path $HOME/.config/fish/completions/manual $fish_complete_path
 # fzf
 fzf --fish | source
 # zoxide. It should be at the very end of this file !
-zoxide init fish | source
+zoxide init --cmd cd fish | source
 
 ################################################################
 ################################################################
