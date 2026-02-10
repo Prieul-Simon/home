@@ -1,10 +1,6 @@
-## Fish
-# fish does not show the alias that is set unlike bash when typing `alias egrep`
-# thus, create an abbr `showalias` for that
-abbr --add showalias --set-cursor='%' -- 'alias | grep "^alias %"'
-
 ## Core utilities
 abbr --add batplain 'bat --force-colorization --paging=never --style=plain'
+abbr --add dysk "dysk --units=binary --all --cols +label --sort=filesystem-asc --filter='size > 0 & !type=tmpfs'"
 
 ## Git abbrs
 abbr --add --position anywhere --set-cursor='%' -- gitcommit git\ commit\ -m\ \'\%\'

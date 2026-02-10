@@ -95,7 +95,7 @@
         {
             "type": "disk",
             "key": "│{#cyan}│ {icon}  Disk      │{$4}│{#keys}│{$2}",
-            "format": "{#cyan}({mountpoint}) {#default}{size-used} \/ {size-total} ({size-percentage}) - {filesystem}"
+            "format": "{#cyan}({mountpoint}) {#default}{size-used} \/ {size-total} ({size-percentage}) - {#cyan}{filesystem}"
         },
         {
             "type": "battery",
