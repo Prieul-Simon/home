@@ -3,8 +3,8 @@
 * Pop!\_OS 24.04
     * COSMIC Store Applets
     * Ghostty: https://github.com/mkasberg/ghostty-ubuntu (+ `case "$TERM" in xterm-ghostty) color_prompt=yes;;esac` in `~/.bashrc`)
-    * NerdFonts: https://www.nerdfonts.com/font-downloads ('Droid Sans Mono' for Code, 'Noto Sans Mono' for terminal under Pop!_OS, etc.)
-        * => just  copy .ttf files of fonts you need into `~/.local/share/fonts`
+    * NerdFonts: https://www.nerdfonts.com/font-downloads ('IosevkaTerm', 'Noto Sans Mono', 'Droid Sans Mono' for VSCode, etc.)
+        * => just  copy .ttf,.otf files of fonts you need into `~/.local/share/fonts`
     * fish (https://fishshell.com/ & https://github.com/fish-shell/fish-shell?tab=readme-ov-file#packages-for-linux)
     * starship (https://starship.rs)
     * fzf (https://github.com/junegunn/fzf & https://junegunn.github.io/fzf)

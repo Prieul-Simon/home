@@ -52,9 +52,11 @@
 command = /usr/bin/fish --login --interactive
 
 ## FONT
-font-family = "NotoSansM Nerd Font Mono"
+#font-family = "NotoSansM Nerd Font Mono"
+font-family = "IosevkaTerm NF"
 font-size = 11
-# font-feature = -liga
+font-feature = -calt, -liga, -dlig, -zero
+#adjust-cell-width = 0%
 
 ## PROMPT + CURSOR
 cursor-style = block
