@@ -41,6 +41,8 @@ if status is-interactive
     # tabs 4 # TODO it was in my bash config, is it needed in fish ?
 
     ## power commands
+    # ripgrep aka rg
+    set -gx RIPGREP_CONFIG_PATH $HOME/utils/config/ripgrep/ripgreprc
     # fzf
     fzf --fish | source
     set -gx FZF_DEFAULT_COMMAND 'fd --type file --follow --hidden --exclude .git --color=always'
