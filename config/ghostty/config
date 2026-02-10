@@ -51,6 +51,14 @@
 ## SHELL
 command = /usr/bin/fish --login --interactive
 
+## CLIPBOARD
+selection-clear-on-copy = false
+# setting copy-on-select to 'clipboard' will always copy text to the selection clipboard as well as the system clipboard
+# copy-on-select = clipboard
+# setting copy-on-select to 'true' will always copy text to the selection clipboard (and not to the system clipboard)
+copy-on-select = true
+keybind = performable:ctrl+shift+c=copy_to_clipboard
+
 ## FONT
 #font-family = "NotoSansM Nerd Font Mono"
 font-family = "IosevkaTerm NF"
@@ -80,3 +88,6 @@ window-new-tab-position = end
 # window-width = 180
 window-padding-x = 8,8
 window-padding-y = 0,1
+
+## INTERACTION
+link-url = true
