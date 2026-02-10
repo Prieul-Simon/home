@@ -29,6 +29,7 @@
         * http-server
         * gnomon
         * pino-pretty
+        * tree-sitter-cli
         * (tldr (do not work for the moment))
 * nvm/npm
     * https://github.com/nvm-sh/nvm
@@ -57,6 +58,9 @@
     * Bun for Visual Studio Code
     * Vue (official)
     * Oxc
+* Neovim
+    * https://neovim.io
+    * LazyVim (https://www.lazyvim.org)
 * Bruno (HTTP tester)
 * Duck (S3 client)
 * Docker Desktop

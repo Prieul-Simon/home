@@ -30,6 +30,7 @@ alias prettylog="bun run --bun --no-install pino-pretty"
 set __SIMON_TLDR_NODE_CLIENT "/mnt/data/dev/_ext/tldr-node-client/bin/tldr"
 alias tldr-bun="bun run --bun $__SIMON_TLDR_NODE_CLIENT"
 alias tldr-node="$__SIMON_TLDR_NODE_CLIENT"
+alias tree-sitter="bun run --bun --no-install tree-sitter"
 
 ## Local Bun scripts
 alias now-timestamp='$HOME/utils/scripts/bun/timestamp.ts'
