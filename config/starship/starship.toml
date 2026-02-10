@@ -38,12 +38,15 @@ $java\
 $kotlin\
 $haskell\
 $python\
-[](fg:green bg:lavender)\
+$lua\
+[](fg:green bg:sapphire)\
+$memory_usage\
+[](fg:sapphire bg:lavender)\
 $time\
 [ ](fg:lavender)\
 $cmd_duration\
 $line_break\
-\n[\u2570\u2500 ](red)$character"""
+[\u2570\u2500 ](red)$character"""
 
 # palette = 'catppuccin_mocha'
 palette = 'catppuccin_macchiato'
@@ -54,28 +57,28 @@ palette = 'catppuccin_macchiato'
 disabled = false
 style = "bg:red fg:crust"
 
-[os.symbols]
-Windows = ""
-Ubuntu = "󰕈"
-SUSE = ""
-Raspbian = "󰐿"
-Mint = "󰣭"
-Macos = "󰀵"
-Manjaro = ""
-Linux = "󰌽"
-Gentoo = "󰣨"
-Fedora = "󰣛"
-Alpine = ""
-Amazon = ""
-Android = ""
-AOSC = ""
-Arch = "󰣇"
-Artix = "󰣇"
-CentOS = ""
-Debian = "󰣚"
-Redhat = "󱄛"
-RedHatEnterprise = "󱄛"
-Pop = ""
+# [os.symbols]
+# Windows = ""
+# Ubuntu = "󰕈"
+# SUSE = ""
+# Raspbian = "󰐿"
+# Mint = "󰣭"
+# Macos = "󰀵"
+# Manjaro = ""
+# Linux = "󰌽"
+# Gentoo = "󰣨"
+# Fedora = "󰣛"
+# Alpine = ""
+# Amazon = ""
+# Android = ""
+# AOSC = ""
+# Arch = "󰣇"
+# Artix = "󰣇"
+# CentOS = ""
+# Debian = "󰣚"
+# Redhat = "󱄛"
+# RedHatEnterprise = "󱄛"
+# Pop = ""
 
 [username]
 show_always = true
@@ -112,7 +115,8 @@ style = "bg:yellow"
 format = '[[($all_status$ahead_behind )](fg:crust bg:yellow)]($style)'
 
 [nodejs]
-symbol = ""
+# symbol = ""
+symbol = ""
 style = "bg:green"
 format = '[[ $symbol( $version) ](fg:crust bg:green)]($style)'
 [bun]
@@ -178,7 +182,7 @@ style = "bg:lavender"
 format = '[[  $time ](fg:crust bg:lavender)]($style)'
 
 [line_break]
-disabled = true
+disabled = false
 
 [character]
 disabled = false
@@ -406,9 +410,17 @@ symbol = " "
 
 [lua]
 symbol = " "
+style = "bg:green"
+format = '[[ $symbol( LuaJIT $version) ](fg:crust bg:green)]($style)'
+lua_binary = "luajitversion"
 
 [memory_usage]
 symbol = "󰍛 "
+disabled = false
+threshold = -1
+# format = '[ $symbol ${ram}( | ${swap})]($style)'
+format = '[ $symbol ${ram} ]($style)'
+style = "bg:sapphire fg:crust"
 
 [meson]
 symbol = "󰔷 "
@@ -425,56 +437,56 @@ symbol = " "
 [ocaml]
 symbol = " "
 
-# [os.symbols]
-# Alpaquita = " "
-# Alpine = " "
-# AlmaLinux = " "
-# Amazon = " "
-# Android = " "
-# AOSC = " "
-# Arch = " "
-# Artix = " "
-# CachyOS = " "
-# CentOS = " "
-# Debian = " "
-# DragonFly = " "
-# Elementary = " "
-# Emscripten = " "
-# EndeavourOS = " "
-# Fedora = " "
-# FreeBSD = " "
-# Garuda = "󰛓 "
-# Gentoo = " "
-# HardenedBSD = "󰞌 "
-# Illumos = "󰈸 "
-# Ios = "󰀷 "
-# Kali = " "
-# Linux = " "
-# Mabox = " "
-# Macos = " "
-# Manjaro = " "
-# Mariner = " "
-# MidnightBSD = " "
-# Mint = " "
-# NetBSD = " "
-# NixOS = " "
-# Nobara = " "
-# OpenBSD = "󰈺 "
-# openSUSE = " "
-# OracleLinux = "󰌷 "
-# Pop = " "
-# Raspbian = " "
-# Redhat = " "
-# RedHatEnterprise = " "
-# RockyLinux = " "
-# Redox = "󰀘 "
-# Solus = "󰠳 "
-# SUSE = " "
-# Ubuntu = " "
-# Unknown = " "
-# Void = " "
-# Windows = "󰍲 "
-# Zorin = " "
+[os.symbols]
+Alpaquita = " "
+Alpine = " "
+AlmaLinux = " "
+Amazon = " "
+Android = " "
+AOSC = " "
+Arch = " "
+Artix = " "
+CachyOS = " "
+CentOS = " "
+Debian = " "
+DragonFly = " "
+Elementary = " "
+Emscripten = " "
+EndeavourOS = " "
+Fedora = " "
+FreeBSD = " "
+Garuda = "󰛓 "
+Gentoo = " "
+HardenedBSD = "󰞌 "
+Illumos = "󰈸 "
+Ios = "󰀷 "
+Kali = " "
+Linux = " "
+Mabox = " "
+Macos = " "
+Manjaro = " "
+Mariner = " "
+MidnightBSD = " "
+Mint = " "
+NetBSD = " "
+NixOS = " "
+Nobara = " "
+OpenBSD = "󰈺 "
+openSUSE = " "
+OracleLinux = "󰌷 "
+Pop = " "
+Raspbian = " "
+Redhat = " "
+RedHatEnterprise = " "
+RockyLinux = " "
+Redox = "󰀘 "
+Solus = "󰠳 "
+SUSE = " "
+Ubuntu = " "
+Unknown = " "
+Void = " "
+Windows = "󰍲 "
+Zorin = " "
 
 [perl]
 symbol = " "
