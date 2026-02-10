@@ -1,3 +1,5 @@
+#!/bin/sh
+
 source "${BASH_SOURCE%/*}/old.sh"
 source "${BASH_SOURCE%/*}/dev.sh"
 source "${BASH_SOURCE%/*}/python.sh"
