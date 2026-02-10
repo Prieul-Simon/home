@@ -11,7 +11,9 @@
     * zoxide (https://github.com/ajeetdsouza/zoxide)
     * bat (installed as `batcat`, an alias is already created to `bat`) (https://github.com/sharkdp/bat)
     * eza (https://github.com/eza-community/eza)
-    * lf (https://github.com/gokcehan/lf)
+    * ripgrep (https://github.com/BurntSushi/ripgrep)
+    * fd (https://github.com/sharkdp/fd?tab=readme-ov-file)
+    * yazi (https://yazi-rs.github.io/docs/installation)
 * Other utilities
     * fastfetch
     * cmatrix (because it is useless & cool)

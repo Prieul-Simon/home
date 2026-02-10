@@ -13,7 +13,6 @@ alias grep 'grep --color=always'
 alias fgrep 'fgrep --color=always'
 alias egrep 'egrep --color=always'
 alias bat batcat
-alias lf lfcd
 
 ## Utilities
 alias boo='ghostty +boo'

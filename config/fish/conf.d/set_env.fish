@@ -24,4 +24,3 @@ set -x WGETRC $XDG_CONFIG_HOME/wget/wgetrc
 ## Others
 # set -x CAPACITOR_ANDROID_STUDIO_PATH "/home/simon/programs/android-studio-2024/bin/studio.sh"
 set -x EDITOR nano
-# set -x EDITOR "cosmic-edit 2>/dev/null" # `lf` need it

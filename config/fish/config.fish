@@ -43,6 +43,9 @@ if status is-interactive
     ## power commands
     # fzf
     fzf --fish | source
+    set -gx FZF_DEFAULT_COMMAND 'fd --type file --follow --hidden --exclude .git --color=always'
+    set -gx FZF_DEFAULT_OPTS "--ansi"
+    set -gx FZF_CTRL_T_COMMAND $FZF_DEFAULT_COMMAND
     # zoxide. It should be at the very end of this file !
     zoxide init --cmd cd fish | source
 

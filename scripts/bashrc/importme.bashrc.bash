@@ -55,8 +55,7 @@ export WGETRC="$XDG_CONFIG_HOME/wget/wgetrc"
 
 # Others
 # export CAPACITOR_ANDROID_STUDIO_PATH="/home/simon/programs/android-studio-2024/bin/studio.sh"
-export EDITOR="nano" # `lf` need it
-# export EDITOR="cosmic-edit 2>/dev/null" # `lf` need it
+export EDITOR="nano"
 
 # fzf
 eval "$(fzf --bash)"
