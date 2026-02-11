@@ -34,6 +34,7 @@ alias tree-sitter="bun run --bun --no-install tree-sitter"
 
 ## Local Bun scripts
 alias now-timestamp='$HOME/utils/scripts/bun/timestamp.ts'
+alias identity='$HOME/utils/scripts/bun/identity.ts'
 
 ## Easy life
 alias àmajuscule='echo -n "À" | cb'
