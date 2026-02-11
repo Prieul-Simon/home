@@ -4,7 +4,8 @@
     "editor.fontFamily": "'IosevkaTerm NF', 'Droid Sans Mono', 'DroidSansM Nerd Font Mono', monospace",
     "editor.fontVariations": false,
     "files.associations": {
-        "config": "properties"
+        "config": "properties",
+        "custom": "rust"
     },
     "terminal.integrated.profiles.linux": {
         "bash": {
