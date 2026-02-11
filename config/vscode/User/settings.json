@@ -1,0 +1,33 @@
+{
+    "workbench.iconTheme": "vscode-icons",
+    "editor.linkedEditing": true,
+    "editor.fontFamily": "'IosevkaTerm NF', 'Droid Sans Mono', 'DroidSansM Nerd Font Mono', monospace",
+    "editor.fontVariations": false,
+    "files.associations": {
+        "config": "properties"
+    },
+    "terminal.integrated.profiles.linux": {
+        "bash": {
+            "path": "bash",
+            "icon": "terminal-bash"
+        },
+        "zsh": {
+            "path": "zsh"
+        },
+        "fish": {
+            "path": "/usr/bin/fish"
+        },
+        "tmux": {
+            "path": "tmux",
+            "icon": "terminal-tmux"
+        },
+        "pwsh": {
+            "path": "pwsh",
+            "icon": "terminal-powershell"
+        }
+    },
+    "terminal.integrated.defaultProfile.linux": "fish",
+    "git.blame.editorDecoration.enabled": false,
+    "terminal.integrated.fontSize": 16,
+    "editor.fontSize": 16
+}

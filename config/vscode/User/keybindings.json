@@ -1,0 +1,31 @@
+// Place your key bindings in this file to override the defaults
+[
+    // ctrl+q may conflict with system shortcuts, quit all VSCode windows with ctrl+shift+q
+    {
+        "key": "ctrl+shift+q",
+        "command": "workbench.action.quit"
+    },
+    {
+        "key": "ctrl+q",
+        "command": "-workbench.action.quit"
+    },
+
+    // With Eclipse keymap, ctrl+d is delete line
+    // Then remove this binding from adding a cursor to next selection match, and bind it instead on ctrl+alt+k
+    // WHich is coherent, ctrl+k for next match, ctrl+alt+k for next match but with keeping previous cursor on selection
+    {
+        "key": "ctrl+shift+k",
+        "command": "-editor.action.deleteLines",
+        "when": "textInputFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+alt+k",
+        "command": "editor.action.addSelectionToNextFindMatch",
+        "when": "editorFocus"
+    },
+    {
+        "key": "ctrl+d",
+        "command": "-editor.action.addSelectionToNextFindMatch",
+        "when": "editorFocus"
+    },
+]
