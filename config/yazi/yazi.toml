@@ -1,3 +1,9 @@
 [mgr]
 show_hidden = true
+show_symlink = true
 ratio = [1, 2, 3]
+
+[preview]
+wrap = "yes"
+tab_size = 4
+
