@@ -22,6 +22,7 @@
     * python3-venv python3-pip
     * libnotify-bin
     * dysk (https://dystroy.org/dysk/install)
+    * colorized-logs (for ansi2txt for my custom function for nvm.fish autocomplete)
 * Git
 * Bun
     * Install globally :

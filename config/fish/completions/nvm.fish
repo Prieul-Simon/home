@@ -1,48 +1,66 @@
-# Copy / pasted from https://raw.githubusercontent.com/derekstavis/plugin-nvm/refs/heads/master/completions/nvm.fish
-# I modified it to adapt to my installation. Needs to be improved and make __nvm_complete_ls_remote & __nvm_complete_ls work
-set commands help install uninstall use run current ls ls-remote version \
-             version-remote deactivate alias unalias reinstall-packages which
-
 function __nvm_complete_ls_remote
-  if not test "$__nvm_ls_remote"
-    set -g __nvm_ls_remote (bass source $NVM_DIR/nvm.sh --no-use ';' nvm_ls_remote ';' nvm_ls_remote_iojs)
-  end
+    if not test "$__nvm_ls_remote"
+        # tac for reverse ordering (aka most recent first)
+        # cut for "disabling" too old versions that I would never install
+        # ansi2txt for removing colors
+        set -g __nvm_ls_remote (nvm ls-remote | grep -Po '(?:iojs-)?v[0-9]+\.[0-9]+\.[0-9]+' | tac | cut --delimiter \n --fields -150 | ansi2txt)
+    end
 
-  printf "%s\n" $__nvm_ls_remote
+    printf "%s\n" $__nvm_ls_remote
 end
 
 function __nvm_complete_ls
-  if not test "$__nvm_ls"
-    set -g __nvm_ls (bass source $NVM_DIR/nvm.sh --no-use ';' nvm_ls)
-  end
+    # no cache as in my installation it leads to bugs when switching from version to version
+    # if not test "$__nvm_ls"
+    #   set -g __nvm_ls (nvm ls | grep -Po '[[:space:]].\K(v[0-9]+\.[0-9]+\.[0-9]+)' | ansi2txt)
+    # end
 
-  printf "%s\n" $__nvm_ls
+    # ansi2txt for removing colors
+    set -l __nvm_ls (nvm ls | grep -Po '[[:space:]].\K(v[0-9]+\.[0-9]+\.[0-9]+)' | ansi2txt)
+
+    printf "%s\n" $__nvm_ls
 end
 
-complete -c nvm -f -d "Node Version Manager"
+#Install
+complete -f -c nvm -n __fish_use_subcommand -a install -d 'Download and install a <version>. Uses .nvmrc if available'
+complete -f -c nvm -n "__fish_seen_subcommand_from install" -a "(__nvm_complete_ls_remote)"
+complete -f -c nvm -n "__fish_seen_subcommand_from install" -l reinstall-packages-from= -d 'When installing, reinstall packages installed in <node|iojs|node version number>'
+complete -f -c nvm -n "__fish_seen_subcommand_from install" -s s -d 'From source'
 
-# complete -c nvm -f -n "__fish_seen_subcommand_from install"            -a "(__nvm_complete_ls_remote)"
-# complete -c nvm -f -n "__fish_seen_subcommand_from uninstall"          -a "(__nvm_complete_ls)"
-# complete -c nvm -f -n "__fish_seen_subcommand_from use"                -a "(__nvm_complete_ls)"
-# complete -c nvm -f -n "__fish_seen_subcommand_from which"              -a "(__nvm_complete_ls)"
-# complete -c nvm -f -n "__fish_seen_subcommand_from reinstall-packages" -a "(__nvm_complete_ls)"
-# complete -c nvm -f -n "__fish_seen_subcommand_from run"                -a "(__nvm_complete_ls)"
+#Use
+complete -f -c nvm -n __fish_use_subcommand -a use -d 'Modify PATH to use <version>. Uses .nvmrc if available'
+complete -f -c nvm -n "__fish_seen_subcommand_from use" -a "(__nvm_complete_ls)"
+complete -f -c nvm -n "__fish_seen_subcommand_from use" -l silent
 
-complete -c nvm -f -n "__fish_use_subcommand" -a help               -d "Show help message"
-# complete -c nvm -f -n "__fish_use_subcommand" -a install -s -s      -d "Download and install a <version>, [-s] from source. Uses .nvmrc if available"
-complete -c nvm -f -n "__fish_use_subcommand" -a install            -d "Download and install a <version>, [-s] from source. Uses .nvmrc if available"
-complete -c nvm -f -n "__fish_use_subcommand" -a uninstall          -d "Uninstall a version"
-# complete -c nvm -f -n "__fish_use_subcommand" -a use -o --silent    -d "Modify PATH to use <version>. Uses .nvmrc if available"
-complete -c nvm -f -n "__fish_use_subcommand" -a use                -d "Modify PATH to use <version>. Uses .nvmrc if available"
-complete -c nvm -f -n "__fish_use_subcommand" -a run                -d "Run <version> with <args> as arguments. Uses .nvmrc if available for <version>"
-complete -c nvm -f -n "__fish_use_subcommand" -a current            -d "Display currently activated version"
-complete -c nvm -f -n "__fish_use_subcommand" -a ls                 -d "List installed versions"
-complete -c nvm -f -n "__fish_use_subcommand" -a ls                 -d "List versions matching a given description"
-complete -c nvm -f -n "__fish_use_subcommand" -a ls-remote          -d "List remote versions available for install"
-complete -c nvm -f -n "__fish_use_subcommand" -a version            -d "Resolve the given description to a single local version"
-complete -c nvm -f -n "__fish_use_subcommand" -a version-remote     -d "Resolve the given description to a single remote version"
-complete -c nvm -f -n "__fish_use_subcommand" -a deactivate         -d "Undo effects of nvm on current shell"
-complete -c nvm -f -n "__fish_use_subcommand" -a alias              -d "Set an alias named <name> pointing to <version>"
-complete -c nvm -f -n "__fish_use_subcommand" -a unalias            -d "Deletes the alias named <name>"
-complete -c nvm -f -n "__fish_use_subcommand" -a reinstall-packages -d "Reinstall global npm packages contained in <version> to current version"
-complete -c nvm -f -n "__fish_use_subcommand" -a which              -d "Display path to installed node version. Uses .nvmrc if available"
+#Exec
+complete -f -c nvm -n __fish_use_subcommand -a exec -d 'Run <command> on <version>. Uses .nvmrc if available'
+complete -f -c nvm -n "__fish_seen_subcommand_from exec" -a "(__nvm_complete_ls)"
+complete -f -c nvm -n "__fish_seen_subcommand_from exec" -l silent
+
+#Run
+complete -f -c nvm -n __fish_use_subcommand -a run -d 'Run <command> on <version>. Uses .nvmrc if available'
+complete -f -c nvm -n "__fish_seen_subcommand_from run" -a "(__nvm_complete_ls)"
+complete -f -c nvm -n "__fish_seen_subcommand_from run" -l silent
+
+#Uninstall
+complete -f -c nvm -n __fish_use_subcommand -a uninstall -d 'Uninstall a version'
+complete -f -c nvm -n "__fish_seen_subcommand_from uninstall" -a "(__nvm_complete_ls)"
+
+#Which
+complete -f -c nvm -n __fish_use_subcommand -a which -d 'Display path to installed node version. Uses .nvmrc if available'
+complete -f -c nvm -n "__fish_seen_subcommand_from which" -a "(__nvm_complete_ls)"
+
+#Reinstall-Packages
+complete -f -c nvm -n __fish_use_subcommand -a reinstall-packages -d 'Reinstall global `npm` packages contained in <version> to current version'
+complete -f -c nvm -n "__fish_seen_subcommand_from reinstall-packages" -a "(__nvm_complete_ls)"
+
+#Completions
+complete -f -c nvm -n __fish_use_subcommand -a current -d 'Display currently activated version'
+complete -f -c nvm -n __fish_use_subcommand -a ls -d 'List installed versions'
+complete -f -c nvm -n __fish_use_subcommand -a ls-remote -d 'List remote versions available for install'
+complete -f -c nvm -n __fish_use_subcommand -a version -d 'Resolve the given description to a single local <version>'
+complete -f -c nvm -n __fish_use_subcommand -a version-remote -d 'Resolve the given description to a single remote <version>'
+complete -f -c nvm -n __fish_use_subcommand -a deactivate -d 'Undo effects of `nvm` on current shell'
+complete -f -c nvm -n __fish_use_subcommand -a alias -d 'Show all aliases beginning with <pattern> or set an alias named <name> pointing to <version>'
+complete -f -c nvm -n __fish_use_subcommand -a unalias -d 'Deletes the alias named <name>'
+complete -f -c nvm -n __fish_use_subcommand -a unload -d 'Unload `nvm` from shell'
