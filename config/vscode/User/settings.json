@@ -28,7 +28,7 @@
         }
     },
     "terminal.integrated.defaultProfile.linux": "fish",
-    "git.blame.editorDecoration.enabled": false,
+    "git.blame.editorDecoration.enabled": true,
     "terminal.integrated.fontSize": 16,
     "editor.fontSize": 16
 }
