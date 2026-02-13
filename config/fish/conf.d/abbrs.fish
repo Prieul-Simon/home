@@ -1,4 +1,5 @@
 ## Core utilities
+abbr --add -- - 'cd -' # typing '-' will autocomplete to 'cd -'
 abbr --add batplain 'bat --force-colorization --paging=never --style=plain'
 abbr --add dysk "dysk --units=binary --all --cols +label --sort=filesystem-asc --filter='size > 0 & !type=tmpfs'"
 
