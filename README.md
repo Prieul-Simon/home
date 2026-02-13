@@ -17,3 +17,12 @@ ln -s /mnt/data/dev/home.git/scripts scripts
 Then
 * fish: follow the instructions in `config.fish`
 * bash: follow the instructions in `importme.bashrc.bash` and `importme.bash_aliases.bash`
+
+## Experimental
+### Autoinstall script
+
+```sh
+curl https://raw.githubusercontent.com/Prieul-Simon/home/refs/heads/main/scripts/autoinstall/install.sh | bash
+```
+
+

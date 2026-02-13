@@ -1,0 +1,90 @@
+#!/bin/sh
+
+echo 'Start autoinstall'
+## preconditions:
+## installed packages: git, wget, curl
+
+## 0)
+# files / directories variables
+read -p 'Please enter the partition data path (WITHOUT last slash character) (for instance /mnt/mypartdata or /home/bob/data): ' PART_DATA_PATH
+export PART_DATA_PATH
+echo "the partition is: $PART_DATA_PATH"
+mkdir --verbose --parents $PART_DATA_PATH/pbin/_all
+mkdir --verbose --parents $PART_DATA_PATH/pdata
+mkdir --verbose --parents $PART_DATA_PATH/assets/fonts
+mkdir --verbose --parents $PART_DATA_PATH/assets/cheatsheets
+# dir
+echo ''
+mkdir --verbose $HOME/tmp
+cd $HOME/tmp
+
+## 1) Prepare git
+echo ''
+echo 'Preparing git...'
+# it is ok, this .config is not symlinked, it contains a custom .gitignore which will point to $HOME/utils/config/git
+mkdir --verbose $HOME/.config/git
+touch $HOME/.config/git/config
+git config --global include.path "$HOME/utils/config/git/.gitconfig" # does not exist yet but it does not matter
+echo 'current git config list is:'
+git config --list
+
+## 2) apt upgrade & add gh
+echo ''
+echo 'apt upgrade...'
+sudo sudo apt update && apt list --upgradable && apt upgrade -y
+echo ''
+echo 'Installing gh through apt...'
+sudo apt install --yes gh
+
+## 3) Fetch this repo
+echo ''
+echo 'Fetching "home" repository...'
+PART_DEV_PATH="$PART_DATA_PATH/dev"
+cd $PART_DEV_PATH
+gh repo clone Prieul-Simon/home home.git
+
+## 4) Make symbolic links I'm used to
+echo ''
+echo 'Creating symlinks...'
+mkdir --verbose $HOME/utils
+cd $HOME/utils
+ln -s --versbose $PART_DEV_PATH/home.git/config .
+ln -s --versbose $PART_DEV_PATH/home.git/scripts .
+mkdir --verbose $HOME/.config/wget
+ln -s --verbose $HOME/utils/config/wget/wgetrc $HOME/.config/wget/wgetrc
+mkdir --verbose $HOME/.config/nano
+ln -s --verbose $HOME/utils/config/nano/.nanorc $HOME/.config/nano/nanorc
+
+## 5) Configure git
+echo ''
+echo 'Configuring git...'
+# nothing to do, the linking in utils/config was sufficient
+echo 'current git config list is (after configuring):'
+git config --list
+
+## 6) Configure .bashrc
+TO_BE_SOURCED='
+################################################################
+################################################################
+# My custom modifications
+source "$HOME/utils/scripts/bashrc/importme.bashrc.bash"
+
+################################################################
+################################################################
+'
+echo $TO_BE_SOURCED >> $HOME/.bashrc
+echo 'source "$HOME/utils/scripts/bash_aliases/importme.bash_aliases.bash"' >> $HOME/.bash_aliases
+
+## 7) Install fish
+echo ''
+echo 'Installing fish...'
+ln -s --verbose $HOME/utils/config/fish $HOME/.config/fish
+sudo apt install --yes fish
+
+## 8) Delegate to fish
+echo ''
+cd $HOME/utils/scripts/autoinstall
+echo 'Will now delegate the next steps of the installation to fish shell and 02_install.fish ...'
+fish 02_install.fish
+echo ''
+echo 'End of install.sh !'
