@@ -36,7 +36,7 @@ git config --list
 ## 2) apt upgrade & add gh
 echo ''
 echo 'apt upgrade...'
-sudo sudo apt update && apt list --upgradable && apt upgrade -y
+sudo sudo apt update && apt list --upgradable && sudo apt upgrade -y
 echo ''
 echo 'Installing gh through apt...'
 sudo apt install --yes gh
@@ -48,7 +48,11 @@ PART_DEV_PATH="$PART_DATA_PATH/dev"
 mkdir --verbose --parents $PART_DEV_PATH
 cdverbose $PART_DEV_PATH
 # gh repo clone Prieul-Simon/home home.git
-git clone https://github.com/Prieul-Simon/home.git home.git
+git clone https://github.com/Prieul-Simon/home.git ./home.git
+if [ ! -d "$PART_DEV_PATH/home.git/.git" ]; then
+    echo 'Error: git "home" repository was not fetched at the correct location'
+    exit 1
+fi
 
 ## 4) Make symbolic links I'm used to
 echo ''
@@ -87,6 +91,7 @@ echo ''
 echo 'Installing bun...'
 cdverbose $HOME/tmp
 curl -fsSL https://bun.sh/install | bash
+source $HOME/.bashrc
 # install some packages globally
 bun --global install --verbose \
     clipboard-cli \
@@ -99,6 +104,7 @@ bun --global install --verbose \
 echo ''
 echo 'Installing nvm...'
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.4/install.sh | bash
+source $HOME/.bashrc
 echo 'Installing Node.js (stable version)...'
 nvm install stable
 echo 'Installing Node.js (LTS version)...'

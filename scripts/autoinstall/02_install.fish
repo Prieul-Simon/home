@@ -164,7 +164,10 @@ echo 'End of installation: trying running fastfetch: '
 nvm use default
 fastfetch
 echo ''
-echo "End of 02_install.fish ! Don't forget to test if ghostty, tmux (launch it and install plugins), bash & fish shells work as expected, and to check ~/tmp folder !"
+echo "End of 02_install.fish !"
+echo "Don't forget to test if ghostty, tmux (launch it and install plugins), bash & fish shells work as expected"
+echo "You should also check ~/tmp folder and remove some files"
+echo "For authenticating to GitHub, run 'gh auth'"
 
 ### Function for installing eza
 ### See https://github.com/eza-community/eza/blob/main/INSTALL.md#manual-linux
