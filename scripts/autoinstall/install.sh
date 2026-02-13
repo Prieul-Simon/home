@@ -20,7 +20,7 @@ mkdir --verbose --parents $PART_DATA_PATH/assets/cheatsheets
 # dir
 echo ''
 mkdir --verbose $HOME/tmp
-cd $HOME/tmp
+cd --verbose $HOME/tmp
 
 ## 1) Prepare git
 echo ''
@@ -45,7 +45,7 @@ echo ''
 echo 'Fetching "home" repository...'
 PART_DEV_PATH="$PART_DATA_PATH/dev"
 mkdir --verbose --parents $PART_DEV_PATH
-cd $PART_DEV_PATH
+cd --verbose $PART_DEV_PATH
 # gh repo clone Prieul-Simon/home home.git
 git clone https://github.com/Prieul-Simon/home.git home.git
 
@@ -53,7 +53,7 @@ git clone https://github.com/Prieul-Simon/home.git home.git
 echo ''
 echo 'Creating symlinks...'
 mkdir --verbose $HOME/utils
-cd $HOME/utils
+cd --verbose $HOME/utils
 ln -s --verbose $PART_DEV_PATH/home.git/config .
 ln -s --verbose $PART_DEV_PATH/home.git/scripts .
 mkdir --verbose $HOME/.config/wget
@@ -81,15 +81,37 @@ source "$HOME/utils/scripts/bashrc/importme.bashrc.bash"
 echo $TO_BE_SOURCED >> $HOME/.bashrc
 echo 'source "$HOME/utils/scripts/bash_aliases/importme.bash_aliases.bash"' >> $HOME/.bash_aliases
 
-## 7) Install fish
+## 7) bun
+echo ''
+echo 'Installing bun...'
+cd --verbose $HOME/tmp
+curl -fsSL https://bun.sh/install | bash
+# install some packages globally
+bun --global install --verbose \
+    clipboard-cli \
+    http-server \
+    gnomon \
+    pino-pretty \
+    tree-sitter-cli \
+
+## 8) Install Node through nvm
+echo ''
+echo 'Installing nvm...'
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.4/install.sh | bash
+echo 'Installing Node.js (stable version)...'
+nvm install stable
+echo 'Installing Node.js (LTS version)...'
+nvm install 'lts/*'
+
+## 9) Install fish
 echo ''
 echo 'Installing fish...'
 ln -s --verbose $HOME/utils/config/fish $HOME/.config/fish
 sudo apt install --yes fish
 
-## 8) Delegate to fish
+## 10) Delegate to fish
 echo ''
-cd $HOME/utils/scripts/autoinstall
+cd --verbose $HOME/utils/scripts/autoinstall
 echo 'Will now delegate the next steps of the installation to fish shell and 02_install.fish ...'
 fish 02_install.fish
 echo ''
