@@ -48,7 +48,7 @@ PART_DEV_PATH="$PART_DATA_PATH/dev"
 mkdir --verbose --parents $PART_DEV_PATH
 cdverbose $PART_DEV_PATH
 # gh repo clone Prieul-Simon/home home.git
-git clone https://github.com/Prieul-Simon/home.git ./home.git
+git clone https://github.com/Prieul-Simon/home.git $PART_DEV_PATH"/home.git"
 if [ ! -d "$PART_DEV_PATH/home.git/.git" ]; then
     echo 'Error: git "home" repository was not fetched at the correct location'
     exit 1
