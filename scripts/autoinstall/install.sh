@@ -44,16 +44,18 @@ sudo apt install --yes gh
 echo ''
 echo 'Fetching "home" repository...'
 PART_DEV_PATH="$PART_DATA_PATH/dev"
+mkdir --verbose --parents $PART_DEV_PATH
 cd $PART_DEV_PATH
-gh repo clone Prieul-Simon/home home.git
+# gh repo clone Prieul-Simon/home home.git
+git clone https://github.com/Prieul-Simon/home.git home.git
 
 ## 4) Make symbolic links I'm used to
 echo ''
 echo 'Creating symlinks...'
 mkdir --verbose $HOME/utils
 cd $HOME/utils
-ln -s --versbose $PART_DEV_PATH/home.git/config .
-ln -s --versbose $PART_DEV_PATH/home.git/scripts .
+ln -s --verbose $PART_DEV_PATH/home.git/config .
+ln -s --verbose $PART_DEV_PATH/home.git/scripts .
 mkdir --verbose $HOME/.config/wget
 ln -s --verbose $HOME/utils/config/wget/wgetrc $HOME/.config/wget/wgetrc
 mkdir --verbose $HOME/.config/nano
