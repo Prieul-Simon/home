@@ -7,6 +7,10 @@ echo 'Start autoinstall'
 ## 0)
 # files / directories variables
 read -p 'Please enter the partition data path (WITHOUT last slash character) (for instance /mnt/mypartdata or /home/bob/data): ' PART_DATA_PATH
+if [ -z "$PART_DATA_PATH" ]; then
+    echo 'Error: PART_DATA_PATH is empty'
+    exit 1
+fi
 export PART_DATA_PATH
 echo "the partition is: $PART_DATA_PATH"
 mkdir --verbose --parents $PART_DATA_PATH/pbin/_all

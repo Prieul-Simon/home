@@ -22,7 +22,7 @@ Then
 ### Autoinstall script
 
 ```sh
-curl https://raw.githubusercontent.com/Prieul-Simon/home/refs/heads/main/scripts/autoinstall/install.sh | bash
+sh -c "$(curl https://raw.githubusercontent.com/Prieul-Simon/home/refs/heads/main/scripts/autoinstall/install.sh)"
 ```
 
 
