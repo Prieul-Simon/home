@@ -13,14 +13,19 @@
 --hidden
 
 # Using glob patterns to include/exclude files or folders
---glob=!.git/*
---glob=!.var/*
---glob=!.local/*
---glob=!.cache/*
---glob=!.steam/*
+--glob=!**/.git/**
+--glob=!**/.var/**
+--glob=!**/.local/**
+--glob=!**/.cache/**
+--glob=!**/.steam/**
+--glob=!**/Code/User/History/**
+--glob=!**/vscode/User/History/**
 
+--glob=!**/.bash_history
 --glob=!*.log
 --glob=!tmux_resurrect_*.txt
+--glob=!bun.lock
+--glob=!package-lock.json
 
 # or
 # --glob
