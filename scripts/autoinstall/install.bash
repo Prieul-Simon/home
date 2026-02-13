@@ -91,29 +91,15 @@ echo 'Installing bun...'
 curl -fsSL https://bun.sh/install | bash
 source $HOME/.bashrc
 # install some packages globally
-_install_bun_pakages () {
-    bun --global install --verbose \
-        clipboard-cli \
-        http-server \
-        gnomon \
-        pino-pretty \
-        tree-sitter-cli \
-}
 # run in another subprocess for sourcing
-bash -c _install_bun_pakages
+bash -x $HOME/utils/scripts/autoinstall/02_install_bun_packages.bash
 
 ## 8) Install Node through nvm
 echo ''
 echo 'Installing nvm...'
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.4/install.sh | bash
-_install_node () {
-    echo 'Installing Node.js (stable version)...'
-    nvm install stable
-    echo 'Installing Node.js (LTS version)...'
-    nvm install 'lts/*'
-}
 # run in another subprocess for sourcing
-bash -c _install_node
+bash -x $HOME/utils/scripts/autoinstall/03_install_node.bash
 
 ## 9) Install fish
 echo ''
@@ -124,6 +110,6 @@ sudo apt install --yes fish
 ## 10) Delegate to fish
 echo ''
 echo 'Will now delegate the next steps of the installation to fish shell and 02_install.fish ...'
-fish $HOME/utils/scripts/autoinstall/02_install.fish
+fish $HOME/utils/scripts/autoinstall/04_install.fish
 echo ''
 echo 'End of install.sh !'
