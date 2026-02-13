@@ -77,6 +77,7 @@ TO_BE_SOURCED='
 ################################################################
 # My custom modifications
 source "$HOME/utils/scripts/bashrc/importme.bashrc.bash"
+export PATH="'$PART_DATA_PATH'/pbin/_all:$HOME/.local/bin:$PATH"
 
 ################################################################
 ################################################################
@@ -90,22 +91,29 @@ echo 'Installing bun...'
 curl -fsSL https://bun.sh/install | bash
 source $HOME/.bashrc
 # install some packages globally
-bun --global install --verbose \
-    clipboard-cli \
-    http-server \
-    gnomon \
-    pino-pretty \
-    tree-sitter-cli \
+_install_bun_pakages () {
+    bun --global install --verbose \
+        clipboard-cli \
+        http-server \
+        gnomon \
+        pino-pretty \
+        tree-sitter-cli \
+}
+# run in another subprocess for sourcing
+bash -c _install_bun_pakages
 
 ## 8) Install Node through nvm
 echo ''
 echo 'Installing nvm...'
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.4/install.sh | bash
-source $HOME/.bashrc
-echo 'Installing Node.js (stable version)...'
-nvm install stable
-echo 'Installing Node.js (LTS version)...'
-nvm install 'lts/*'
+_install_node () {
+    echo 'Installing Node.js (stable version)...'
+    nvm install stable
+    echo 'Installing Node.js (LTS version)...'
+    nvm install 'lts/*'
+}
+# run in another subprocess for sourcing
+bash -c _install_node
 
 ## 9) Install fish
 echo ''

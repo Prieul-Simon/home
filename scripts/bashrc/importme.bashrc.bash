@@ -18,9 +18,6 @@ export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_STATE_HOME="$HOME/.local/state"
 
-# binaries
-export PATH="/mnt/data/pbin/_all:$HOME/.local/bin:$PATH"
-
 # Set some environment preferences
 tabs 4
 

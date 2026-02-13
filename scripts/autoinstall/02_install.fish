@@ -8,11 +8,11 @@ if test $PART_DATA_PATH -eq ""
     exit 1
 end
 mkdir --verbose $HOME/.config/tmux
-ln -s --verbose $HOME/utils/config/tmux/.tmux.conf              $HOME/.config/tmux/tmux.conf        # bind tmux conf file from this git repo to the expected location
+ln -s --verbose $HOME/utils/config/tmux/.tmux.conf              $HOME/.config/tmux/tmux.conf # bind tmux conf file from this git repo to the expected location
 mkdir --verbose --parents $PART_DATA_PATH/pbin/.tmux/plugins
-ln -s --verbose $PART_DATA_PATH/pbin/.tmux/plugins              $HOME/.config/tmux/plugins          # bind partition .tmux/plugins folder to the expected location
+ln -s --verbose $PART_DATA_PATH/pbin/.tmux/plugins              $HOME/.config/tmux/plugins # bind partition .tmux/plugins folder to the expected location
 mkdir --verbose --parents $PART_DATA_PATH/pdata/tmux/resurrect
-ln -s --verbose $PART_DATA_PATH/pdata/tmux/resurrect            resurrect-data                      # bind partition resurrect folder to the expected location
+ln -s --verbose $PART_DATA_PATH/pdata/tmux/resurrect            $HOME/utils/config/tmux/resurrect-data # bind partition resurrect folder to the expected location
 echo 'Installing tmux...'
 sudo apt install --yes tmux
 echo 'Overriding systemd tmux.service...'
@@ -47,10 +47,12 @@ ln -s --verbose $PART_DATA_PATH/pbin/fd/current/autocomplete/fd.fish $HOME/utils
 ## fzf
 mkdir --verbose --parents $PART_DATA_PATH/pbin/fzf/0.67.0
 wget -O fzf.tar.gz https://github.com/junegunn/fzf/releases/download/v0.67.0/fzf-0.67.0-linux_amd64.tar.gz
-tar xvf fd.tar.gz --directory $PART_DATA_PATH/pbin/fzf/0.67.0
+tar xvf fzf.tar.gz --directory $PART_DATA_PATH/pbin/fzf/0.67.0
 ln -s --verbose $PART_DATA_PATH/pbin/fzf/0.67.0 $PART_DATA_PATH/pbin/fzf/current
 ln -s --verbose $PART_DATA_PATH/pbin/fzf/current/fzf $PART_DATA_PATH/pbin/_all/
 ## zoxide
+mkdir --verbose --parents $PART_DATA_PATH/pdata/zoxide/.local/share/zoxide
+ln -s --verbose $PART_DATA_PATH/pdata/zoxide/.local/share/zoxide $HOME/.local/share/zoxide
 curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh
 ## eza
 install-eza
@@ -119,14 +121,17 @@ sudo apt install --yes ./fastfetch.deb
 ## 19) Install interactive stuff
 echo ''
 echo 'Installing utilities for interactive (fish and bash)...'
-# For fish
-bun install --verbose
-$HOME/utils/scripts/bun/setup-completions.ts
-# For bash
-$HOME/utils/scripts/bun/setup-git.ts # Will install git prompt and git completions (bash only)
-# + TODO cheatsheets
-## FIXME what the fuck below (it is a c/c error ?)
-ln -s --verbose $PART_DATA_PATH/pbin/dysk/current/build/x86_64-unknown-linux-gnu/dysk $PART_DATA_PATH/pbin/_all/
+_bun_run_setups () {
+    # For fish
+    bun install --verbose
+    # FIXME not the correct location (must set working dir ?)
+    $HOME/utils/scripts/bun/setup-completions.ts
+    # For bash
+    # FIXME not the correct location (must set working dir ?)
+    $HOME/utils/scripts/bun/setup-git.ts # Will install git prompt and git completions (bash only)
+    # + TODO cheatsheets
+}
+(cd $HOME/utils/scripts/bun/ && _bun_run_setups)
 
 ## 20) COSMIC
 if test $XDG_SESSION_DESKTOP -eq "COSMIC"

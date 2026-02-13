@@ -15,7 +15,9 @@
 ### My custom modifications
 
 ## binaries
+# FIXME here as a workaround, all alternatives of the PART_DATA are statically set, even though some of them does not exist on the current machine
 set PATH /mnt/data/pbin/_all:$HOME/.local/bin $PATH
+set PATH /mnt/mydata/pbin/_all:$HOME/.local/bin $PATH
 
 ################################################################
 ################################################################
