@@ -124,14 +124,14 @@ echo 'Installing utilities for interactive (fish and bash)...'
 _bun_run_setups () {
     # For fish
     bun install --verbose
-    # FIXME not the correct location (must set working dir ?)
     $HOME/utils/scripts/bun/setup-completions.ts
     # For bash
-    # FIXME not the correct location (must set working dir ?)
     $HOME/utils/scripts/bun/setup-git.ts # Will install git prompt and git completions (bash only)
     # + TODO cheatsheets
 }
-(cd $HOME/utils/scripts/bun/ && _bun_run_setups)
+cd $HOME/utils/scripts/bun/
+_bun_run_setups
+cd -
 
 ## 20) COSMIC
 if test $XDG_SESSION_DESKTOP -eq "COSMIC"
