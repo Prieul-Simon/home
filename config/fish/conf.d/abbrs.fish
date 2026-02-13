@@ -5,10 +5,15 @@ abbr --add dysk "dysk --units=binary --all --cols +label --sort=filesystem-asc -
 
 ## Git abbrs
 abbr --add --position anywhere --set-cursor='%' -- gitcommit git\ commit\ -m\ \'\%\'
+abbr --add --position anywhere --set-cursor='%' -- gcommit git\ commit\ -m\ \'\%\'
+abbr --add gstatus git status
+abbr --add gitstatus git status
 
 ## I use apt so often that I want to shortcut the commands
-abbr --add  "apt-list-upgradable" "sudo apt update && apt list --upgradable"
-abbr --add "apt-upgrade" "sudo apt upgrade -y"
+abbr --add  apt-list-upgradable "sudo apt update && apt list --upgradable"
+abbr --add  aptlistupgradable "sudo apt update && apt list --upgradable"
+abbr --add apt-upgrade "sudo apt upgrade -y"
+abbr --add aptupgrade "sudo apt upgrade -y"
 
 ## Often-used programs
 abbr --add noderun 'node --run'
