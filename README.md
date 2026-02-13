@@ -22,7 +22,8 @@ Then
 ### Autoinstall script
 
 ```sh
-sh -c "$(curl https://raw.githubusercontent.com/Prieul-Simon/home/refs/heads/main/scripts/autoinstall/install.sh)"
+# Execute from a tmp dir to avoid to put some files in unexpected locations if there is a bug in the script
+bash -c "$(curl https://raw.githubusercontent.com/Prieul-Simon/home/refs/heads/main/scripts/autoinstall/install.bash)"
 ```
 
 

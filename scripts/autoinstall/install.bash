@@ -1,12 +1,13 @@
-#!/bin/sh
+#!/bin/bash
 
 echo 'Start autoinstall'
+## TODO .lessht is created at root of home
 ## preconditions:
+## Execute with bash (sh is not sufficient)
 ## installed packages: git, wget, curl
 
 ## 0)
 # files / directories variables
-alias cdverbose='cd $argv; echo "=> after cd, new dir: $(pwd)"'
 read -p 'Please enter the partition data path (WITHOUT last slash character) (for instance /mnt/mypartdata or /home/bob/data): ' PART_DATA_PATH
 if [ -z "$PART_DATA_PATH" ]; then
     echo 'Error: PART_DATA_PATH is empty'
@@ -21,7 +22,6 @@ mkdir --verbose --parents $PART_DATA_PATH/assets/cheatsheets
 # dir
 echo ''
 mkdir --verbose $HOME/tmp
-cdverbose $HOME/tmp
 
 ## 1) Prepare git
 echo ''
@@ -46,7 +46,6 @@ echo ''
 echo 'Fetching "home" repository...'
 PART_DEV_PATH="$PART_DATA_PATH/dev"
 mkdir --verbose --parents $PART_DEV_PATH
-cdverbose $PART_DEV_PATH
 # gh repo clone Prieul-Simon/home home.git
 git clone https://github.com/Prieul-Simon/home.git $PART_DEV_PATH"/home.git"
 if [ ! -d "$PART_DEV_PATH/home.git/.git" ]; then
@@ -58,9 +57,8 @@ fi
 echo ''
 echo 'Creating symlinks...'
 mkdir --verbose $HOME/utils
-cdverbose $HOME/utils
-ln -s --verbose $PART_DEV_PATH/home.git/config .
-ln -s --verbose $PART_DEV_PATH/home.git/scripts .
+ln -s --verbose $PART_DEV_PATH/home.git/config $HOME/utils/
+ln -s --verbose $PART_DEV_PATH/home.git/scripts $HOME/utils/
 mkdir --verbose $HOME/.config/wget
 ln -s --verbose $HOME/utils/config/wget/wgetrc $HOME/.config/wget/wgetrc
 mkdir --verbose $HOME/.config/nano
@@ -89,7 +87,6 @@ echo 'source "$HOME/utils/scripts/bash_aliases/importme.bash_aliases.bash"' >> $
 ## 7) bun
 echo ''
 echo 'Installing bun...'
-cdverbose $HOME/tmp
 curl -fsSL https://bun.sh/install | bash
 source $HOME/.bashrc
 # install some packages globally
@@ -118,8 +115,7 @@ sudo apt install --yes fish
 
 ## 10) Delegate to fish
 echo ''
-cdverbose $HOME/utils/scripts/autoinstall
 echo 'Will now delegate the next steps of the installation to fish shell and 02_install.fish ...'
-fish 02_install.fish
+fish $HOME/utils/scripts/autoinstall/02_install.fish
 echo ''
 echo 'End of install.sh !'
