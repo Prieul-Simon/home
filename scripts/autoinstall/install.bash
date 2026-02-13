@@ -81,7 +81,7 @@ source "$HOME/utils/scripts/bashrc/importme.bashrc.bash"
 ################################################################
 ################################################################
 '
-echo $TO_BE_SOURCED >> $HOME/.bashrc
+echo "$TO_BE_SOURCED" >> $HOME/.bashrc
 echo 'source "$HOME/utils/scripts/bash_aliases/importme.bash_aliases.bash"' >> $HOME/.bash_aliases
 
 ## 7) bun
