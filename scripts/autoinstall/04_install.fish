@@ -102,10 +102,15 @@ sudo apt install --yes \
     cmatrix \
     gparted \
     btop \
+    fortune-mod \
+    cowsay \
+    lolcat \
+    
 
 # Patch gparted desktop
 mkdir --verbose --parents $HOME/.local/share/applications/
 ln -s --verbose $HOME/utils/scripts/launch-app/gparted-wrapper/gparted.desktop  $HOME/.local/share/applications/gparted.desktop
+echo 'TODO will not work if != /mnt/data => need to manually edit locations in gparted.desktop and gparted.sh'
     
 ## 16) tldr-py
 echo ''
@@ -137,18 +142,6 @@ ln -s --verbose $HOME/utils/config/fastfetch $HOME/.config/
 wget -O fastfetch.deb https://github.com/fastfetch-cli/fastfetch/releases/download/2.58.0/fastfetch-linux-amd64.deb
 chmod +x fastfetch.deb
 sudo apt install --yes ./fastfetch.deb
-
-## 19) Install interactive stuff
-echo ''
-echo 'Installing utilities for interactive (fish and bash)...'
-function _bun_run_setups
-    # need to wrap with bash for...bash completions
-    bun install --verbose
-    bash $HOME/utils/scripts/autoinstall/05_bun_setups.bash
-end
-cd $HOME/utils/scripts/bun/
-_bun_run_setups
-cd -
 
 ## 20) COSMIC
 if test $XDG_SESSION_DESKTOP = "COSMIC"
