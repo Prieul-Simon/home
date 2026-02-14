@@ -110,7 +110,7 @@ sudo apt install --yes fish
 
 ## 10) Delegate to fish
 echo ''
-echo 'Will now delegate the next steps of the installation to fish shell and 02_install.fish ...'
+echo 'Will now delegate the next steps of the installation to fish shell and 04_install.fish ...'
 fish $HOME/utils/scripts/autoinstall/04_install.fish
 
 echo ''
