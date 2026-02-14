@@ -26,6 +26,7 @@ mkdir --verbose --parents $PART_DATA_PATH/assets/fonts/IosevkaTerm
 wget -O IosevkaTerm.zip https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/IosevkaTerm.zip
 unzip IosevkaTerm.zip -d $PART_DATA_PATH/assets/fonts/IosevkaTerm
 rm --verbose IosevkaTerm.zip
+mkdir --verbose --parents $HOME/.local/share/fonts/
 cp --verbose $PART_DATA_PATH/assets/fonts/IosevkaTerm/*.ttf $HOME/.local/share/fonts/
 
 ## 13) Ghostty
@@ -101,6 +102,10 @@ sudo apt install --yes \
     cmatrix \
     gparted \
     btop \
+
+# Patch gparted desktop
+mkdir --verbose --parents $HOME/.local/share/applications/
+ln -s --verbose $HOME/utils/scripts/launch-app/gparted-wrapper/gparted.desktop  $HOME/.local/share/applications/gparted.desktop
     
 ## 16) tldr-py
 echo ''
@@ -137,12 +142,9 @@ sudo apt install --yes ./fastfetch.deb
 echo ''
 echo 'Installing utilities for interactive (fish and bash)...'
 function _bun_run_setups
-    # For fish
+    # need to wrap with bash for...bash completions
     bun install --verbose
-    $HOME/utils/scripts/bun/setup-completions.ts
-    # For bash
-    $HOME/utils/scripts/bun/setup-git.ts # Will install git prompt and git completions (bash only)
-    # + TODO cheatsheets
+    bash $HOME/utils/scripts/autoinstall/05_bun_setups.bash
 end
 cd $HOME/utils/scripts/bun/
 _bun_run_setups
@@ -153,9 +155,10 @@ if test $XDG_SESSION_DESKTOP = "COSMIC"
     echo ''
     echo 'COMSIC detected! Trying to link my shared COSMIC configuration files: '
     for dir_name in 'com.system76.CosmicSettings.Shortcuts' 'com.system76.CosmicPanel.Dock' 'com.system76.CosmicPanel.Panel'
-        rm -rf $HOME/.config/cosmic/$dir_name/v1
+        rm -rf --verbose $HOME/.config/cosmic/$dir_name/v1
         # TODO when v2 etc. will exist, adapt this script
         # here I try to be careful with the use of 'rm' and 'rmdir'
+        rmdir --verbose $HOME/.config/cosmic/$dirname/v1
         rmdir --verbose $HOME/.config/cosmic/$dirname
         # bind COSMIC conf directory from this git repo to the expected location
         ln -s --verbose $HOME/utils/config/cosmic/$dir_name $HOME/.config/cosmic/

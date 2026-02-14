@@ -1,5 +1,6 @@
 #!/bin/bash
 
+SECONDS=0
 echo 'Start autoinstall'
 ## TODO .lessht is created at root of home
 ## preconditions:
@@ -75,9 +76,9 @@ git config --list
 TO_BE_SOURCED='
 ################################################################
 ################################################################
-# My custom modifications
-source "$HOME/utils/scripts/bashrc/importme.bashrc.bash"
+# My custom modifications ($PATH must be set BEFORE)
 export PATH="'$PART_DATA_PATH'/pbin/_all:$HOME/.local/bin:$PATH"
+source "$HOME/utils/scripts/bashrc/importme.bashrc.bash"
 
 ################################################################
 ################################################################
@@ -111,5 +112,7 @@ sudo apt install --yes fish
 echo ''
 echo 'Will now delegate the next steps of the installation to fish shell and 02_install.fish ...'
 fish $HOME/utils/scripts/autoinstall/04_install.fish
+
 echo ''
-echo 'End of install.sh !'
+duration=$SECONDS
+echo "End of install.sh: took $((duration / 60)) minutes $((duration % 60)) seconds"
