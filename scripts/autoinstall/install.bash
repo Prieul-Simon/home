@@ -92,14 +92,14 @@ curl -fsSL https://bun.sh/install | bash
 source $HOME/.bashrc
 # install some packages globally
 # run in another subprocess for sourcing
-bash -x $HOME/utils/scripts/autoinstall/02_install_bun_packages.bash
+bash $HOME/utils/scripts/autoinstall/02_install_bun_packages.bash
 
 ## 8) Install Node through nvm
 echo ''
 echo 'Installing nvm...'
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.4/install.sh | bash
 # run in another subprocess for sourcing
-bash -x $HOME/utils/scripts/autoinstall/03_install_node.bash
+bash $HOME/utils/scripts/autoinstall/03_install_node.bash
 
 ## 9) Install fish
 echo ''
