@@ -150,9 +150,8 @@ if test $XDG_SESSION_DESKTOP = "COSMIC"
     for dir_name in 'com.system76.CosmicSettings.Shortcuts' 'com.system76.CosmicPanel.Dock' 'com.system76.CosmicPanel.Panel'
         rm -rf --verbose $HOME/.config/cosmic/$dir_name/v1
         # TODO when v2 etc. will exist, adapt this script
-        # here I try to be careful with the use of 'rm' and 'rmdir'
-        rmdir --verbose $HOME/.config/cosmic/$dirname/v1
-        rmdir --verbose $HOME/.config/cosmic/$dirname
+        # here I try to be careful with the use of 'rm'
+        rm -rf --verbose $HOME/.config/cosmic/$dir_name
         # bind COSMIC conf directory from this git repo to the expected location
         ln -s --verbose $HOME/utils/config/cosmic/$dir_name $HOME/.config/cosmic/
     end
