@@ -18,6 +18,8 @@ sudo apt install --yes tmux
 echo 'Overriding systemd tmux.service...'
 mkdir --verbose --parents $HOME/.config/systemd/user/tmux.service.d
 ln -s $HOME/utils/config/tmux/tmux.service.d/override.conf $HOME/.config/systemd/user/tmux.service.d/
+echo 'Install Tmux Plugin Manager'
+git clone https://github.com/tmux-plugins/tpm $HOME/.config/tmux/plugins/tpm
 
 ## 12) Font
 echo ''
