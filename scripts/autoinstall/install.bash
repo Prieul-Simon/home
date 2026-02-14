@@ -113,6 +113,8 @@ echo ''
 echo 'Installing fish...'
 ln -s --verbose $HOME/utils/config/fish $HOME/.config/fish
 sudo apt install --yes fish
+echo 'Installing starship...'
+curl -sS https://starship.rs/install.sh | sh
 
 ## 10) Delegate to fish
 echo ''
