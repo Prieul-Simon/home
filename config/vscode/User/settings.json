@@ -29,6 +29,10 @@
     },
     "terminal.integrated.defaultProfile.linux": "fish",
     "git.blame.editorDecoration.enabled": true,
+    "workbench.colorCustomizations": {
+        "git.blame.editorDecorationForeground": "#3e4242",
+    },
     "terminal.integrated.fontSize": 16,
-    "editor.fontSize": 16
+    "editor.fontSize": 16,
+    "git.openRepositoryInParentFolders": "never"
 }
