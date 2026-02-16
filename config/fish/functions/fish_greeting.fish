@@ -11,5 +11,18 @@ function fish_greeting
     #     case 5
     #         echo "🦈"
     # end
+    
+    if test "tmux-256color" = $TERM; or test "xterm-ghostty" = $TERM
+        if functions -q pokemon_greeting
+            pokemon_greeting
+        else
+            duck_greeting
+        end
+    else
+        duck_greeting
+    end
+end
+
+function duck_greeting
     fortune -s | cowsay -f duck | lolcat
 end
