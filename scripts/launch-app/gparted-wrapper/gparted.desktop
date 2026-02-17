@@ -10,12 +10,12 @@ GenericName=Partition Editor
 X-GNOME-FullName=GParted Partition Editor
 Comment[en_CA]=Create, reorganise, and delete partitions
 Comment[en_GB]=Create, reorganise, and delete partitions
-Comment[fr]=(simon 5)Crée, réorganise et supprime des partitions
+Comment[fr]=Crée, réorganise et supprime des partitions
 Comment=Create, reorganize, and delete partitions
 ################################################################
 # Modify 'Exec'
-#Exec=/usr/sbin/gparted %f
-Exec=/mnt/data/pbin/gparted-wrapper/gparted.sh
+# Exec=/usr/sbin/gparted %f
+Exec=bash -c "$HOME/utils/scripts/launch-app/gparted-wrapper/gparted.bash"
 ################################################################
 Icon=gparted
 Terminal=false

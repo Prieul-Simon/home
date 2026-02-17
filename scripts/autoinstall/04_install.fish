@@ -111,8 +111,9 @@ sudo apt install --yes \
 
 # Patch gparted desktop
 mkdir --verbose --parents $HOME/.local/share/applications/
+mkdir --verbose --parents $HOME/.local/state/gparted-wrapper
+touch $HOME/.local/state/gparted-wrapper/log.log
 ln -s --verbose $HOME/utils/scripts/launch-app/gparted-wrapper/gparted.desktop  $HOME/.local/share/applications/gparted.desktop
-echo 'TODO will not work if != /mnt/data => need to manually edit locations in gparted.desktop and gparted.sh'
     
 ## 16) tldr-py
 echo ''
