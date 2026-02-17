@@ -6,7 +6,7 @@
 # ```
 # cd $HOME/utils/scripts/bun/
 # bun install
-# ln -s /mnt/data/assets/cheatsheets cheatsheets
+# ln -s $DATA_PATH/assets/cheatsheets cheatsheets
 # ```
 #####################################################################################################################################################
 
@@ -51,9 +51,9 @@ alias cb='bun run --bun --no-install clipboard'
 alias bun_httpserver='bun run --no-install http-server' # Need Node.js/nvm as it does not work with Bun runtime
 alias bun_gnomon='bun run --bun --no-install gnomon'
 alias prettylog="bun run --bun --no-install pino-pretty"
-export __SIMON_TLDR_NODE_CLIENT="/mnt/data/dev/_ext/tldr-node-client/bin/tldr"
-alias tldr-bun="bun run --bun $__SIMON_TLDR_NODE_CLIENT"
-alias tldr-node="$__SIMON_TLDR_NODE_CLIENT"
+# export __SIMON_TLDR_NODE_CLIENT="$DATA_PATH/dev/_ext/tldr-node-client/bin/tldr" # at this moment $DATA_PATH is not set yet
+# alias tldr-bun="bun run --bun $__SIMON_TLDR_NODE_CLIENT"
+# alias tldr-node="$__SIMON_TLDR_NODE_CLIENT"
 
 # Local Bun scripts
 alias now-timestamp='$HOME/utils/scripts/bun/timestamp.ts'

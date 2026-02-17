@@ -12,6 +12,15 @@ set -gx XDG_CACHE_HOME $HOME/.cache
 set -gx XDG_DATA_HOME $HOME/.local/share
 set -gx XDG_STATE_HOME $HOME/.local/state
 
+## Needed variables for my custom environment
+set -gx DATA_PATH /mnt/data
+
+## binaries in PATH
+# FIXME here as a workaround, all alternatives of the PART_DATA are statically set, even though some of them does not exist on the current machine
+set PATH /mnt-mydata/pbin/_all:$HOME/.local/bin $PATH
+set PATH /mnt/mydata/pbin/_all:$HOME/.local/bin $PATH
+set PATH $DATA_PATH/pbin/_all:$HOME/.local/bin $PATH
+
 ## Node.js
 ## https://nodejs.org/api/repl.html#repl_environment_variable_options
 set -x NODE_REPL_HISTORY $XDG_STATE_HOME/.node_repl_history

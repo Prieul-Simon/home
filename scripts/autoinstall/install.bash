@@ -77,7 +77,8 @@ TO_BE_SOURCED='
 ################################################################
 ################################################################
 # My custom modifications ($PATH must be set BEFORE)
-export PATH="'$PART_DATA_PATH'/pbin/_all:$HOME/.local/bin:$PATH"
+export DATA_PATH="'$PART_DATA_PATH'"
+export PATH="$DATA_PATH/pbin/_all:$HOME/.local/bin:$PATH"
 source "$HOME/utils/scripts/bashrc/importme.bashrc.bash"
 
 ################################################################
