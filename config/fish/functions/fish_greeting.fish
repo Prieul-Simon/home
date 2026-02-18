@@ -13,7 +13,7 @@ function fish_greeting
     # end
     
     if test "tmux-256color" = $TERM; or test "xterm-ghostty" = $TERM
-        if functions -q pokemon_greeting
+        if functions -q pokemon_greeting; and command -q pokemonsay
             pokemon_greeting
         else
             duck_greeting
