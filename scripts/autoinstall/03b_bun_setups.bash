@@ -8,6 +8,7 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 # setup-completions will need node, so load it
 export NVM_DIR="$HOME/.config/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+export NPM_CONFIG_USERCONFIG="$HOME/utils/config/npm/.npmrc"
 # bun
 bun install
 # Execute the bun scripts within a bash shell

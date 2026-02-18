@@ -41,6 +41,9 @@ PS1=$PS1'\[\e[91m\]$(__git_ps1 "(%s) ")\[\e[00m\]'
 # Git completion
 source "$HOME/utils/scripts/bashrc/git/current/git-completion.bash"
 
+# npm
+export NPM_CONFIG_USERCONFIG="$HOME/utils/config/npm/.npmrc"
+
 # Node.js
 # https://nodejs.org/api/repl.html#repl_environment_variable_options
 export NODE_REPL_HISTORY="$XDG_STATE_HOME/.node_repl_history"

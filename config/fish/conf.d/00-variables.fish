@@ -28,6 +28,8 @@ set PATH $BUN_INSTALL/bin $PATH
 
 # nvm
 set -x NVM_DIR $XDG_CONFIG_HOME/nvm
+# npm
+set -gx NPM_CONFIG_USERCONFIG $HOME/utils/config/npm/.npmrc
 
 ## Node.js
 ## https://nodejs.org/api/repl.html#repl_environment_variable_options
