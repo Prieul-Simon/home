@@ -2,12 +2,16 @@
 
 SECONDS=0
 echo 'Start autoinstall'
-## TODO .lessht is created at root of home
 ## preconditions:
 ## Execute with bash (sh is not sufficient)
 ## installed packages: git, wget, curl
 
 ## 0)
+# XDG vars (nvm will use it, maybe some other programs..)
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_STATE_HOME="$HOME/.local/state"
 # files / directories variables
 read -p 'Please enter the partition data path (WITHOUT last slash character) (for instance /mnt/mypartdata or /home/bob/data): ' PART_DATA_PATH
 if [ -z "$PART_DATA_PATH" ]; then
@@ -99,7 +103,6 @@ bash $HOME/utils/scripts/autoinstall/02_install_bun_packages.bash
 ## 8) Install Node through nvm
 echo ''
 echo 'Installing nvm...'
-export XDG_CONFIG_HOME="$HOME/.config" # nvm will be installed here
 NVM_VERSION='v0.40.4'
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/$NVM_VERSION/install.sh | bash
 # run in another subprocess for sourcing

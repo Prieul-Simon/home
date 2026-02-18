@@ -40,6 +40,11 @@ set -x PYTHON_HISTORY $XDG_STATE_HOME/.python_history # for python >= 3.13 only
 ## https://bug-wget.gnu.narkive.com/BFRYDBtI/wishlist-configure-wget-hsts-by-environment-variable
 set -x WGETRC $XDG_CONFIG_HOME/wget/wgetrc
 
+## dotnet (which I don't use directly, it is used by another program)
+set -x DOTNET_CLI_HOME $XDG_DATA_HOME/dotnet
+# GnuPG
+set -x GNUPGHOME $XDG_DATA_HOME/gnupg
+
 ## Others
 # set -x CAPACITOR_ANDROID_STUDIO_PATH "/home/simon/programs/android-studio-2024/bin/studio.sh"
 set -x EDITOR nano

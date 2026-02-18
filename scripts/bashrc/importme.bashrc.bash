@@ -52,6 +52,10 @@ export PYTHON_HISTORY="$XDG_STATE_HOME/.python_history" # for python >= 3.13 onl
 # wget
 # https://bug-wget.gnu.narkive.com/BFRYDBtI/wishlist-configure-wget-hsts-by-environment-variable
 export WGETRC="$XDG_CONFIG_HOME/wget/wgetrc"
+# dotnet (which I don't use directly, it is used by another program)
+export DOTNET_CLI_HOME="$XDG_DATA_HOME/dotnet"
+# GnuPG
+export GNUPGHOME="$XDG_DATA_HOME/gnupg"
 
 # Others
 # export CAPACITOR_ANDROID_STUDIO_PATH="/home/simon/programs/android-studio-2024/bin/studio.sh"
