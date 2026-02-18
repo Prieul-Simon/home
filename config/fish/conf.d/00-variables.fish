@@ -16,10 +16,15 @@ set -gx XDG_STATE_HOME $HOME/.local/state
 set -gx DATA_PATH /mnt/data
 
 ## binaries in PATH
+set PATH $HOME/.local/bin $PATH
 # FIXME here as a workaround, all alternatives of the PART_DATA are statically set, even though some of them does not exist on the current machine
-set PATH /mnt-mydata/pbin/_all:$HOME/.local/bin $PATH
-set PATH /mnt/mydata/pbin/_all:$HOME/.local/bin $PATH
-set PATH $DATA_PATH/pbin/_all:$HOME/.local/bin $PATH
+set PATH /mnt-mydata/pbin/_all $PATH
+set PATH /mnt/mydata/pbin/_all $PATH
+set PATH $DATA_PATH/pbin/_all $PATH
+
+# bun
+set -x BUN_INSTALL $XDG_DATA_HOME/bun
+set PATH $BUN_INSTALL/bin $PATH
 
 ## Node.js
 ## https://nodejs.org/api/repl.html#repl_environment_variable_options

@@ -1,8 +1,7 @@
 #!/bin/bash
 
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
-bun --global install \
+export BUN_INSTALL="$HOME/.local/share/bun"
+$BUN_INSTALL/bin/bun --global install \
     clipboard-cli \
     http-server \
     gnomon \

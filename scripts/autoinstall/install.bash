@@ -78,7 +78,7 @@ TO_BE_SOURCED='
 ################################################################
 # My custom modifications ($PATH must be set BEFORE)
 export DATA_PATH="'$PART_DATA_PATH'"
-export PATH="$DATA_PATH/pbin/_all:$HOME/.local/bin:$PATH"
+export PATH="$DATA_PATH/pbin/_all:$PATH"
 source "$HOME/utils/scripts/bashrc/importme.bashrc.bash"
 
 ################################################################
@@ -90,8 +90,8 @@ echo 'source "$HOME/utils/scripts/bash_aliases/importme.bash_aliases.bash"' >> $
 ## 7) bun
 echo ''
 echo 'Installing bun...'
+export BUN_INSTALL="$HOME/.local/share/bun"
 curl -fsSL https://bun.sh/install | bash
-source $HOME/.bashrc
 # install some packages globally
 # run in another subprocess for sourcing
 bash $HOME/utils/scripts/autoinstall/02_install_bun_packages.bash

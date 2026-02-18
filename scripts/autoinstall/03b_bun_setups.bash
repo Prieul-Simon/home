@@ -3,7 +3,7 @@
 # Change working directory
 cd $HOME/utils/scripts/bun/
 # bun
-export BUN_INSTALL="$HOME/.bun"
+export BUN_INSTALL="$HOME/.local/share/bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 # setup-completions will need node, so load it
 export NVM_DIR="$HOME/.nvm"
