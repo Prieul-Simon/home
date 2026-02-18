@@ -23,6 +23,7 @@
 
 --glob=!**/.bash_history
 --glob=!*.log
+--glob=!*.log.*
 --glob=!tmux_resurrect_*.txt
 --glob=!bun.lock
 --glob=!package-lock.json
