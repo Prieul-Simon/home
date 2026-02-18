@@ -6,7 +6,7 @@ cd $HOME/utils/scripts/bun/
 export BUN_INSTALL="$HOME/.local/share/bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 # setup-completions will need node, so load it
-export NVM_DIR="$HOME/.nvm"
+export NVM_DIR="$HOME/.config/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 # bun
 bun install

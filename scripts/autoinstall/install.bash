@@ -99,7 +99,9 @@ bash $HOME/utils/scripts/autoinstall/02_install_bun_packages.bash
 ## 8) Install Node through nvm
 echo ''
 echo 'Installing nvm...'
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.4/install.sh | bash
+export XDG_CONFIG_HOME="$HOME/.config" # nvm will be installed here
+NVM_VERSION='v0.40.4'
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/$NVM_VERSION/install.sh | bash
 # run in another subprocess for sourcing
 bash $HOME/utils/scripts/autoinstall/03_install_node.bash
 

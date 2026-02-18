@@ -17,9 +17,6 @@
 ################################################################
 ################################################################
 
-# nvm
-set -x NVM_DIR $HOME/.nvm
-
 ## Interactive only
 if status is-interactive
     # Commands to run in interactive sessions can go here

@@ -26,6 +26,9 @@ set PATH $DATA_PATH/pbin/_all $PATH
 set -x BUN_INSTALL $XDG_DATA_HOME/bun
 set PATH $BUN_INSTALL/bin $PATH
 
+# nvm
+set -x NVM_DIR $XDG_CONFIG_HOME/nvm
+
 ## Node.js
 ## https://nodejs.org/api/repl.html#repl_environment_variable_options
 set -x NODE_REPL_HISTORY $XDG_STATE_HOME/.node_repl_history
