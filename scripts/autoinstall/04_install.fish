@@ -42,16 +42,18 @@ echo ''
 echo 'Installing core utilities...'
 ## fd
 mkdir --verbose --parents $PART_DATA_PATH/pbin/fd
-wget -O fd.tar.gz https://github.com/sharkdp/fd/releases/download/v10.3.0/fd-v10.3.0-x86_64-unknown-linux-gnu.tar.gz
+set -l FD_VERSION 'v10.3.0'
+wget -O fd.tar.gz https://github.com/sharkdp/fd/releases/download/$FD_VERSION/fd-$FD_VERSION-x86_64-unknown-linux-gnu.tar.gz
 tar xf fd.tar.gz --directory $PART_DATA_PATH/pbin/fd
-ln -s --verbose $PART_DATA_PATH/pbin/fd/fd-v10.3.0-x86_64-unknown-linux-gnu $PART_DATA_PATH/pbin/fd/current
+ln -s --verbose $PART_DATA_PATH/pbin/fd/fd-$FD_VERSION-x86_64-unknown-linux-gnu $PART_DATA_PATH/pbin/fd/current
 ln -s --verbose $PART_DATA_PATH/pbin/fd/current/fd $PART_DATA_PATH/pbin/_all/
 ln -s --verbose $PART_DATA_PATH/pbin/fd/current/autocomplete/fd.fish $HOME/utils/config/fish/completions/manual/ # bind fd completions from source
 ## fzf
-mkdir --verbose --parents $PART_DATA_PATH/pbin/fzf/0.67.0
-wget -O fzf.tar.gz https://github.com/junegunn/fzf/releases/download/v0.67.0/fzf-0.67.0-linux_amd64.tar.gz
-tar xf fzf.tar.gz --directory $PART_DATA_PATH/pbin/fzf/0.67.0
-ln -s --verbose $PART_DATA_PATH/pbin/fzf/0.67.0 $PART_DATA_PATH/pbin/fzf/current
+set -l FZF_VERSION '0.67.0'
+mkdir --verbose --parents $PART_DATA_PATH/pbin/fzf/$FZF_VERSION
+wget -O fzf.tar.gz https://github.com/junegunn/fzf/releases/download/v$FZF_VERSION/fzf-$FZF_VERSION-linux_amd64.tar.gz
+tar xf fzf.tar.gz --directory $PART_DATA_PATH/pbin/fzf/$FZF_VERSION
+ln -s --verbose $PART_DATA_PATH/pbin/fzf/$FZF_VERSION $PART_DATA_PATH/pbin/fzf/current
 ln -s --verbose $PART_DATA_PATH/pbin/fzf/current/fzf $PART_DATA_PATH/pbin/_all/
 ## zoxide
 mkdir --verbose --parents $PART_DATA_PATH/pdata/zoxide/.local/share/zoxide
@@ -69,9 +71,10 @@ end
 install-eza
 ## ripgrep
 mkdir --verbose --parents $PART_DATA_PATH/pbin/ripgrep
-wget -O ripgrep.tar.gz https://github.com/BurntSushi/ripgrep/releases/download/15.1.0/ripgrep-15.1.0-x86_64-unknown-linux-musl.tar.gz
+set -l RG_VERSION '15.1.0'
+wget -O ripgrep.tar.gz https://github.com/BurntSushi/ripgrep/releases/download/$RG_VERSION/ripgrep-$RG_VERSION-x86_64-unknown-linux-musl.tar.gz
 tar xf ripgrep.tar.gz --directory $PART_DATA_PATH/pbin/ripgrep
-ln -s --verbose $PART_DATA_PATH/pbin/ripgrep/ripgrep-15.1.0-x86_64-unknown-linux-musl $PART_DATA_PATH/pbin/ripgrep/current
+ln -s --verbose $PART_DATA_PATH/pbin/ripgrep/ripgrep-$RG_VERSION-x86_64-unknown-linux-musl $PART_DATA_PATH/pbin/ripgrep/current
 ln -s --verbose $PART_DATA_PATH/pbin/ripgrep/current/rg $PART_DATA_PATH/pbin/_all/
 ln -s --verbose $PART_DATA_PATH/pbin/ripgrep/current/complete/rg.fish $HOME/utils/config/fish/completions/manual/ # bind ripgrep completions from source
 ## bat
@@ -79,17 +82,19 @@ sudo apt install --yes bat
 ln -s --verbose $HOME/utils/config/bat $HOME/.config/ # bind bat conf directory from this git repo to the expected location
 ## yazi
 mkdir --verbose --parents $PART_DATA_PATH/pbin/yazi
-wget -O yazi.zip https://github.com/sxyazi/yazi/releases/download/v26.1.22/yazi-x86_64-unknown-linux-gnu.zip
+set -l YAZI_VERSION 'v26.1.22'
+wget -O yazi.zip https://github.com/sxyazi/yazi/releases/download/$YAZI_VERSION/yazi-x86_64-unknown-linux-gnu.zip
 unzip yazi.zip -d $PART_DATA_PATH/pbin/yazi
 ln -s --verbose $PART_DATA_PATH/pbin/yazi/yazi-x86_64-unknown-linux-gnu $PART_DATA_PATH/pbin/yazi/current
 ln -s --verbose $PART_DATA_PATH/pbin/yazi/current/yazi $PART_DATA_PATH/pbin/_all/
 ln -s --verbose $HOME/utils/config/yazi $HOME/.config/ # bind yazi conf directory from this git repo to the expected location
 ln -s --verbose $PART_DATA_PATH/pbin/yazi/current/completions/yazi.fish $HOME/utils/config/fish/completions/manual/ # bind yazi completions from source
 ## dysk
-mkdir --verbose --parents $PART_DATA_PATH/pbin/dysk/dysk_3.6.0
-wget -O dysk.zip  https://dystroy.org/dysk/download/dysk_3.6.0.zip
-unzip dysk.zip -d $PART_DATA_PATH/pbin/dysk/dysk_3.6.0
-ln -s --verbose $PART_DATA_PATH/pbin/dysk/dysk_3.6.0 $PART_DATA_PATH/pbin/dysk/current
+set -l DYSK_VERSION '3.6.0'
+mkdir --verbose --parents $PART_DATA_PATH/pbin/dysk/dysk_$DYSK_VERSION
+wget -O dysk.zip  https://dystroy.org/dysk/download/dysk_$DYSK_VERSION.zip
+unzip dysk.zip -d $PART_DATA_PATH/pbin/dysk/dysk_$DYSK_VERSION
+ln -s --verbose $PART_DATA_PATH/pbin/dysk/dysk_$DYSK_VERSION $PART_DATA_PATH/pbin/dysk/current
 ln -s --verbose $PART_DATA_PATH/pbin/dysk/current/build/x86_64-unknown-linux-gnu/dysk $PART_DATA_PATH/pbin/_all/
 ln -s --verbose $PART_DATA_PATH/pbin/dysk/current/build/completion/dysk.fish $HOME/utils/config/fish/completions/manual/ # bind dysk completions from source
 
@@ -142,7 +147,8 @@ ln -s --verbose $PART_DATA_PATH/pbin/neovim/current/bin/nvim $PART_DATA_PATH/pbi
 echo ''
 echo 'Installing fastfetch..'
 ln -s --verbose $HOME/utils/config/fastfetch $HOME/.config/
-wget -O fastfetch.deb https://github.com/fastfetch-cli/fastfetch/releases/download/2.58.0/fastfetch-linux-amd64.deb
+set -l FASTFETCH_VERSION '2.58.0'
+wget -O fastfetch.deb https://github.com/fastfetch-cli/fastfetch/releases/download/$FASTFETCH_VERSION/fastfetch-linux-amd64.deb
 chmod +x fastfetch.deb
 sudo apt install --yes ./fastfetch.deb
 
@@ -173,4 +179,5 @@ echo "You should also check the current folder and remove some files if they wer
 echo "For authenticating to GitHub, run 'gh auth'"
 echo "For initializing tmux, launch it once and install plugins (<Prefix>+Ctrl-I)"
 echo "For initializing LazyVim, launch nvim at least once"
+echo "You may need to re-run setup_completions.ts"
 echo ''
