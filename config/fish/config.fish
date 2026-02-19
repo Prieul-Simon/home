@@ -39,7 +39,12 @@ if status is-interactive
     set -gx FZF_DEFAULT_OPTS "--ansi"
     set -gx FZF_CTRL_T_COMMAND $FZF_DEFAULT_COMMAND
     # zoxide. It should be at the very end of this file !
+    set -x _ZO_DATA_DIR $XDG_DATA_HOME/zoxide # directory in which the database is stored
     set -x _ZO_ECHO '1' # z will print the matched directory before navigating to it
+    # set -x _ZO_EXCLUDE_DIRS '' # separated by ':'
+    # set -x _ZO_FZF_OPTS '' # Custom options to pass to fzf during interactive selection
+    set -x _ZO_MAXAGE 200000 # aging algorithm, which limits the maximum number of entries in the databas
+    # set -x _ZO_RESOLVE_SYMLINKS '1' # if '1', z will resolve symlinks before adding directories to the database
     zoxide init --cmd cd fish | source
 
     ## End of this file : Starship prompt (https://starship.rs/)

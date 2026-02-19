@@ -31,7 +31,6 @@ Notes:
 
 Notes:
 * `FZF_CTRL_T_COMMAND` binds `fzf` to `fd`
-* `.local/share/zoxide/ -> <pdata>` (db for zoxide)
 
 ### JS runtimes
 | program                                                          | version | through | fish completion | additional information
