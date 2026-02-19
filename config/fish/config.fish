@@ -39,6 +39,7 @@ if status is-interactive
     set -gx FZF_DEFAULT_OPTS "--ansi"
     set -gx FZF_CTRL_T_COMMAND $FZF_DEFAULT_COMMAND
     # zoxide. It should be at the very end of this file !
+    set -x _ZO_ECHO '1' # z will print the matched directory before navigating to it
     zoxide init --cmd cd fish | source
 
     ## End of this file : Starship prompt (https://starship.rs/)
