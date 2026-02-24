@@ -26,6 +26,7 @@ Notes:
 | [eza](https://github.com/eza-community/eza)                      | latest (v0.23.4) | tar.gz | /usr/local/bin | `setup-completions.ts`::fetch from GH | (none) | (aliases) | ls
 | [ripgrep](https://github.com/BurntSushi/ripgrep)                 | 15.1.0 | tar.gz | pbin | `fish/completions/manual -> <pbin>` | (none) | `RIPGREP_CONFIG_PATH -> <thisrepo>/ripgreprc` | grep
 | [bat](https://github.com/sharkdp/bat)                            | (auto) | apt | /usr/bin | `/usr/share/fish/completions` | `setup-completions.ts`::copy from `/user/share/bash-completion` | `.config/bat/ -> <thisrepo>` | cat
+| [sd](https://github.com/chmln/sd)                                | (auto) | apt | /usr/bin | (none) | (none) |  | sed
 | [yazi](https://yazi-rs.github.io/docs/installation)              | v26.1.22 | zip | pbin | `fish/completions/manual -> <pbin>` | (none) | `.config/yazi/ -> <thisrepo>` | -
 | [dysk](https://dystroy.org/dysk/install)                         | 3.6.0 | zip | pbin | `fish/completions/manual -> <pbin>` | ? | (abbrs) | df
 

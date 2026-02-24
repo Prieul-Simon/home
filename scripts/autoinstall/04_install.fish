@@ -75,8 +75,8 @@ tar xf ripgrep.tar.gz --directory $PART_DATA_PATH/pbin/ripgrep
 ln -s --verbose $PART_DATA_PATH/pbin/ripgrep/ripgrep-$RG_VERSION-x86_64-unknown-linux-musl $PART_DATA_PATH/pbin/ripgrep/current
 ln -s --verbose $PART_DATA_PATH/pbin/ripgrep/current/rg $PART_DATA_PATH/pbin/_all/
 ln -s --verbose $PART_DATA_PATH/pbin/ripgrep/current/complete/rg.fish $HOME/utils/config/fish/completions/manual/ # bind ripgrep completions from source
-## bat
-sudo apt install --yes bat
+## bat + sd
+sudo apt install --yes bat sd
 ln -s --verbose $HOME/utils/config/bat $HOME/.config/ # bind bat conf directory from this git repo to the expected location
 ## yazi
 mkdir --verbose --parents $PART_DATA_PATH/pbin/yazi
