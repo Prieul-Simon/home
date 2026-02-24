@@ -8,6 +8,9 @@ abbr --add --position anywhere --set-cursor='%' -- gitcommit git\ commit\ -m\ \'
 abbr --add --position anywhere --set-cursor='%' -- gcommit git\ commit\ -m\ \'\%\'
 abbr --add gstatus git status
 abbr --add gitstatus git status
+abbr --add gitsiwtchbranch "git branch | fzf --preview 'git show --color=always {-1}' \
+                 --bind 'enter:become(git checkout {-1})' \
+                 --height 40% --layout reverse"
 
 ## I use apt so often that I want to shortcut the commands
 abbr --add  apt-list-upgradable "sudo apt update && apt list --upgradable"
