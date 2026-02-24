@@ -101,6 +101,7 @@ echo ''
 echo 'Installing utilities from apt...'
 sudo apt install --yes \
     colorized-logs \
+    tree \
     libnotify-bin \
     python3-venv \
     python3-pip \

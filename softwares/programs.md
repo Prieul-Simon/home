@@ -49,6 +49,7 @@ Notes:
 | program                                                          | version | through | additional information
 | --                                                               | -- | -- | --
 | colorized-logs                                                   | (auto) | apt | provided `ansi2txt` for my custom function, in `nvm.fish` autocomplete
+| tree                                                             | (auto) | apt | for previewing directories in fzf commands
 | libnotify-bin                                                    | (auto) | apt | for `notify-send`
 | python3-venv                                                     | (auto) | apt | 
 | python3-pip                                                      | (auto) | apt | 
