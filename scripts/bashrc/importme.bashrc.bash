@@ -63,6 +63,8 @@ export EDITOR="nano"
 
 # fzf
 eval "$(fzf --bash)"
+# fzf-git
+source "$HOME/utils/config/fzf-git/fzf-git.sh"
 # zoxide. It should be at the very end of this file !
 eval "$(zoxide init bash)"
 

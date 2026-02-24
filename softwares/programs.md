@@ -67,6 +67,7 @@ Notes:
 | [Neovim](https://neovim.io) ([LazyVim](https://www.lazyvim.org)) | v0.11.6 | tar.gz | pbin | `.config/nvim -> <thisrepo>`; needs tree-sitter-cli, fzf, fd, ripgrep
 | tldr-py                                                          | (auto) | pip | pbin | `~/.cache/tldr -> <pdata>`
 | fastfetch                                                        | (auto) | wget \| deb | /usr/bin | `.config/fastfetch/ -> <thisrepo>`
+| fzf-git                                                          | (none) | (config-file) | - | `<thisrepo>/config/fzf-git`
 
 tldr-py TODO => prefetch cache with common commands ?
 

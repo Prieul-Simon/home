@@ -50,6 +50,9 @@ if status is-interactive
         --preview 'tree -C {}'
     "
 
+    # fzf-git (https://github.com/junegunn/fzf-git.sh/blob/main/README.md)
+    source $HOME/utils/config/fzf-git/fzf-git.fish
+
     # zoxide. It should be at the very end of this file !
     set -x _ZO_DATA_DIR $XDG_DATA_HOME/zoxide # directory in which the database is stored
     set -x _ZO_ECHO '1' # z will print the matched directory before navigating to it
