@@ -9,6 +9,10 @@ function pokemon_greeting --description "Greeting by a 1st gen Pokemon"
     set -l REGEXP_SEARCH_CORRECT_POKEMON "^$RANDOM_INT_3_DIGITS - "
     set -l FIRST_ITEM (pokemonsay --list | rg "$REGEXP_SEARCH_CORRECT_POKEMON" | head -n 1)
     set -l POKEMON_FULL_NAME (echo "$FIRST_ITEM" | cut --delimiter " " --fields 3) # 3rd field because format is "%nationalDex - %pokemonName"
+    if test -z "$POKEMON_FULL_NAME"
+        set --erase POKEMON_FULL_NAME
+        set POKEMON_FULL_NAME "Smeargle" # when bugged, do this "easter egg"
+    end
 
     set -g GREETING_MESSAGE (fortune -s | string collect)
     # set -g GREETING_MESSAGE (cheat_fish_show | string collect)
