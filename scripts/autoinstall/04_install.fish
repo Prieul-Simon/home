@@ -7,6 +7,7 @@ if test $PART_DATA_PATH = ""
     echo 'error: PART_DATA_PATH is empty'
     exit 1
 end
+set -l PART_DEV_PATH $PART_DATA_PATH/dev
 mkdir --verbose $HOME/.config/tmux
 ln -s --verbose $HOME/utils/config/tmux/.tmux.conf              $HOME/.config/tmux/tmux.conf # bind tmux conf file from this git repo to the expected location
 mkdir --verbose --parents $PART_DATA_PATH/pbin/.tmux/plugins
@@ -144,12 +145,19 @@ ln -s --verbose $PART_DATA_PATH/pbin/neovim/current/bin/nvim $PART_DATA_PATH/pbi
 
 ## 18) Fastfetch
 echo ''
-echo 'Installing fastfetch..'
+echo 'Installing fastfetch...'
 ln -s --verbose $HOME/utils/config/fastfetch $HOME/.config/
 set -l FASTFETCH_VERSION '2.58.0'
 wget -O fastfetch.deb https://github.com/fastfetch-cli/fastfetch/releases/download/$FASTFETCH_VERSION/fastfetch-linux-amd64.deb
 chmod +x fastfetch.deb
 sudo apt install --yes ./fastfetch.deb
+
+## 19) Others
+echo ''
+echo 'Installing pokemonsay...'
+git clone https://github.com/Prieul-Simon/pokemonsay.git $PART_DEV_PATH/pokemonsay
+ln -s --verbose $PART_DEV_PATH/pokemonsay/pokemonsay.sh $HOME/.local/bin/pokemonsay
+ln -s --verbose $PART_DEV_PATH/pokemonsay/pokemonthink.sh $HOME/.local/bin/pokemonthink
 
 ## 20) COSMIC
 if test $XDG_SESSION_DESKTOP = "COSMIC"

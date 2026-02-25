@@ -68,6 +68,7 @@ Notes:
 | tldr-py                                                          | (auto) | pip | pbin | `~/.cache/tldr -> <pdata>`
 | fastfetch                                                        | (auto) | wget \| deb | /usr/bin | `.config/fastfetch/ -> <thisrepo>`
 | fzf-git                                                          | (none) | (config-file) | - | `<thisrepo>/config/fzf-git`
+| pokemonsay (fork)                                                | (none) | git | ~/.local/bin | -
 
 tldr-py TODO => prefetch cache with common commands ?
 
