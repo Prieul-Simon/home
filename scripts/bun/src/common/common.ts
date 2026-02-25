@@ -1,3 +1,4 @@
+import { $ } from "bun"
 import type { PathLike } from "fs"
 import { exists, symlink } from "fs/promises"
 
@@ -26,6 +27,14 @@ export async function symlinkIfUnexisting(
         return
     }
     await symlink(target, nameLinkToCreate)
+}
+
+export async function getHomeFolder(): Promise<string> {
+    const dir = (await $`echo $HOME`.text()).trim()
+    if (!dir.startsWith('/')) {
+        throw new Error(`$HOME is not absolute, got: '${dir}'`)
+    }
+    return dir
 }
 
 function log(msg: string, logFn?: typeof console.info) {

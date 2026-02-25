@@ -1,6 +1,6 @@
 #####################################################################################################################################################
 # In ~/.bashrc, include this file with the following line:
-# `source "$HOME/utils/scripts/bashrc/importme.bashrc.bash"`
+# `source "$HOME/utils/config/bash/bashrc/importme.bashrc.bash"`
 # 
 # need to download and setup the .sh files for git prompt+completions and all other completions :
 # ```
@@ -25,24 +25,24 @@ export XDG_STATE_HOME="$HOME/.local/state"
 tabs 4
 
 # Load all scripts completions in 'sh' & 'sh/manual' folder
-for file in $HOME/utils/scripts/bashrc/sh/*.sh $HOME/utils/scripts/bashrc/sh/*.bash; do 
+for file in $HOME/utils/config/bash/bashrc/sh/*.sh $HOME/utils/config/bash/bashrc/sh/*.bash; do 
     if [ -f "$file" ]; then  
 	    . "$file"
     fi 
 done
-for file in $HOME/utils/scripts/bashrc/sh/manual/*.sh $HOME/utils/scripts/bashrc/sh/manual/*.bash; do 
+for file in $HOME/utils/config/bash/bashrc/sh/manual/*.sh $HOME/utils/config/bash/bashrc/sh/manual/*.bash; do 
     if [ -f "$file" ]; then  
 	    . "$file"
     fi 
 done
 
 # Git
-source "$HOME/utils/scripts/bashrc/git/current/git-prompt.sh"
+source "$HOME/utils/config/bash/bashrc/git/current/git-prompt.sh"
 export GIT_PS1_SHOWDIRTYSTATE=1
 PS1=$PS1'\[\e[91m\]$(__git_ps1 "(%s) ")\[\e[00m\]'
 # PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
 # Git completion
-source "$HOME/utils/scripts/bashrc/git/current/git-completion.bash"
+source "$HOME/utils/config/bash/bashrc/git/current/git-completion.bash"
 
 # npm
 export NPM_CONFIG_USERCONFIG="$HOME/utils/config/npm/.npmrc"

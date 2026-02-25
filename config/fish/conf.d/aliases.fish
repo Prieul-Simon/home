@@ -1,5 +1,5 @@
 ## Source common helpers with bash shell
-bass source $HOME/utils/scripts/bash_aliases/core/all.sh
+bass source $HOME/utils/config/bash/bash_aliases/core/all.sh
 
 ## Improve even more ls & other aliases
 # Now silently use eza instead of ls
@@ -51,8 +51,8 @@ alias cheat_fish_open='firefox https://cheatsheetshero.com/search?q=fish+shell'
 ## HELP / REMINDERS
 # compatibility with from importme.bash_aliases.bash
 # TODO
-# set -l HELPERS_DIR $HOME/utils/scripts/bash_aliases/helpers/all.sh
-# set -l HELPERS_DIR $HOME/utils/scripts/bash_aliases/helpers/_private.sh
+# set -l HELPERS_DIR $HOME/utils/config/bash/bash_aliases/helpers/all.sh
+# set -l HELPERS_DIR $HOME/utils/config/bash/bash_aliases/helpers/_private.sh
 # if test -e $HELPERS_DIR
     # bass source $HELPERS_DIR
 # end
@@ -65,7 +65,7 @@ alias tldr="tldr-py"
 
 ## Games
 # compatibility with from importme.bash_aliases.bash
-set -l GAMES_ALIASES_DIR $HOME/utils/scripts/bash_aliases/games.sh
+set -l GAMES_ALIASES_DIR $HOME/utils/config/bash/bash_aliases/games.sh
 if test -e $GAMES_ALIASES_DIR
     bass source $GAMES_ALIASES_DIR
 end

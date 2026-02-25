@@ -9,15 +9,16 @@
  */
 import { $, write } from "bun"
 import { mkdir } from 'fs/promises'
-import { resolve } from 'path'
-import { retrieveRawContent, symlinkIfUnexisting } from "./src/common/common"
+import { basename } from 'path'
+import { getHomeFolder, retrieveRawContent, symlinkIfUnexisting } from "./src/common/common"
 
-const RELATIVE_POINTER = `../bashrc/git/current`
-const relativeLocation = (v: string) => `../bashrc/git/${v}`
+const absolutePointer = (home: string) => `${home}/utils/config/bash/bashrc/git/current`
+const absoluteLocation = (home: string, v: string) => `${home}/utils/config/bash/bashrc/git/${v}`
 const completionUrl = (v: string) => `https://raw.githubusercontent.com/git/git/${v}/contrib/completion/git-completion.bash`
 const promptUrl = (v: string) => `https://raw.githubusercontent.com/git/git/${v}/contrib/completion/git-prompt.sh`
 
 async function setupGit() {
+    const home = await getHomeFolder()
     const version = await getVersion()
     const [completionResult, promptResult] = await Promise.allSettled<string>([
         retrieveRawContent(completionUrl(version)),
@@ -29,8 +30,8 @@ async function setupGit() {
         completionFile,
         promptFile,
     ] = [
-            `${relativeLocation(version)}/git-completion.bash`,
-            `${relativeLocation(version)}/git-prompt.sh`,
+            `${absoluteLocation(home, version)}/git-completion.bash`,
+            `${absoluteLocation(home, version)}/git-prompt.sh`,
         ]
     if (completionResult?.status === 'fulfilled') {
         await write(completionFile, completionResult.value)
@@ -39,9 +40,9 @@ async function setupGit() {
         await write(promptFile, promptResult.value)
     }
     // Create links
-    await mkdir(RELATIVE_POINTER, { recursive: true })
-    await symlinkIfUnexisting(resolve(completionFile), `${RELATIVE_POINTER}/git-completion.bash`)
-    await symlinkIfUnexisting(resolve(promptFile), `${RELATIVE_POINTER}/git-prompt.sh`)
+    await mkdir(absolutePointer(home), { recursive: true })
+    await symlinkIfUnexisting(`../${version}/${basename(completionFile)}`, `${absolutePointer(home)}/git-completion.bash`)
+    await symlinkIfUnexisting(`../${version}/${basename(promptFile)}`, `${absolutePointer(home)}/git-prompt.sh`)
     console.info('setup-git finished !')
 }
 

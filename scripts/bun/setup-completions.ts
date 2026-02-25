@@ -7,7 +7,7 @@
  */
 
 import { $, write } from "bun"
-import { retrieveRawContent as commonRetrieveRawContent } from "./src/common/common"
+import { retrieveRawContent as commonRetrieveRawContent, getHomeFolder } from "./src/common/common"
 import { exists } from "fs/promises"
 
 async function setupAll() {
@@ -22,6 +22,7 @@ async function setupAll() {
     ])
 }
 
+const HOME = await getHomeFolder()
 await setupAll()
 process.exit(0)
 
@@ -61,7 +62,7 @@ async function retrieveRawContent(category: Category, url: string): Promise<stri
 }
 
 async function setupTmux(category: Category = 'tmux') {
-    const completionFile = '../bashrc/sh/tmux.completion.bash'
+    const completionFile = `${HOME}/utils/config/bash/bashrc/sh/tmux.completion.bash`
     if (await testFileExists(category, completionFile)) return
 
     // const completionUrl = `https://raw.githubusercontent.com/Bash-it/bash-it/refs/heads/master/completion/available/tmux.completion.bash`
@@ -78,14 +79,14 @@ async function setupBun(category: Category = 'bun') {
     ])
 }
 async function setupBunBash(category: Category = 'bun') {
-    const completionFile = '../bashrc/sh/bun.completion.bash'
+    const completionFile = `${HOME}/utils/config/bash/bashrc/sh/bun.completion.bash`
     if (await testFileExists(category, completionFile)) return
 
     await $`bun completions > ${completionFile}`
     logSuccess(category, completionFile)
 }
 async function setupBunFish(category: Category = 'bun') {
-    const completionFile = '../../config/fish/completions/bun.fish'
+    const completionFile = `${HOME}/utils/config/fish/completions/bun.fish`
     if (await testFileExists(category, completionFile)) return
 
     await $`
@@ -96,7 +97,7 @@ async function setupBunFish(category: Category = 'bun') {
 }
 
 async function setupNpm(category: Category = 'npm') {
-    const completionFile = '../bashrc/sh/npm.completion.sh'
+    const completionFile = `${HOME}/utils/config/bash/bashrc/sh/npm.completion.sh`
     if (await testFileExists(category, completionFile)) return
 
     await $`npm completion > ${completionFile}`
@@ -104,7 +105,7 @@ async function setupNpm(category: Category = 'npm') {
 }
 
 async function setupNode(category: Category = 'node') {
-    const completionFile = '../bashrc/sh/node.completion.bash'
+    const completionFile = `${HOME}/utils/config/bash/bashrc/sh/node.completion.bash`
     if (await testFileExists(category, completionFile)) return
 
     await $`node --completion-bash > ${completionFile}`
@@ -112,7 +113,7 @@ async function setupNode(category: Category = 'node') {
 }
 
 async function setupTldr(category: Category = 'tldr') {
-    const completionFile = '../bashrc/sh/tldr.completion.bash'
+    const completionFile = `${HOME}/utils/config/bash/bashrc/sh/tldr.completion.bash`
     if (await testFileExists(category, completionFile)) return
 
     const completionUrl = `https://raw.githubusercontent.com/tldr-pages/tldr-node-client/refs/heads/main/bin/completion/bash/tldr`
@@ -123,7 +124,7 @@ async function setupTldr(category: Category = 'tldr') {
 
 async function setupBat(category: Category = 'bat') {
     // as I made `alias bat='batcat'`, need to setup its autocomplete
-    const completionFile = '../bashrc/sh/bat.completion.bash'
+    const completionFile = `${HOME}/utils/config/bash/bashrc/sh/bat.completion.bash`
     if (await testFileExists(category, completionFile)) return
 
     const sourceFile = '/usr/share/bash-completion/completions/batcat'
@@ -147,7 +148,7 @@ async function setupEza(category: Category = 'eza') {
     ])
 }
 async function setupEzaFish(category: Category = 'eza') {
-    const completionFile = '../../config/fish/completions/eza.fish'
+    const completionFile = `${HOME}/utils/config/fish/completions/eza.fish`
     if (await testFileExists(category, completionFile)) return
 
     const completionUrl = `https://raw.githubusercontent.com/eza-community/eza/refs/heads/main/completions/fish/eza.fish`
