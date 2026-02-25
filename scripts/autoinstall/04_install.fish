@@ -159,7 +159,13 @@ git clone https://github.com/Prieul-Simon/pokemonsay.git $PART_DEV_PATH/pokemons
 ln -s --verbose $PART_DEV_PATH/pokemonsay/pokemonsay.sh $HOME/.local/bin/pokemonsay
 ln -s --verbose $PART_DEV_PATH/pokemonsay/pokemonthink.sh $HOME/.local/bin/pokemonthink
 
-## 20) COSMIC
+## 20) Install interactive stuff
+echo ''
+echo 'Installing utilities for interactive (fish and bash)...'
+# need to launch it with bash and not fish !
+bash $HOME/utils/scripts/autoinstall/05_bun_setups.bash
+
+## 21) COSMIC
 if test $XDG_SESSION_DESKTOP = "COSMIC"
     echo ''
     echo 'COMSIC detected! Trying to link my shared COSMIC configuration files: '
@@ -174,7 +180,7 @@ if test $XDG_SESSION_DESKTOP = "COSMIC"
     echo 'COMSIC configured, you may need to relogin to avoid graphical issues'
 end
 
-## 21) End
+## 99) End
 echo ''
 echo 'End of installation: trying running fastfetch: '
 nvm use default
@@ -186,6 +192,5 @@ echo "You should also check the current folder and remove some files if they wer
 echo "For authenticating to GitHub, run 'gh auth'"
 echo "For initializing tmux, launch it once and install plugins (<Prefix>+Ctrl-I)"
 echo "For initializing LazyVim, launch nvim at least once"
-echo "You may need to re-run setup_completions.ts"
 echo "You may need to change the workaround in 00-variables.fish:17 and assign the correct value"
 echo ''

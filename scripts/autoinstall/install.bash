@@ -109,12 +109,6 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/$NVM_VERSION/install.sh | 
 # run in another subprocess for sourcing
 bash $HOME/utils/scripts/autoinstall/03_install_node.bash
 
-## 8.1) Install interactive stuff
-echo ''
-echo 'Installing utilities for interactive (fish and bash)...'
-# need to launch it with bash and not fish !
-bash $HOME/utils/scripts/autoinstall/03b_bun_setups.bash
-
 ## 9) Install fish
 echo ''
 echo 'Installing fish...'
