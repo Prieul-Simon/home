@@ -13,6 +13,9 @@ function pokemon_greeting --description "Greeting by a 1st gen Pokemon"
     set -g GREETING_MESSAGE (fortune -s | string collect)
     # set -g GREETING_MESSAGE (cheat_fish_show | string collect)
     # set -g GREETING_MESSAGE (echo -e "this is a test\nmessage !!!!" | string collect)
+
+    __log "new pokemon greeting: debug values: ($RANDOM_INT)  ($RANDOM_INT_3_DIGITS) ($REGEXP_SEARCH_CORRECT_POKEMON) ($FIRST_ITEM) ($POKEMON_FULL_NAME)"
+
     set -g GREETING_FULL_MESSAGE '' "$GREETING_MESSAGE" \n \n $POKEMON_FULL_NAME
 
     echo $GREETING_FULL_MESSAGE | pokemonsay --no-name --pokemon "$POKEMON_FULL_NAME" | __transform_lines
@@ -75,4 +78,16 @@ function __pad_left_3_char0
     else
         echo "$str"
     end
+end
+
+function __log
+    set -l msg "$argv[1]"
+
+    set -l logfile_loc $XDG_STATE_HOME/pokemon_greeting
+    set -l logfile $logfile_loc/log
+    mkdir --parents $logfile_loc
+
+    set -l datetime (date)
+
+    echo "[$datetime] $msg" >> $logfile
 end
