@@ -119,6 +119,7 @@ bash $HOME/utils/scripts/autoinstall/03b_bun_setups.bash
 echo ''
 echo 'Installing fish...'
 ln -s --verbose $HOME/utils/config/fish $HOME/.config/fish
+sudo add-apt-repository ppa:fish-shell/release-4
 sudo apt install --yes fish
 echo 'Installing starship...'
 curl -sS https://starship.rs/install.sh | sh

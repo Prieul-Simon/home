@@ -13,13 +13,11 @@ set -gx XDG_DATA_HOME $HOME/.local/share
 set -gx XDG_STATE_HOME $HOME/.local/state
 
 ## Needed variables for my custom environment
+# FIXME here as a temp workaround, DATA_PATH is statically set, even though it oculd be incorrect on the current machine
 set -gx DATA_PATH /mnt/data
 
 ## binaries in PATH
 set PATH $HOME/.local/bin $PATH
-# FIXME here as a workaround, all alternatives of the PART_DATA are statically set, even though some of them does not exist on the current machine
-set PATH /mnt-mydata/pbin/_all $PATH
-set PATH /mnt/mydata/pbin/_all $PATH
 set PATH $DATA_PATH/pbin/_all $PATH
 
 # bun
