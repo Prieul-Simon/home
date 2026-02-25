@@ -59,6 +59,8 @@ export WGETRC="$XDG_CONFIG_HOME/wget/wgetrc"
 export DOTNET_CLI_HOME="$XDG_DATA_HOME/dotnet"
 # GnuPG
 export GNUPGHOME="$XDG_DATA_HOME/gnupg"
+# Docker
+export DOCKER_CONFIG="$XDG_CONFIG_HOME"/docker
 
 # Others
 # export CAPACITOR_ANDROID_STUDIO_PATH="/home/simon/programs/android-studio-2024/bin/studio.sh"

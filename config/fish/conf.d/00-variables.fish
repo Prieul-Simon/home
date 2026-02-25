@@ -42,6 +42,8 @@ set -x WGETRC $XDG_CONFIG_HOME/wget/wgetrc
 set -x DOTNET_CLI_HOME $XDG_DATA_HOME/dotnet
 # GnuPG
 set -x GNUPGHOME $XDG_DATA_HOME/gnupg
+# Docker
+set -gx DOCKER_CONFIG $XDG_CONFIG_HOME/docker
 
 ## Others
 # set -x CAPACITOR_ANDROID_STUDIO_PATH "/home/simon/programs/android-studio-2024/bin/studio.sh"
