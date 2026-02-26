@@ -36,15 +36,21 @@ if status is-interactive
 
     # fzf
     fzf --fish | source
-    # set -gx FZF_DEFAULT_COMMAND 'fd --type file --follow --hidden --exclude .git --color=always'
-    # set -gx FZF_DEFAULT_OPTS "--ansi"
-    # set -gx FZF_CTRL_T_COMMAND $FZF_DEFAULT_COMMAND
+    # Ctrl-R : Paste the selected command from history onto the command-line
+    set -gx FZF_CTRL_R_OPTS "
+        --bind 'ctrl-y:execute-silent(echo -n {2..} | cb)+abort'
+        --color header:italic
+        --header 'Press CTRL-Y to copy command into clipboard'
+    "
+    # Ctrl-T : Paste the selected files and directories onto the command-line (here: use bat for preview)
     set -gx FZF_CTRL_T_OPTS "
         --walker-skip .git,node_modules,target,dist
         --preview 'bat -n --color=always {}'
-        --bind 'ctrl-/:change-preview-window(down|hidden|)'
+        --bind 'ctrl-p:change-preview-window(down|hidden|)'
+        --color header:italic
+        --header 'Press CTRL-P to toggle preview window'
     "
-    # Print tree structure in the preview window
+    # Alt-C : cd into the selected directory (here: print tree structure in the preview window)
     set -gx FZF_ALT_C_OPTS "
         --walker-skip .git,node_modules,target,dist
         --preview 'tree -C {}'

@@ -45,8 +45,9 @@ alias ëmajuscule='echo -n "Ë" | cb'
 alias çmajuscule='echo -n "Ç" | cb'
 
 ## cheatsheets
-# TODO from importme.bash_aliases.bash
+alias ?='cheat_fish_show'
 alias cheat_fish_open='firefox https://cheatsheetshero.com/search?q=fish+shell'
+# TODO from importme.bash_aliases.bash
 
 ## HELP / REMINDERS
 # compatibility with from importme.bash_aliases.bash
