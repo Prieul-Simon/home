@@ -197,7 +197,7 @@ vimcmd_visual_symbol = '[❮](bold fg:yellow)'
 
 [cmd_duration]
 disabled = false
-min_time = 0
+min_time = 1
 show_milliseconds = true
 format = " in $duration "
 style = "bg:lavender"
