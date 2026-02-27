@@ -27,6 +27,10 @@
 --glob=!tmux_resurrect_*.txt
 --glob=!bun.lock
 --glob=!package-lock.json
+--glob=!lock
+--glob=!SingletonSocket
+--glob=!SingletonCookie
+--glob=!SingletonLock
 
 # or
 # --glob
