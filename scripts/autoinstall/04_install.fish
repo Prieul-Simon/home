@@ -55,7 +55,8 @@ mkdir --verbose --parents $PART_DATA_PATH/pbin/fzf/$FZF_VERSION
 wget -O fzf.tar.gz https://github.com/junegunn/fzf/releases/download/v$FZF_VERSION/fzf-$FZF_VERSION-linux_amd64.tar.gz
 tar xf fzf.tar.gz --directory $PART_DATA_PATH/pbin/fzf/$FZF_VERSION
 ln -s --verbose $PART_DATA_PATH/pbin/fzf/$FZF_VERSION $PART_DATA_PATH/pbin/fzf/current
-ln -s --verbose $PART_DATA_PATH/pbin/fzf/current/fzf $PART_DATA_PATH/pbin/_all/
+# ln -s --verbose $PART_DATA_PATH/pbin/fzf/current/fzf $PART_DATA_PATH/pbin/_all/ # because of tmux-fzf, it is easier to put it in ~/.local/bin instead
+ln -s --verbose $PART_DATA_PATH/pbin/fzf/current/fzf $HOME/.local/bin/
 ## zoxide
 curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh
 ## eza
