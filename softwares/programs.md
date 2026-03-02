@@ -56,7 +56,7 @@ Notes:
 | python3-pip                                                      | (auto) | apt | 
 | cmatrix                                                          | (auto) | apt | because it is useless & cool
 | gparted                                                          | (auto) | apt | `.local/share/applications/gparted.desktop -> <thisrepo>`
-| btop                                                             | (auto) | apt | better `top` and `htop`
+| btop                                                             | (auto) | apt | better `top` and `htop` -  `.config/btop -> <thisrepo>`
 |fortune-mod                                                       | (auto) | apt | `fish_greeting`
 | cowsay                                                           | (auto) | apt | `fish_greeting`
 | lolcat                                                           | (auto) | apt | `fish_greeting`

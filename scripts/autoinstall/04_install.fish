@@ -101,6 +101,7 @@ ln -s --verbose $PART_DATA_PATH/pbin/dysk/current/build/completion/dysk.fish $HO
 ## 15) add apt packages
 echo ''
 echo 'Installing utilities from apt...'
+ln -s --verbose $HOME/utils/config/btop $HOME/.config/
 sudo apt install --yes \
     colorized-logs \
     tree \
