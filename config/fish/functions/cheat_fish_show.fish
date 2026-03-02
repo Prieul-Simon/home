@@ -3,6 +3,7 @@ function cheat_fish_show --description 'Print help for fish shell'
 > Ctrl-A            Move cursor to the beginning of the line.
 > Ctrl-E            Move cursor to the end of the line.
 > Ctrl-U            Delete from cursor to the beginning of the line.
+> Shift-delete      Delete from history the current command-line.
 > Ctrl-R            (fzf) Select & Paste onto the command-line from command-history
 > Ctrl-T            (fzf) Select & Paste onto the command-line from found files/directories
 > Alt-C             (fzf) cd into selected directory

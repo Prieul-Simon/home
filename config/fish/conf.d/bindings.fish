@@ -1,1 +1,0 @@
-bind --mode insert ctrl-h forget
