@@ -30,7 +30,7 @@ set -x NVM_DIR $XDG_CONFIG_HOME/nvm
 set -gx NPM_CONFIG_USERCONFIG $HOME/utils/config/npm/.npmrc
 
 ## Node.js
-## https://nodejs.org/api/repl.html#repl_environment_variable_options
+## https://nodejs.org/api/repl.html#environment-variable-options
 set -x NODE_REPL_HISTORY $XDG_STATE_HOME/.node_repl_history
 ## Python
 set -x PYTHON_HISTORY $XDG_STATE_HOME/.python_history # for python >= 3.13 only
