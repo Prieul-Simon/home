@@ -3,10 +3,8 @@ bass source $HOME/utils/config/bash/bash_aliases/core/all.sh
 
 ## Improve even more ls & other aliases
 # Now silently use eza instead of ls
-set -l __UNSET_MSG ' unset by purpose in aliases.fish'
-alias l "echo 'l'$__UNSET_MSG"
-alias la "echo 'la'$__UNSET_MSG"
-alias ll "echo 'll'$__UNSET_MSG"
+alias l el
+alias la ela
 alias ls el
 alias ll ellla
 alias grep 'grep --color=always'
