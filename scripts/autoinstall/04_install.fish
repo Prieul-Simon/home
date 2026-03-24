@@ -10,6 +10,7 @@ end
 set -l PART_DEV_PATH $PART_DATA_PATH/dev
 mkdir --verbose $HOME/.config/tmux
 ln -s --verbose $HOME/utils/config/tmux/.tmux.conf              $HOME/.config/tmux/tmux.conf # bind tmux conf file from this git repo to the expected location
+ln -s --verbose $HOME/utils/config/tmux/conf                    $HOME/.config/tmux/ # bind tmux sub-conf files from this git repo to the expected location
 mkdir --verbose --parents $PART_DATA_PATH/pbin/.tmux/plugins
 ln -s --verbose $PART_DATA_PATH/pbin/.tmux/plugins              $HOME/.config/tmux/plugins # bind partition .tmux/plugins folder to the expected location
 mkdir --verbose --parents $PART_DATA_PATH/pdata/tmux/resurrect
