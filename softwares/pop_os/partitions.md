@@ -3,11 +3,11 @@
 | Part      | Name         | File System | Mount point | Label           | Size      |
 | --------- | ------------ | ----------- | ----------- | --------------- | --------- |
 | 1         | ESP          | fat32       | /boot/efi   | ESP             | 1.0 GiB   |
-| 2         | recovery     | fat32       | /recovery   | RECOVERY        | 4.0 GiB   |
-| 3         | root         | ext4        | /           | popos           | 100 GiB   |
-| 4         | var          | ext4        | /var        | var             | 20 GiB    |
-| 5         | homes        | ext4        | /home       | homes           | 150 GiB   |
-| 6         | swap         | linux-swap  | -           | -               | RAM size  |
+| 2         | swap         | linux-swap  | -           | -               | RAM size  |
+| 3         | recovery     | fat32       | /recovery   | RECOVERY        | 4.0 GiB   |
+| 4         | root         | ext4        | /           | popos           | 100 GiB   |
+| 5         | var          | ext4        | /var        | var             | 20 GiB    |
+| 6         | homes        | ext4        | /home       | homes           | 150 GiB   |
 | 7         | data         | ext4        | /mnt/data   | Data Disk Part  | remaining |
 
 
