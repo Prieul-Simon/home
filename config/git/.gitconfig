@@ -4,8 +4,8 @@
 	email = simon.prieul@gmail.com
 [core]
 	editor = nano
-	excludesFile = /home/simon/utils/config/git/global.gitignore
-	hooksPath = /home/simon/utils/config/git/hooks/
+	excludesFile = ~/utils/config/git/global.gitignore
+	hooksPath = ~/utils/config/git/hooks/
 [init]
 	defaultBranch = main
 [pull]
