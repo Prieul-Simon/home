@@ -15,6 +15,7 @@ function cheat_fish_show --description 'Print help for fish shell'
  > Ctrl-T            (fzf) Select & Paste onto the command-line from found files/directories
  > Alt-C             (fzf) cd into selected directory
  > Ctrl-G            (fzf-git) Prefix for key bindings for git. Then ? for more help
+ > Ctrl-B u          Open menu for (forked)tmux-fzf-url
  > Ctrl-B Shift-F    Open menu for sainnhe/tmux-fzf
  > Ctrl-B Shift-O    Open menu for omerxx/tmux-sessionx\
 "
