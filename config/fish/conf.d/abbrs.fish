@@ -22,4 +22,7 @@ abbr --add aptupgrade "sudo apt upgrade -y"
 abbr --add noderun 'node --run'
 abbr --add explorer 'cosmic-files &>/dev/null .'
 abbr --add pdfreader 'evince'
-abbr --add ccurl "curl -i -w '\n\n~~> Time: %{time_total}s\n'"
+abbr --add ccurl_time                   "curl -i -w '\n\n~~> Time: %{time_total}s\n'"
+abbr --add ccurl_withheaders            "curl --location --dump-header - "
+abbr --add ccurl_post_json              "curl --request POST --location --dump-header - --header 'Content-Type: application/json' --json '{\"foo\":\"bar\"}' "
+abbr --add ccurl_post_file_json         "curl --request POST --location --dump-header - --header 'Content-Type: application/json' --data @./myfile.json "
