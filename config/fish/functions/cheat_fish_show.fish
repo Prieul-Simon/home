@@ -8,7 +8,7 @@ function cheat_fish_show --description 'Print help for fish shell'
  > Ctrl-E            Move cursor to the end of the line.
  > Ctrl-U            Delete from cursor to the beginning of the line.
  > Shift-delete      Delete from history the current command-line.
- > Alt-S             sudo <Previous command in history>
+ > Alt-S             sudo <Previous command in history> (equivalent to `sudo !!` in bash)
 
 "$bold"fzf $normal
  > Ctrl-R            (fzf) Select & Paste onto the command-line from command-history
