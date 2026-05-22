@@ -30,8 +30,8 @@ __simon_create_alias "apt-upgrade" "sudo apt upgrade -y"
 
 # Utilities
 alias boo='ghostty +boo'
-alias python='python3'
-alias fake-mail='python -m smtpd -n -c DebuggingServer localhost:25'
+# alias python='python3'
+alias fake-mail='python3 -m smtpd -n -c DebuggingServer localhost:25'
 
 # Better commands
 function recursive-grep() {
