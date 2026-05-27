@@ -167,7 +167,7 @@ git clone https://github.com/Prieul-Simon/pokemonsay.git $PART_DEV_PATH/pokemons
 ln -s --verbose $PART_DEV_PATH/pokemonsay/pokemonsay.sh $HOME/.local/bin/pokemonsay
 ln -s --verbose $PART_DEV_PATH/pokemonsay/pokemonthink.sh $HOME/.local/bin/pokemonthink
 echo ''
-echo 'Creating symolic links towards scripts...'
+echo 'Creating symbolic links towards scripts...'
 ln -s --verbose $HOME/utils/scripts/bun/prieul-tunneling.ts $HOME/.local/bin/prieul-tunneling
 
 ## 20) Install interactive stuff
