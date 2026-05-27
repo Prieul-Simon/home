@@ -1,0 +1,12 @@
+{
+    remoteUser: 'john',
+    remoteHost: '1.1.1.1',
+    remotePort: 22,
+    mappings: [
+        {
+            remotePort: 9999,
+            localIp: '127.0.0.99',
+            domain: 'some.example.com',
+        },
+    ]
+}
