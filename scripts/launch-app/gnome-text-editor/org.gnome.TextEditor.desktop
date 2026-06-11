@@ -1,0 +1,43 @@
+[Desktop Entry]
+Categories=GNOME;GTK;Utility;TextEditor;
+Keywords[en_GB]=write;notepad;
+Keywords[fr]=écrire;bloc-notes;
+Keywords=write;notepad;
+DBusActivatable=true
+Exec=/usr/bin/flatpak run --branch=stable --arch=x86_64 --command=gnome-text-editor --file-forwarding org.gnome.TextEditor @@u %U @@
+MimeType=text/plain;application/x-zerosize;
+################################################################
+# Modify 'Name', 'GenericName', 'Comment
+# Name[en_GB]=Text Editor
+# Name[fr]=Éditeur de texte
+# Name=Text Editor
+Name[en_GB]=Text Editor (GEdit)
+Name[fr]=Éditeur de texte (GEdit)
+Name=Text Editor (GEdit)
+# GenericName[en_GB]=Text Editor
+# GenericName[fr]=Éditeur de texte
+# GenericName=Text Editor
+GenericName[en_GB]=Text Editor (GEdit)
+GenericName[fr]=Éditeur de texte (GEdit)
+GenericName=Text Editor (GEdit)
+# Comment[en_GB]=View and edit text files
+# Comment[fr]=Voir et modifier des fichiers texte
+# Comment=View and edit text files
+Comment[en_GB]=View and edit text files (GNOME Text Editor)
+Comment[fr]=Voir et modifier des fichiers texte (GNOME Text Editor)
+Comment=View and edit text files (GNOME Text Editor)
+################################################################
+Icon=org.gnome.TextEditor
+StartupNotify=true
+Terminal=false
+Type=Application
+X-Flatpak-RenamedFrom=gnome-text-editor
+X-Purism-FormFactor=Workstation;Mobile;
+Actions=new-window;
+X-Flatpak=org.gnome.TextEditor
+
+[Desktop Action new-window]
+Name[en_GB]=New Window
+Name[fr]=Nouvelle fenêtre
+Name=New Window
+Exec=/usr/bin/flatpak run --branch=stable --arch=x86_64 --command=gnome-text-editor org.gnome.TextEditor --new-window
