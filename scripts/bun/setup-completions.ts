@@ -82,7 +82,10 @@ async function setupBunBash(category: Category = 'bun') {
     const completionFile = `${HOME}/utils/config/bash/bashrc/sh/bun.completion.bash`
     if (await testFileExists(category, completionFile)) return
 
-    await $`bun completions > ${completionFile}`
+    await $`
+        export SHELL="/bin/bash"
+        bun completions > ${completionFile}
+    `
     logSuccess(category, completionFile)
 }
 async function setupBunFish(category: Category = 'bun') {
