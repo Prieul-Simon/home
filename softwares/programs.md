@@ -8,7 +8,7 @@
 | [Fish](https://github.com/fish-shell/fish-shell?tab=readme-ov-file#packages-for-linux)                             | (auto) | apt | `.config/fish/ -> <thisrepo>`
 | [Starship](https://starship.rs)                                  | (latest) | curl \| sh | `config.fish`
 | Tmux                                                             | (auto) | apt | `.config/tmux/tmux.conf -> <thisrepo>` & `.config/tmux/plugins -> <pbin>`
-| Font [IosevkaTerm](https://www.nerdfonts.com/font-downloads)     | v3.4.0 | zip | cp .ttf,.otf files in `~/.local/share/fonts`
+| Font [IosevkaTerm](https://www.nerdfonts.com/font-downloads)     | v3.5.1 | zip | cp .ttf,.otf files in `~/.local/share/fonts`
 | [Ghostty](https://github.com/mkasberg/ghostty-ubuntu)            | latest (1.2.3) | curl \| bash | `.config/ghostty/ -> <thisrepo>`
 
 Notes:
