@@ -32,7 +32,7 @@ while read --nchars 1 -l response --prompt-str="Do you want to install terminal 
         case y Y
             echo 'Installing terminal font...'
             mkdir --verbose --parents $PART_DATA_PATH/assets/fonts/IosevkaTerm
-            wget -O IosevkaTerm.zip https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/IosevkaTerm.zip
+            wget -O IosevkaTerm.zip https://github.com/ryanoasis/nerd-fonts/releases/download/v3.5.1/IosevkaTerm.zip
             unzip IosevkaTerm.zip -d $PART_DATA_PATH/assets/fonts/IosevkaTerm
             rm --verbose IosevkaTerm.zip
             mkdir --verbose --parents $HOME/.local/share/fonts/
