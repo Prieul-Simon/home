@@ -4,7 +4,8 @@ SECONDS=0
 echo 'Start autoinstall'
 ## preconditions:
 ## Execute with bash (sh is not sufficient)
-## installed packages: git, wget, curl
+## installed packages: git, wget, curl, unzip
+read -p 'You need to ensure that [git, wget, curl, unzip] are installed. Press any key to continue...'
 
 ## 0)
 # XDG vars (nvm will use it, maybe some other programs..)
