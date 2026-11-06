@@ -25,19 +25,51 @@ git clone https://github.com/tmux-plugins/tpm $HOME/.config/tmux/plugins/tpm
 
 ## 12) Font
 echo ''
-echo 'Installing terminal font...'
-mkdir --verbose --parents $PART_DATA_PATH/assets/fonts/IosevkaTerm
-wget -O IosevkaTerm.zip https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/IosevkaTerm.zip
-unzip IosevkaTerm.zip -d $PART_DATA_PATH/assets/fonts/IosevkaTerm
-rm --verbose IosevkaTerm.zip
-mkdir --verbose --parents $HOME/.local/share/fonts/
-cp --verbose $PART_DATA_PATH/assets/fonts/IosevkaTerm/*.ttf $HOME/.local/share/fonts/
+# Keep asking until we get a valid response
+while read --nchars 1 -l response --prompt-str="Do you want to install terminal font ? (y/n)"
+      or return 1 # if the read was aborted with ctrl-c/ctrl-d
+    switch $response
+        case y Y
+            echo 'Installing terminal font...'
+            mkdir --verbose --parents $PART_DATA_PATH/assets/fonts/IosevkaTerm
+            wget -O IosevkaTerm.zip https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/IosevkaTerm.zip
+            unzip IosevkaTerm.zip -d $PART_DATA_PATH/assets/fonts/IosevkaTerm
+            rm --verbose IosevkaTerm.zip
+            mkdir --verbose --parents $HOME/.local/share/fonts/
+            cp --verbose $PART_DATA_PATH/assets/fonts/IosevkaTerm/*.ttf $HOME/.local/share/fonts/
+            break
+        case n N
+            # We break out of the while and go on
+            echo 'No terminal font will be installed'
+            break
+        case '*'
+            # We go through the while loop and ask again
+            echo Not valid input
+            continue
+    end
+end
 
 ## 13) Ghostty
 echo ''
-echo 'Installing ghostty...'
-ln -s --verbose $HOME/utils/config/ghostty $HOME/.config/
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/mkasberg/ghostty-ubuntu/HEAD/install.sh)"
+# Keep asking until we get a valid response
+while read --nchars 1 -l response --prompt-str="Do you want to install Ghostty ? (y/n)"
+      or return 1 # if the read was aborted with ctrl-c/ctrl-d
+    switch $response
+        case y Y
+            echo 'Installing ghostty...'
+            ln -s --verbose $HOME/utils/config/ghostty $HOME/.config/
+            /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/mkasberg/ghostty-ubuntu/HEAD/install.sh)"
+            break
+        case n N
+            # We break out of the while and go on
+            echo 'Ghostty will not be installed'
+            break
+        case '*'
+            # We go through the while loop and ask again
+            echo Not valid input
+            continue
+    end
+end
 
 ## 14) Core utilities
 echo ''
