@@ -74,6 +74,7 @@ end
 ## 14) Core utilities
 echo ''
 echo 'Installing core utilities...'
+mkdir --verbose --parents $HOME/.local/bin
 ## fd
 mkdir --verbose --parents $PART_DATA_PATH/pbin/fd
 set -l FD_VERSION 'v10.3.0'
