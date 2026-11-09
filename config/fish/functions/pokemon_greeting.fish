@@ -63,8 +63,8 @@ function __transform_lines
 
     # Throw everything at the end
     # echo 'This is a debug line for separating'
-    echo -e $LOLCAT_LINES | pr -T -o 4 | lolcat
-    echo -e $POKEMON_LINES | pr -T -o 12
+    echo -e $LOLCAT_LINES | pr --form-feed --omit-header --omit-pagination --indent 4 | lolcat
+    echo -e $POKEMON_LINES | pr --form-feed --omit-header --omit-pagination --indent 12
 end
 
 function __pad_left_3_char0
