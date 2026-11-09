@@ -12,7 +12,7 @@ function fish_greeting
     #         echo "🦈"
     # end
     
-    if test "tmux-256color" = $TERM; or test "xterm-ghostty" = $TERM
+    if test "tmux-256color" = $TERM; or test "xterm-ghostty" = $TERM; or test "xterm-256color" = $TERM
         if functions -q pokemon_greeting; and command -q pokemonsay
             pokemon_greeting
         else
