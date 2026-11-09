@@ -60,7 +60,7 @@ alias cheat_fish_open='firefox https://cheatsheetshero.com/search?q=fish+shell'
 # Unfortunately, tldr node client does not work, so use python client instead
 set -x TLDR_LANGUAGE "en"
 set -x TLDR_PLATFORM "linux"
-alias tldr="tldr-py"
+# alias tldr="tldr-py"
 
 ## Games
 # compatibility with from importme.bash_aliases.bash

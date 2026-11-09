@@ -80,7 +80,7 @@ source "${BASH_SOURCE%/*}/helpers/all.sh"
 # Unfortunately, tldr node client does not work, so use python client instead
 export TLDR_LANGUAGE="en"
 export TLDR_PLATFORM="linux"
-alias tldr="tldr-py"
+# alias tldr="tldr-py"
 
 # Games
 if [ -f "${BASH_SOURCE%/*}/games.sh" ]; then  
