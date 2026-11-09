@@ -3,7 +3,7 @@
 ## 11) tmux
 echo ''
 echo 'Preparing tmux...'
-if test $PART_DATA_PATH = ""
+if test "$PART_DATA_PATH" = ""
     echo 'error: PART_DATA_PATH is empty'
     exit 1
 end
@@ -210,7 +210,7 @@ echo 'Installing utilities for interactive (fish and bash)...'
 bash $HOME/utils/scripts/autoinstall/05_bun_setups.bash
 
 ## 21) COSMIC
-if test $XDG_SESSION_DESKTOP = "COSMIC"
+if test "$XDG_SESSION_DESKTOP" = "COSMIC"
     echo ''
     echo 'COMSIC detected! Trying to link my shared COSMIC configuration files: '
     for dir_name in 'com.system76.CosmicSettings.Shortcuts' 'com.system76.CosmicPanel.Dock' 'com.system76.CosmicPanel.Panel'
