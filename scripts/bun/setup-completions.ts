@@ -137,10 +137,12 @@ async function setupBat(category: Category = 'bat') {
     }
     await $`cp ${sourceFile} ${completionFile}`
 
-    // Need to remove last line, so copy it with 'head' command (-n -1 removes the last line)
-    await $`head -n -1 ${sourceFile} > ${completionFile}`
+    // Need to remove last two lines ("complete" line and empty line), so copy it with 'head' command (-n -2 removes the last two lines)
+    await $`head -n -2 ${sourceFile} > ${completionFile}`
     // & replace it with another line at the end of the copied file
+    await $`echo '## [START: added by setup-completions.ts::setupBat()]' >> ${completionFile}`
     await $`echo '} && complete -F _bat bat' >> ${completionFile}`
+    await $`echo '## [END  : added by setup-completions.ts::setupBat()]' >> ${completionFile}`
 
     logSuccess(category, completionFile)
 }
