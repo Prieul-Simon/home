@@ -64,7 +64,7 @@ if status is-interactive
     set -x _ZO_ECHO '1' # z will print the matched directory before navigating to it
     # set -x _ZO_EXCLUDE_DIRS '' # separated by ':'
     # set -x _ZO_FZF_OPTS '' # Custom options to pass to fzf during interactive selection
-    set -x _ZO_MAXAGE 200000 # aging algorithm, which limits the maximum number of entries in the databas
+    set -x _ZO_MAXAGE 200000 # aging algorithm, which limits the maximum number of entries in the database
     # set -x _ZO_RESOLVE_SYMLINKS '1' # if '1', z will resolve symlinks before adding directories to the database
     zoxide init --cmd cd fish | source
 

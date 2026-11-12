@@ -13,7 +13,7 @@ set -gx XDG_DATA_HOME $HOME/.local/share
 set -gx XDG_STATE_HOME $HOME/.local/state
 
 ## Needed variables for my custom environment
-# FIXME here as a temp workaround, DATA_PATH is statically set, even though it oculd be incorrect on the current machine
+# FIXME here as a temp workaround, DATA_PATH is statically set, even though it could be incorrect on the current machine
 set -gx DATA_PATH /mnt/data
 
 ## binaries in PATH
