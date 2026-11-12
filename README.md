@@ -28,6 +28,18 @@ In order to make some other things to work, you may need to:
 
 * `sudo apt install xdg-open` (for making `fzf-url` work)
 
+### Ghostty
+
+Alternatively, you can still install the font and ghostty on Linux, and then create a Windows shortcut with this target:
+
+`"C:\Program Files\WSL\wslg.exe" -d Ubuntu-26.04 --cd "~" -- env GDK_BACKEND=x11 XCURSOR_SIZE=24 /usr/bin/ghostty --gtk-single-instance=true`
+
+### VS Code
+
+* Make sure WSL extension (`ms-vscode-remote.remote-wsl`) is installed
+* Open the project (`code .`) from Linux distro terminal => the first time, VS Code will install a server in WSL
+* You may need to install extensions on the WSL server side
+
 ## Manual
 
 Start by the following steps (if autoinstall was used, it is already done):
