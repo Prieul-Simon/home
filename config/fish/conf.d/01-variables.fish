@@ -13,8 +13,9 @@ set -gx XDG_DATA_HOME $HOME/.local/share
 set -gx XDG_STATE_HOME $HOME/.local/state
 
 ## Needed variables for my custom environment
-# FIXME here as a temp workaround, DATA_PATH is statically set, even though it could be incorrect on the current machine
-set -gx DATA_PATH /mnt/data
+if test "$DATA_PATH" = ""
+    echo '[WARNING]: DATA_PATH is empty. Please copy/paste 00-datapath-variable.fish.sample to 00-datapath-variable.fish and set its real value'
+end
 
 ## binaries in PATH
 set PATH $HOME/.local/bin $PATH

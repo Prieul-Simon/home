@@ -2,3 +2,5 @@ node_modules/
 *.swp
 *.save
 lazy-lock.json
+
+00-datapath-variable.fish

@@ -236,5 +236,5 @@ echo "You should also check the current folder and remove some files if they wer
 echo "For authenticating to GitHub, run 'gh auth'"
 echo "For initializing tmux, launch it once and install plugins (<Prefix>+Ctrl-I)"
 echo "For initializing LazyVim, launch nvim at least once"
-echo "You may need to change the workaround in 00-variables.fish:17 and assign the correct value"
+echo "You may need to change the workaround in 01-variables.fish:19 and assign the correct value to DATA_PATH"
 echo ''

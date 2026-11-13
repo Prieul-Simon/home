@@ -22,7 +22,7 @@ bash -c "$(curl https://raw.githubusercontent.com/Prieul-Simon/home/refs/heads/m
     * `wsl --distribution Ubuntu-26.04`
     * apt update, upgrade and install packages (unzip...) if needed
     * Launch autoinstall script
-    * Do not forget the workarounds at then end (edition of 00-variables.fish, first launch of tmux, etc.)
+    * Do not forget the workarounds at then end (edition of 00-datapath-variable.fish, first launch of tmux, etc.)
 
 In order to make some other things to work, you may need to:
 

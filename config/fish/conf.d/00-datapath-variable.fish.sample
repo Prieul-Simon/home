@@ -1,0 +1,2 @@
+# You MUST set DATA_PATH to its real value on this machine, by copy/pasting this sample file and removing the `.sample` extension
+set -gx DATA_PATH /mnt/data
