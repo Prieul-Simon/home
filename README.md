@@ -37,8 +37,9 @@ Alternatively, you can still install the font and ghostty on Linux, and then cre
 ### VS Code
 
 * Make sure WSL extension (`ms-vscode-remote.remote-wsl`) is installed
-* Open the project (`code .`) from Linux distro terminal => the first time, VS Code will install a server in WSL
+* Open the command palette and "WSL: Connect to WSL using Distro..."  => the first time, VS Code will install a server in WSL
 * You may need to install extensions on the WSL server side
+* Once setup, you can save the workspace (locally on Windows with `Show local`) with naming pattern `wsl-<name>.code-workspace`
 
 ## Manual
 
