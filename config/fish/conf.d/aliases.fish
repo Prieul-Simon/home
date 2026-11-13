@@ -1,3 +1,5 @@
+status is-interactive; or return
+
 ## Source common helpers with bash shell
 bass source $HOME/utils/config/bash/bash_aliases/core/all.sh
 

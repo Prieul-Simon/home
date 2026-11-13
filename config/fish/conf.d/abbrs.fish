@@ -1,3 +1,5 @@
+status is-interactive; or return
+
 ## Core utilities
 abbr --add -- - 'cd -' # typing '-' will autocomplete to 'cd -'
 abbr --add batplain 'bat --force-colorization --paging=never --style=plain'
