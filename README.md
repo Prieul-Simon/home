@@ -58,3 +58,10 @@ ln -s $DATA_PATH/dev/home.git/scripts scripts
 Then
 * fish: follow the instructions in `config.fish`
 * bash: follow the instructions in `importme.bashrc.bash` and `importme.bash_aliases.bash`
+
+## Miscellaneous
+
+### Local git-ignore
+
+If using different versions of softwares on different machines (e.g. btop 1.3.0 and 1.4.6), some configuration files may have different format. If you want to ignore your local modifications, but still keep version control on other machines, use this fish abbreviation:
+`git-local-ignore config/btop/btop.conf`

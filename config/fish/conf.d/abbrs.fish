@@ -11,6 +11,9 @@ abbr --add gitstatus git status
 abbr --add gitsiwtchbranch "git branch | fzf --preview 'git show --color=always {-1}' \
                  --bind 'enter:become(git checkout {-1})' \
                  --height 40% --layout reverse"
+abbr --add git-local-ignore 'git update-index --skip-worktree'
+abbr --add git-local-unignore 'git update-index --no-skip-worktree'
+abbr --add git-local-show-ignored 'git ls-files -v | grep "^S"'
 
 ## I use apt so often that I want to shortcut the commands
 abbr --add  apt-list-upgradable "sudo apt update && apt list --upgradable"
