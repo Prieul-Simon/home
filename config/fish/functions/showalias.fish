@@ -1,6 +1,6 @@
 # fish does not show the alias that is set unlike bash when typing `alias egrep`
 # thus, create a function`showalias` for that
-function showalias
+function showalias -d "Show what the command is an alias for"
     # bass source $NVM_DIR/nvm.sh --no-use ';' nvm $argv
     set -l query $argv
     echo "> (showalias): Running command 'alias | grep \"^alias $query\"'"
