@@ -12,6 +12,7 @@ function pokemon_greeting --description "Greeting by a 1st gen Pokemon"
     if test -z "$POKEMON_FULL_NAME"
         set --erase POKEMON_FULL_NAME
         set POKEMON_FULL_NAME "Smeargle" # when bugged, do this "easter egg"
+        __log "bugged0: debug values: ($RANDOM_INT)  ($RANDOM_INT_3_DIGITS) ($REGEXP_SEARCH_CORRECT_POKEMON) ($FIRST_ITEM)"
     end
 
     set -g GREETING_MESSAGE (fortune -s | string collect)
