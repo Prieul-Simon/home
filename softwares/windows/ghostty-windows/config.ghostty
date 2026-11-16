@@ -54,6 +54,7 @@
 ## SHELL
 command = wsl --distribution Ubuntu-26.04 --cd ~ --exec /usr/bin/fish --login --interactive
 working-directory = C:\Users\<user>\<wherever-you-want>
+env = WSLENV=TERM:COLORTERM
 
 ## CLIPBOARD
 selection-clear-on-copy = false

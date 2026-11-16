@@ -12,7 +12,19 @@ function fish_greeting
     #         echo "🦈"
     # end
     
-    if test "tmux-256color" = $TERM; or test "xterm-ghostty" = $TERM; or test "xterm-256color" = $TERM
+    if test -n "$__SIMON_GREETING_FORCE_MODE"
+        switch $__SIMON_GREETING_FORCE_MODE
+            case "pokemon"
+                pokemon_greeting
+            case "duck"
+                duck_greeting
+            case "*"
+                echo "[fish_greeting] Unknown __SIMON_GREETING_FORCE_MODE: $__SIMON_GREETING_FORCE_MODE"
+        end
+        return
+    end
+
+    if test "tmux-256color" = $TERM; or test "xterm-ghostty" = $TERM
         if functions -q pokemon_greeting; and command -q pokemonsay
             pokemon_greeting
         else
