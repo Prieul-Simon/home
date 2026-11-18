@@ -24,13 +24,14 @@ alias fake-mail='python3 -m smtpd -n -c DebuggingServer localhost:25'
 
 ## Use npmjs.com packages installed globally with Bun
 alias cb='bun run --bun --no-install clipboard'
-alias bun_httpserver='bun run --no-install http-server' # Need Node.js/nvm as it does not work with Bun runtime
+alias bun_httpserver='bun run --no-install http-server'
 alias bun_gnomon='bun run --bun --no-install gnomon'
 alias prettylog="bun run --bun --no-install pino-pretty"
 # set __SIMON_TLDR_NODE_CLIENT "$DATA_PATH/dev/_ext/tldr-node-client/bin/tldr"
 # alias tldr-bun="bun run --bun $__SIMON_TLDR_NODE_CLIENT"
 # alias tldr-node="$__SIMON_TLDR_NODE_CLIENT"
 alias tree-sitter="bun run --bun --no-install tree-sitter"
+alias leaf="bun run --bun --no-install leaf"
 
 ## Local Bun scripts
 alias now-timestamp='$HOME/utils/scripts/bun/timestamp.ts'

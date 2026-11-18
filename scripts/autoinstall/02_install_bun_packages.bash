@@ -7,4 +7,5 @@ $BUN_INSTALL/bin/bun --global install \
     gnomon \
     pino-pretty \
     tree-sitter-cli \
+    @rivolink/leaf \
 

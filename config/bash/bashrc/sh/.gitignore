@@ -4,3 +4,4 @@ npm.completion.sh
 node.completion.bash
 tldr.completion.bash
 bat.completion.bash
+leaf.completion.bash

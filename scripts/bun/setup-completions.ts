@@ -19,6 +19,7 @@ async function setupAll() {
         setupTldr(),
         setupBat(),
         setupEza(),
+        setupLeaf(),
     ])
 }
 
@@ -34,6 +35,7 @@ type Category =
     | 'tldr'
     | 'bat'
     | 'eza'
+    | 'leaf'
 
 function syncLog(category: Category, msg: string, ...data: any[]) {
     const beginCategory = `[${category}]`
@@ -159,5 +161,32 @@ async function setupEzaFish(category: Category = 'eza') {
     const completionUrl = `https://raw.githubusercontent.com/eza-community/eza/refs/heads/main/completions/fish/eza.fish`
     const completionResult = await retrieveRawContent(category, completionUrl)
     await write(completionFile, completionResult)
+    logSuccess(category, completionFile)
+}
+
+async function setupLeaf(category: Category = 'leaf') {
+    await Promise.allSettled([
+        setupLeafBash(category),
+        setupLeafFish(category),
+    ])
+}
+async function setupLeafBash(category: Category = 'leaf') {
+    const completionFile = `${HOME}/utils/config/bash/bashrc/sh/leaf.completion.bash`
+    if (await testFileExists(category, completionFile)) return
+
+    await $`
+        export SHELL="/bin/bash"
+        bun run --bun --no-install leaf --auto-complete bash:dump > ${completionFile}
+    `
+    logSuccess(category, completionFile)
+}
+async function setupLeafFish(category: Category = 'leaf') {
+    const completionFile = `${HOME}/utils/config/fish/completions/leaf.fish`
+    if (await testFileExists(category, completionFile)) return
+
+    await $`
+        export SHELL="/usr/bin/fish"
+        bun run --bun --no-install leaf --auto-complete fish:dump > ${completionFile}
+    `
     logSuccess(category, completionFile)
 }
