@@ -1,7 +1,7 @@
 function pokemon_greeting --description "Greeting by a 1st gen Pokemon"
     set -l RANDOM_INT (random 1 151) # first generation is s1...151
     # set -l RANDOM_INT (random 25 25) # for testing: Pikachu
-    set -l RANDOM_INT_3_DIGITS (__pad_left_3_char0 $RANDOM_INT)
+    set -l RANDOM_INT_3_DIGITS (__pokemon_greeting_pad_left_3_char0 $RANDOM_INT)
 
     # Unfortunately, --nationalDex is bugged as 025 can return both Pikachu (025) and Pecharunt (1025) 
     # fortune -s | pokemonsay --no-name --nationalDex $RANDOM_INT_3_DIGITS
@@ -12,24 +12,25 @@ function pokemon_greeting --description "Greeting by a 1st gen Pokemon"
     if test -z "$POKEMON_FULL_NAME"
         set --erase POKEMON_FULL_NAME
         set POKEMON_FULL_NAME "Smeargle" # when bugged, do this "easter egg"
-        __log "bugged0: debug values: ($RANDOM_INT)  ($RANDOM_INT_3_DIGITS) ($REGEXP_SEARCH_CORRECT_POKEMON) ($FIRST_ITEM)"
+        __pokemon_greeting_log "bugged0: debug values: ($RANDOM_INT)  ($RANDOM_INT_3_DIGITS) ($REGEXP_SEARCH_CORRECT_POKEMON) ($FIRST_ITEM)"
     end
 
     set -g GREETING_MESSAGE (fortune -s | string collect)
     # set -g GREETING_MESSAGE (cheat_fish_show | string collect)
     # set -g GREETING_MESSAGE (echo -e "this is a test\nmessage !!!!" | string collect)
 
-    __log "new pokemon greeting: debug values: ($RANDOM_INT)  ($RANDOM_INT_3_DIGITS) ($REGEXP_SEARCH_CORRECT_POKEMON) ($FIRST_ITEM) ($POKEMON_FULL_NAME)"
+    __pokemon_greeting_log "new pokemon greeting: debug values: ($RANDOM_INT)  ($RANDOM_INT_3_DIGITS) ($REGEXP_SEARCH_CORRECT_POKEMON) ($FIRST_ITEM) ($POKEMON_FULL_NAME)"
 
     set -g GREETING_FULL_MESSAGE '' "$GREETING_MESSAGE" \n \n $POKEMON_FULL_NAME
 
-    echo $GREETING_FULL_MESSAGE | pokemonsay --no-name --pokemon "$POKEMON_FULL_NAME" | __transform_lines
+    echo $GREETING_FULL_MESSAGE | pokemonsay --no-name --pokemon "$POKEMON_FULL_NAME" | __pokemon_greeting_transform_lines
+    # echo $GREETING_FULL_MESSAGE | pokemonsay --no-name --pokemon "$POKEMON_FULL_NAME"
 end
 
 # Adds 4 extra spaces at the beginning of each line for text
 # Lolcatify the text
 # Adds 12 extra spaces at the beginning of each line for pokemon sprite
-function __transform_lines
+function __pokemon_greeting_transform_lines
     # set -f LOLCAT_LINES ''
     # set -f POKEMON_LINES ''
     set -f END_HYPHEN_LINE_COUNT 0
@@ -68,7 +69,7 @@ function __transform_lines
     echo -e $POKEMON_LINES | pr --form-feed --omit-header --omit-pagination --indent 12
 end
 
-function __pad_left_3_char0
+function __pokemon_greeting_pad_left_3_char0
     set -l str "$argv[1]"
     set -l length 3
     set -l char "0"
@@ -85,14 +86,19 @@ function __pad_left_3_char0
     end
 end
 
-function __log
+function __pokemon_greeting_log
     set -l msg "$argv[1]"
 
-    set -l logfile_loc $XDG_STATE_HOME/pokemon_greeting
-    set -l logfile $logfile_loc/log
-    mkdir --parents $logfile_loc
+    # Fire-and-forget: runs in a separate process, doesn't block the prompt
+    begin
+        set -l logfile_loc $XDG_STATE_HOME/pokemon_greeting
+        set -l logfile $logfile_loc/log
+        if not test -e $logfile_loc
+            mkdir --parents $logfile_loc
+        end
 
-    set -l datetime (date)
+        set -l datetime (date)
 
-    echo "[$datetime] $msg" >> $logfile
+        echo "[$datetime] $msg" >> $logfile
+    end & disown 2>/dev/null
 end
