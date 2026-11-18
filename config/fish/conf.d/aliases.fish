@@ -51,15 +51,6 @@ alias cheat_fish_open='xdg-open https://cheatsheetshero.com/search?q=fish+shell'
 # TODO from importme.bash_aliases.bash
 alias ?tmux='cheat_tmux_show'
 
-## HELP / REMINDERS
-# compatibility with from importme.bash_aliases.bash
-# TODO
-# set -l HELPERS_DIR $HOME/utils/config/bash/bash_aliases/helpers/all.sh
-# set -l HELPERS_DIR $HOME/utils/config/bash/bash_aliases/helpers/_private.sh
-# if test -e $HELPERS_DIR
-    # bass source $HELPERS_DIR
-# end
-
 ## tldr.sh
 # Unfortunately, tldr node client does not work, so use python client instead
 set -x TLDR_LANGUAGE "en"
@@ -68,7 +59,7 @@ set -x TLDR_PLATFORM "linux"
 
 ## Games
 # compatibility with from importme.bash_aliases.bash
-set -l GAMES_ALIASES_DIR $HOME/utils/config/bash/bash_aliases/games.sh
-if test -e $GAMES_ALIASES_DIR
-    bass source $GAMES_ALIASES_DIR
+set -l games_aliases_dir $HOME/utils/config/bash/bash_aliases/games.sh
+if test -e $games_aliases_dir
+    bass source $games_aliases_dir
 end

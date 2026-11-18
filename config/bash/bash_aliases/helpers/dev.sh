@@ -4,5 +4,5 @@ function help.tmux() {
     echo "Type goto.tmux.cheat to automatically open the link in Firefox"
 }
 function goto.tmux.cheat() {
-    firefox "https://tmuxcheatsheet.com"
+    xdg-open "https://tmuxcheatsheet.com"
 }
