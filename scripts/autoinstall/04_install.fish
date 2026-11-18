@@ -202,6 +202,10 @@ ln -s --verbose $PART_DEV_PATH/pokemonsay/pokemonthink.sh $HOME/.local/bin/pokem
 echo ''
 echo 'Creating symbolic links towards scripts...'
 ln -s --verbose $HOME/utils/scripts/bun/prieul-tunneling.ts $HOME/.local/bin/prieul-tunneling
+## leaf (already installed by Bun, here just bind configuration)
+echo ''
+echo 'Creating symbolic links towards config...'
+ln -s --verbose $HOME/utils/config/leaf $HOME/.config/ # bind leaf conf directory from this git repo to the expected location
 
 ## 20) Install interactive stuff
 echo ''
