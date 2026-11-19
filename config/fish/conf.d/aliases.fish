@@ -46,10 +46,21 @@ alias ëmajuscule='echo -n "Ë" | cb'
 alias çmajuscule='echo -n "Ç" | cb'
 
 ## cheatsheets
-alias ?='cheat_fish_show'
+alias ?:nopop="cheat_fish_show"
+alias ?tmux:nopop="cheat_tmux_show"
+if test -n "$TMUX_PANE"
+    # tmux context
+    function __simon_tmux_pop
+        tmux display-popup -w 80% -h 80% fish -i -c '$argv 2>&1 | tr -d "\017" | bat --paging=auto --decorations=never' $argv
+    end
+    alias ?="__simon_tmux_pop ?:nopop"
+    alias ?tmux="__simon_tmux_pop ?tmux:nopop"
+else
+    alias ?="?:nopop"
+    alias ?tmux="?tmux:nopop"
+end
 alias cheat_fish_open='xdg-open https://cheatsheetshero.com/search?q=fish+shell'
 # TODO from importme.bash_aliases.bash
-alias ?tmux='cheat_tmux_show'
 
 ## tldr.sh
 # Unfortunately, tldr node client does not work, so use python client instead
