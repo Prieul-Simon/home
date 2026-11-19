@@ -36,14 +36,16 @@ alias leaf="bun run --bun --no-install leaf"
 ## Local Bun scripts
 alias now-timestamp='$HOME/utils/scripts/bun/timestamp.ts'
 alias identity='$HOME/utils/scripts/bun/identity.ts'
+alias uppercase='$HOME/utils/scripts/bun/uppercase.ts'
 
 ## Easy life
-alias àmajuscule='echo -n "À" | cb'
-alias émajuscule='echo -n "É" | cb'
-alias èmajuscule='echo -n "È" | cb'
-alias êmajuscule='echo -n "Ê" | cb'
-alias ëmajuscule='echo -n "Ë" | cb'
-alias çmajuscule='echo -n "Ç" | cb'
+alias majuscule_cb='uppercase | xsel --clipboard --input'
+alias àmajuscule='echo -n "à" | majuscule_cb'
+alias émajuscule='echo -n "é" | majuscule_cb'
+alias èmajuscule='echo -n "è" | majuscule_cb'
+alias êmajuscule='echo -n "ê" | majuscule_cb'
+alias ëmajuscule='echo -n "ë" | majuscule_cb'
+alias çmajuscule='echo -n "ç" | majuscule_cb'
 
 ## cheatsheets
 alias ?:nopop="cheat_fish_show"
