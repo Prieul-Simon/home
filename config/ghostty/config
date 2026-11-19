@@ -91,3 +91,6 @@ window-padding-y = 0,1
 
 ## INTERACTION
 link-url = true
+
+## LOAD SPECIFIC CONFIG FILES
+config-file = ?config.wsl-ubuntu.26.04.ghostty
