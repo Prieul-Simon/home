@@ -10,6 +10,10 @@ abbr --add --position anywhere --set-cursor='%' -- gcommit git\ commit\ -m\ \'\%
 abbr --add gstatus git status
 abbr --add gitstatus git status
 
+## git-pull
+abbr --add gpull git pull -p
+abbr --add gitpull git pull -p
+
 ## git-branch: interactive selection
 abbr --add gitswitchbranch "git branch | fzf --preview 'git show --color=always {-1}' \
                  --bind 'enter:become(git checkout {-1})' \
