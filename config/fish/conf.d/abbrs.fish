@@ -5,20 +5,6 @@ abbr --add -- - 'cd -' # typing '-' will autocomplete to 'cd -'
 abbr --add batplain 'bat --force-colorization --paging=never --style=plain'
 abbr --add dysk "dysk --units=binary --all --cols +label --sort=filesystem-asc --filter='size > 0 & !type=tmpfs'"
 
-## Git abbrs
-abbr --add --position anywhere --set-cursor='%' -- gitcommit git\ commit\ -m\ \'\%\'
-abbr --add --position anywhere --set-cursor='%' -- gcommit git\ commit\ -m\ \'\%\'
-abbr --add gstatus git status
-abbr --add gitstatus git status
-abbr --add gitswitchbranch "git branch | fzf --preview 'git show --color=always {-1}' \
-                 --bind 'enter:become(git checkout {-1})' \
-                 --height 40% --layout reverse"
-abbr --add gitgraph "git log --graph --oneline --decorate --all \
-    --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)'"
-abbr --add git-local-ignore 'git update-index --skip-worktree'
-abbr --add git-local-unignore 'git update-index --no-skip-worktree'
-abbr --add git-local-show-ignored 'git ls-files -v | grep "^S"'
-
 ## I use apt so often that I want to shortcut the commands
 abbr --add  apt-list-upgradable "sudo apt update && apt list --upgradable"
 abbr --add  aptlistupgradable "sudo apt update && apt list --upgradable"
