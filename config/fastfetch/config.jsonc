@@ -122,8 +122,10 @@
             "key": "│{#green}│ {icon}  Desktop   │{$4}│{#keys}│{$2}"
         },
         {
-            "type": "wm",
-            "key": "│{#green}│ {icon}  Session   │{$4}│{#keys}│{$2}"
+            // "type": "wm",
+            "type": "command",
+            "key": "│{#green}│ {icon}  Session   │{$4}│{#keys}│{$2}",
+            "text": "~/.config/fastfetch/custom_wm.sh"
         },
         {
             "type": "theme",
