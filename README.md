@@ -12,9 +12,9 @@ bash -c "$(curl https://raw.githubusercontent.com/Prieul-Simon/home/refs/heads/m
 
 ## Forced to work with Windows ?
 
-* Setup nerd font: go to https://www.nerdfonts.com/font-downloads and download your favorite one (for instance IosevkaTerm Nerd Font). Then install it with Configuration Panel on Windows
-* Install ghostty on Windows : https://github.com/shiweis/ghostty-windows
-* Copy / Paste `softwares/windows/ghostty-windows/config.ghostty` into `C:\Users\<user>\AppData\Local\ghostty\config.ghostty`. Edit it with the correct values
+* (Optional: Setup nerd font: go to https://www.nerdfonts.com/font-downloads and download your favorite one (for instance IosevkaTerm Nerd Font). Then install it with Configuration Panel on Windows)
+* (Optional: Install ghostty on Windows : https://github.com/shiweis/ghostty-windows)
+* (Optional: Copy / Paste `softwares/windows/ghostty-windows/config.ghostty` into `C:\Users\<user>\AppData\Local\ghostty\config.ghostty`. Edit it with the correct values)
 * Setup WSL (https://learn.microsoft.com/en-us/windows/wsl/setup/environment) :
     * `wsl --list --online`
     * `wsl --install --no-distribution`
@@ -22,7 +22,7 @@ bash -c "$(curl https://raw.githubusercontent.com/Prieul-Simon/home/refs/heads/m
     * `wsl --distribution Ubuntu-26.04`
     * apt update, upgrade and install packages (unzip...) if needed
     * Launch autoinstall script
-    * Do not forget the workarounds at then end (edition of 00-datapath-variable.fish, first launch of tmux, etc.)
+    * Do not forget the workarounds at the end (edition of 00-datapath-variable.fish, first launch of tmux, etc.)
 
 In order to make some other things to work, you may need to:
 
