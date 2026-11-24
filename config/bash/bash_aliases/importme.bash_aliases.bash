@@ -1,13 +1,7 @@
 #####################################################################################################################################################
+# (the following instruction is automatically made by install.bash)
 # In ~/.bash_aliases, include this file with the following line:
 # `source "$HOME/utils/config/bash/bash_aliases/importme.bash_aliases.bash"`
-# 
-# need to install and then symlink the folder containing all the .md files containing the cheatsheets:
-# ```
-# cd $HOME/utils/scripts/bun/
-# bun install
-# ln -s $DATA_PATH/assets/cheatsheets cheatsheets
-# ```
 #####################################################################################################################################################
 
 source "${BASH_SOURCE%/*}/create_alias.sh"

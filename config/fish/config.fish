@@ -1,21 +1,8 @@
 #####################################################################################################################################################
+# (the following instruction is automatically made by install.bash)
 # Create a symlink to this repository from the expected location:
-# `ln -s $HOME/utils/config/fish $HOME/.config/fish`
-# 
-# need to download and setup the .fish files for completions :
-# ```
-# cd $HOME/utils/scripts/bun/
-# bun install
-# ./setup-completions.ts
-# ```
+# `ln -s --verbose $HOME/utils/config/fish $HOME/.config/fish`
 #####################################################################################################################################################
-
-################################################################
-################################################################
-### My custom modifications
-
-################################################################
-################################################################
 
 ## Interactive only
 if status is-interactive

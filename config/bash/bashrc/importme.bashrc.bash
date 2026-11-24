@@ -1,14 +1,7 @@
 #####################################################################################################################################################
+# (the following instruction is automatically made by install.bash)
 # In ~/.bashrc, include this file with the following line:
 # `source "$HOME/utils/config/bash/bashrc/importme.bashrc.bash"`
-# 
-# need to download and setup the .sh files for git prompt+completions and all other completions :
-# ```
-# cd $HOME/utils/scripts/bun/
-# bun install
-# ./setup-git.ts
-# ./setup-completions.ts
-# ```
 #####################################################################################################################################################
 
 # Welcome message

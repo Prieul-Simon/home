@@ -41,24 +41,6 @@ Alternatively, you can still install the font and ghostty on Linux, and then cre
 * You may need to install extensions on the WSL server side
 * Once setup, you can save the workspace (locally on Windows with `Show local`) with naming pattern `wsl-<name>.code-workspace`
 
-## Manual
-
-Start by the following steps (if autoinstall was used, it is already done):
-
-```
-mkdir $DATA_PATH/dev
-cd $DATA_PATH/dev
-gh repo clone Prieul-Simon/home home.git
-mkdir ~/utils
-cd ~/utils
-ln -s $DATA_PATH/dev/home.git/config config
-ln -s $DATA_PATH/dev/home.git/scripts scripts
-```
-
-Then
-* fish: follow the instructions in `config.fish`
-* bash: follow the instructions in `importme.bashrc.bash` and `importme.bash_aliases.bash`
-
 ## Miscellaneous
 
 ### Local git-ignore
