@@ -21,6 +21,7 @@ bash -c "$(curl https://raw.githubusercontent.com/Prieul-Simon/home/refs/heads/m
     * `wsl --list`
     * `wsl --distribution Ubuntu-26.04`
     * apt update, upgrade and install packages (unzip...) if needed
+    * (Optional): Setup disk partitions. See [partitions.md](softwares/windows/partitions.md)
     * Launch autoinstall script
     * Do not forget the workarounds at the end (edition of 00-datapath-variable.fish, first launch of tmux, etc.)
 
